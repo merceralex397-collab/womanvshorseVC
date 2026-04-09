@@ -25,6 +25,9 @@ permission:
     "ticket-execution": allow
     "research-delegation": allow
     "isolation-guidance": allow
+    "godot-3d-android-game": allow
+    "blender-mcp-workflow": allow
+    "asset-description": allow
   task:
     "*": deny
     "explore": allow

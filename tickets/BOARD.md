@@ -18,4 +18,5 @@
 | CORE-006 | Enemy variants with model swapping | 2 | core-gameplay | planning | todo | CORE-002, MODEL-* |
 | UI-001 | Title screen | 2 | ui | planning | todo | - |
 | UI-002 | Game over screen | 2 | ui | planning | todo | - |
+| ANDROID-001 | Android export surface setup | 1 | android-export | planning | todo | - |
 | RELEASE-001 | Android export and APK build | 3 | release-readiness | planning | todo | All above |

@@ -14,7 +14,9 @@
       "status": "todo",
       "resolution_state": "open",
       "verification_state": "suspect",
-      "depends_on": ["MODEL-006"],
+      "depends_on": [
+        "MODEL-006"
+      ],
       "source_ticket_id": null,
       "follow_up_ticket_ids": [],
       "summary": "Create the main 3D arena scene with Node3D root, fixed top-down orthographic Camera3D, DirectionalLight3D, and arena-ground.glb model.",
@@ -40,7 +42,9 @@
       "status": "todo",
       "resolution_state": "open",
       "verification_state": "suspect",
-      "depends_on": ["SETUP-001"],
+      "depends_on": [
+        "SETUP-001"
+      ],
       "source_ticket_id": null,
       "follow_up_ticket_ids": [],
       "summary": "Create the player character scene with CharacterBody3D, CollisionShape3D, and GDScript controller with XZ movement.",
@@ -70,7 +74,7 @@
       "summary": "Generate woman-warrior 3D model via blender-agent MCP following assets/briefs/woman-warrior.md. Export GLB to assets/models/.",
       "acceptance": [
         "assets/models/woman-warrior.glb exists",
-        "Triangle count ≤ 3000",
+        "Triangle count \u2264 3000",
         "Manifold mesh, no inverted normals",
         "Imports into Godot without errors",
         "PROVENANCE.md entry added"
@@ -95,7 +99,7 @@
       "summary": "Generate brown horse enemy model via blender-agent MCP following assets/briefs/horse-brown.md. Export GLB to assets/models/.",
       "acceptance": [
         "assets/models/horse-brown.glb exists",
-        "Triangle count ≤ 2000",
+        "Triangle count \u2264 2000",
         "Manifold mesh, no inverted normals",
         "Imports into Godot without errors",
         "PROVENANCE.md entry added"
@@ -120,7 +124,7 @@
       "summary": "Generate black horse enemy model via blender-agent MCP following assets/briefs/horse-black.md. Export GLB to assets/models/.",
       "acceptance": [
         "assets/models/horse-black.glb exists",
-        "Triangle count ≤ 2000",
+        "Triangle count \u2264 2000",
         "Manifold mesh, no inverted normals",
         "Imports into Godot without errors",
         "PROVENANCE.md entry added"
@@ -145,7 +149,7 @@
       "summary": "Generate armored war horse model via blender-agent MCP following assets/briefs/horse-war.md. Export GLB to assets/models/.",
       "acceptance": [
         "assets/models/horse-war.glb exists",
-        "Triangle count ≤ 4000",
+        "Triangle count \u2264 4000",
         "Manifold mesh, no inverted normals",
         "Imports into Godot without errors",
         "PROVENANCE.md entry added"
@@ -170,7 +174,7 @@
       "summary": "Generate boss horse model via blender-agent MCP following assets/briefs/horse-boss.md. Export GLB to assets/models/.",
       "acceptance": [
         "assets/models/horse-boss.glb exists",
-        "Triangle count ≤ 5000",
+        "Triangle count \u2264 5000",
         "Manifold mesh, no inverted normals",
         "Imports into Godot without errors",
         "PROVENANCE.md entry added"
@@ -195,10 +199,36 @@
       "summary": "Generate arena ground environment model via blender-agent MCP following assets/briefs/arena-ground.md. Export GLB to assets/models/.",
       "acceptance": [
         "assets/models/arena-ground.glb exists",
-        "Triangle count ≤ 500",
+        "Triangle count \u2264 500",
         "Manifold mesh, no inverted normals",
         "Imports into Godot without errors",
         "PROVENANCE.md entry added"
+      ],
+      "decision_blockers": [],
+      "artifacts": []
+    },
+    {
+      "id": "ANDROID-001",
+      "title": "Android export surface setup",
+      "wave": 1,
+      "lane": "android-export",
+      "parallel_safe": true,
+      "overlap_risk": "low",
+      "stage": "planning",
+      "status": "todo",
+      "resolution_state": "open",
+      "verification_state": "suspect",
+      "depends_on": [],
+      "source_ticket_id": null,
+      "follow_up_ticket_ids": [
+        "RELEASE-001"
+      ],
+      "summary": "Configure and validate Android export surfaces: export_presets.cfg, debug keystore, package name, and canonical export command.",
+      "acceptance": [
+        "export_presets.cfg has Android Debug preset with com.wvh.vc package",
+        "Debug keystore configured at /home/pc/.local/share/godot/keystores/debug.keystore",
+        "Export path: build/android/womanvshorseVC-debug.apk",
+        "android/ support directory exists"
       ],
       "decision_blockers": [],
       "artifacts": []
@@ -214,7 +244,9 @@
       "status": "todo",
       "resolution_state": "open",
       "verification_state": "suspect",
-      "depends_on": ["SETUP-002"],
+      "depends_on": [
+        "SETUP-002"
+      ],
       "source_ticket_id": null,
       "follow_up_ticket_ids": [],
       "summary": "Create the player attack system with Area3D hitbox, cooldown timer, and damage signal.",
@@ -239,7 +271,9 @@
       "status": "todo",
       "resolution_state": "open",
       "verification_state": "suspect",
-      "depends_on": ["SETUP-001"],
+      "depends_on": [
+        "SETUP-001"
+      ],
       "source_ticket_id": null,
       "follow_up_ticket_ids": [],
       "summary": "Create base enemy horse scene with CharacterBody3D, NavigationAgent3D, health system, and contact damage.",
@@ -265,7 +299,9 @@
       "status": "todo",
       "resolution_state": "open",
       "verification_state": "suspect",
-      "depends_on": ["CORE-002"],
+      "depends_on": [
+        "CORE-002"
+      ],
       "source_ticket_id": null,
       "follow_up_ticket_ids": [],
       "summary": "Create wave spawner that spawns enemy horses at 3D arena edge positions with progressive difficulty.",
@@ -290,7 +326,9 @@
       "status": "todo",
       "resolution_state": "open",
       "verification_state": "suspect",
-      "depends_on": ["SETUP-001"],
+      "depends_on": [
+        "SETUP-001"
+      ],
       "source_ticket_id": null,
       "follow_up_ticket_ids": [],
       "summary": "Create in-game HUD overlay with health, wave number, score, enemy count, virtual joystick, and attack button.",
@@ -315,7 +353,10 @@
       "status": "todo",
       "resolution_state": "open",
       "verification_state": "suspect",
-      "depends_on": ["CORE-001", "CORE-002"],
+      "depends_on": [
+        "CORE-001",
+        "CORE-002"
+      ],
       "source_ticket_id": null,
       "follow_up_ticket_ids": [],
       "summary": "Connect player attacks to enemy health and enemy contact to player health with collision layers and damage signals.",
@@ -341,7 +382,14 @@
       "status": "todo",
       "resolution_state": "open",
       "verification_state": "suspect",
-      "depends_on": ["CORE-002", "MODEL-001", "MODEL-002", "MODEL-003", "MODEL-004", "MODEL-005"],
+      "depends_on": [
+        "CORE-002",
+        "MODEL-001",
+        "MODEL-002",
+        "MODEL-003",
+        "MODEL-004",
+        "MODEL-005"
+      ],
       "source_ticket_id": null,
       "follow_up_ticket_ids": [],
       "summary": "Create variant system that configures horse_base with different GLB models and stats for brown, black, war, and boss types.",
@@ -416,7 +464,25 @@
       "status": "todo",
       "resolution_state": "open",
       "verification_state": "suspect",
-      "depends_on": ["SETUP-001", "SETUP-002", "CORE-001", "CORE-002", "CORE-003", "CORE-004", "CORE-005", "CORE-006", "UI-001", "UI-002"],
+      "depends_on": [
+        "SETUP-001",
+        "SETUP-002",
+        "MODEL-001",
+        "MODEL-002",
+        "MODEL-003",
+        "MODEL-004",
+        "MODEL-005",
+        "MODEL-006",
+        "ANDROID-001",
+        "CORE-001",
+        "CORE-002",
+        "CORE-003",
+        "CORE-004",
+        "CORE-005",
+        "CORE-006",
+        "UI-001",
+        "UI-002"
+      ],
       "source_ticket_id": null,
       "follow_up_ticket_ids": [],
       "summary": "Configure and execute the Android debug APK export. Verify APK is produced and all resources included.",

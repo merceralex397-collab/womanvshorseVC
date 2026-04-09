@@ -52,6 +52,8 @@ permission:
     "go *": allow
     "make *": allow
     "godot *": allow
+    "godot4 *": allow
+    "blender *": allow
     "rm *": deny
     "git reset *": deny
     "git clean *": deny

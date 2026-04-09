@@ -20,6 +20,9 @@ permission:
     "project-context": allow
     "ticket-execution": allow
     "review-audit-bridge": allow
+    "godot-3d-android-game": allow
+    "blender-mcp-workflow": allow
+    "asset-description": allow
   task:
     "*": deny
     "wvhvc-utility-summarize": allow
@@ -52,6 +55,9 @@ permission:
     "tsc --noEmit*": allow
     "ruff check*": allow
     "ruff format --check*": allow
+    "godot *": allow
+    "godot4 *": allow
+    "blender *": allow
 ---
 
 Review the implementation for correctness, regressions, and test gaps. Use `review-audit-bridge` for output ordering and blocker rules.

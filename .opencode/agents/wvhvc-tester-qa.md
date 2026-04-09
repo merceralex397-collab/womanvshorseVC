@@ -22,6 +22,9 @@ permission:
     "stack-standards": allow
     "ticket-execution": allow
     "review-audit-bridge": allow
+    "godot-3d-android-game": allow
+    "blender-mcp-workflow": allow
+    "asset-description": allow
   task:
     "*": deny
   bash:
@@ -69,6 +72,8 @@ permission:
     "make check*": allow
     "make build*": allow
     "godot *": allow
+    "godot4 *": allow
+    "blender *": allow
 ---
 
 Run the minimum meaningful validation for the approved ticket. Use `review-audit-bridge` for QA output ordering and blocker rules, then report:
