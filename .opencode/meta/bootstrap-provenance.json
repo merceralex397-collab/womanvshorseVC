@@ -1,0 +1,91 @@
+{
+  "managed_repo": "/home/pc/projects/Scafforge",
+  "template_commit": "8e43aef27487f524ea93400d0a7a422afef78d71",
+  "template_commit_result": {
+    "success": true,
+    "commit": "8e43aef27487f524ea93400d0a7a422afef78d71",
+    "reason": null,
+    "detail": null
+  },
+  "template_asset_root": "skills/repo-scaffold-factory/assets/project-template",
+  "project_name": "Woman vs Horse VC",
+  "project_slug": "womanvshorsevc",
+  "package_name": "com.example.womanvshorsevc",
+  "agent_prefix": "wvhvc",
+  "generation_scope": "full",
+  "runtime_models": {
+    "tier": "standard",
+    "provider": "minimax-coding-plan",
+    "planner": "minimax-coding-plan/MiniMax-M2.7",
+    "implementer": "minimax-coding-plan/MiniMax-M2.7",
+    "utility": "minimax-coding-plan/MiniMax-M2.7"
+  },
+  "stack_label": "Godot Android",
+  "deliverable_kind": "Android game APK \u2014 woman fights waves of enemy horses in 3D",
+  "deliverable_artifact_path": null,
+  "product_finish_contract": {
+    "deliverable_kind": "Android game APK \u2014 woman fights waves of enemy horses in 3D",
+    "placeholder_policy": "No placeholder models. 3D assets generated via Blender-MCP server. GLB exports.",
+    "visual_finish_target": "Low-poly 3D top-down view. Models generated via blender-agent MCP. Stylized art direction.",
+    "audio_finish_target": "Minimal SFX. Generated or sourced from open repositories.",
+    "content_source_plan": "3D models via blender-agent MCP (GLB export). Audio from open sources. Asset briefs drive generation.",
+    "licensing_or_provenance_constraints": "AI-generated 3D models (CC0). Open-source audio. Full provenance tracking.",
+    "finish_acceptance_signals": "APK compiles and installs. All waves playable. 3D models load correctly. Touch controls work."
+  },
+  "bootstrap_steps": [
+    "repo-scaffold-factory/render-full-scaffold"
+  ],
+  "tracking": {
+    "invocation_log": ".opencode/state/invocation-log.jsonl",
+    "skill_ping_tool": "skill_ping",
+    "tracker_plugin": "invocation-tracker"
+  },
+  "workflow_contract": {
+    "process_version": 7,
+    "ticket_contract_version": 3,
+    "parallel_mode": "sequential",
+    "manager_hierarchy": {
+      "first_class_scaffold_profile": false,
+      "advanced_customization_allowed": true
+    },
+    "post_migration_verification": {
+      "enabled": true,
+      "backlog_verifier_agent": "wvhvc-backlog-verifier",
+      "ticket_creator_agent": "wvhvc-ticket-creator"
+    }
+  },
+  "managed_surfaces": {
+    "replace_on_retrofit": [
+      "opencode.jsonc",
+      ".opencode/tools",
+      ".opencode/plugins",
+      ".opencode/commands",
+      "scaffold-managed .opencode/skills",
+      "docs/process/workflow.md",
+      "docs/process/tooling.md",
+      "docs/process/model-matrix.md",
+      "docs/process/git-capability.md",
+      "START-HERE.md managed block"
+    ],
+    "project_specific_follow_up": [
+      ".opencode/skills",
+      ".opencode/agents",
+      "docs/process/agent-catalog.md"
+    ],
+    "preserve_project_sources": [
+      "docs/spec/CANONICAL-BRIEF.md",
+      "tickets/manifest.json",
+      "tickets/*.md",
+      ".opencode/state/artifacts",
+      ".opencode/state/bootstrap",
+      ".opencode/state/plans",
+      ".opencode/state/implementations",
+      ".opencode/state/reviews",
+      ".opencode/state/qa",
+      ".opencode/state/smoke-tests",
+      ".opencode/state/handoffs"
+    ]
+  },
+  "migration_history": [],
+  "repair_history": []
+}
