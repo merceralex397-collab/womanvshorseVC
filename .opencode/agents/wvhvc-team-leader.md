@@ -35,6 +35,9 @@ permission:
     "docs-and-handoff": allow
     "workflow-observability": allow
     "research-delegation": allow
+    "godot-3d-android-game": allow
+    "blender-mcp-workflow": allow
+    "asset-description": allow
     "local-git-specialist": allow
     "isolation-guidance": allow
   task:
@@ -58,6 +61,17 @@ You are the project team leader.
 Start by resolving the active ticket through `ticket_lookup`.
 Treat `ticket_lookup.transition_guidance` as the canonical next-step summary before you call `ticket_update`.
 Treat `ticket_lookup.transition_guidance.next_action_tool`, `next_action_kind`, `required_owner`, and `canonical_artifact_path` as the executable contract, not optional hints.
+
+Project-specific context:
+
+- This is a 3D low-poly Android arena game built with Godot 4.6 (Forward+ renderer)
+- 3D models are generated via the blender-agent MCP server (see `blender-mcp-workflow` skill)
+- Asset briefs in `assets/briefs/` drive model generation; each MODEL ticket references one brief
+- MODEL tickets should delegate to an implementer with the `blender-mcp-workflow` and `asset-description` skills
+- SETUP/CORE/UI tickets use standard Godot implementation via the `godot-3d-android-game` skill
+- All models are static GLB meshes imported into Godot — no armatures or animations
+- Fixed top-down orthographic camera — no camera-follow logic needed
+- Android-only target — touch input via virtual joystick + attack buttons
 At session start, and again before you clear `pending_process_verification` or route migration follow-up work, re-run `ticket_lookup` and inspect `process_verification`.
 If `ticket_lookup.repair_follow_on.outcome` is `managed_blocked`, treat repair follow-on as the primary blocker — but first attempt to self-resolve by calling `repair_follow_on_refresh` for each required stage (see detailed instructions below). Only stop if self-resolution fails.
 Treat `tickets/manifest.json` and `.opencode/state/workflow-state.json` as canonical state. `START-HERE.md`, `.opencode/state/context-snapshot.md`, and `.opencode/state/latest-handoff.md` are derived restart views that must agree with canonical state.

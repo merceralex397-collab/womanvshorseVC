@@ -23,6 +23,9 @@ permission:
     "repo-navigation": allow
     "stack-standards": allow
     "ticket-execution": allow
+    "godot-3d-android-game": allow
+    "blender-mcp-workflow": allow
+    "asset-description": allow
     "local-git-specialist": allow
     "isolation-guidance": allow
   task:
@@ -48,6 +51,7 @@ permission:
     "cargo *": allow
     "go *": allow
     "make *": allow
+    "godot *": allow
     "rm *": deny
     "git reset *": deny
     "git clean *": deny

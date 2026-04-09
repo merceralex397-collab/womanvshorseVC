@@ -23,6 +23,9 @@ permission:
     "repo-navigation": allow
     "stack-standards": allow
     "ticket-execution": allow
+    "godot-3d-android-game": allow
+    "blender-mcp-workflow": allow
+    "asset-description": allow
     "local-git-specialist": allow
     "isolation-guidance": allow
   task:
@@ -49,6 +52,7 @@ permission:
     "cargo *": allow
     "go *": allow
     "make *": allow
+    "godot *": allow
     "rm *": deny
     "git reset *": deny
     "git clean *": deny
@@ -86,7 +90,18 @@ Stack-specific notes:
 `opencode-team-bootstrap` must rewrite this section with project-specific build, verification, pitfalls, and configuration-file guidance before implementation begins.
 
 <!-- SCAFFORGE:STACK_SPECIFIC_IMPLEMENTATION_NOTES START -->
-- Pending project-specific stack notes.
+- **Engine**: Godot 4.6, Forward+ renderer, GDScript
+- **Platform**: Android (landscape, touch-only)
+- **3D patterns**: Read `godot-3d-android-game` skill before implementing any scene or script
+- **Node types**: CharacterBody3D for player/enemies, Node3D for scene roots, Area3D for hitboxes, CanvasLayer for UI
+- **Camera**: Fixed top-down orthographic — do not add camera-follow scripts
+- **Models**: GLB files in `assets/models/`, loaded via `load("res://assets/models/<name>.glb")`
+- **Blender-MCP models**: MODEL tickets use the `blender-mcp-workflow` skill. Read the asset brief in `assets/briefs/<name>.md` before calling any Blender-MCP tool.
+- **Validation**: `godot --headless --check-only --path .` for project load, grep for broken `res://` references
+- **Collision layers**: Player=1, Enemies=2, PlayerAttacks=3, EnemyAttacks=4, Boundaries=5, Pickups=6
+- **Movement**: XZ plane movement, Y is up. Use `move_and_slide()` on CharacterBody3D.
+- **Android export**: `godot --headless --export-debug "Android" build/android/womanvshorsevc-debug.apk`
+- **Provenance**: After generating any model, add entry to `assets/PROVENANCE.md`
 <!-- SCAFFORGE:STACK_SPECIFIC_IMPLEMENTATION_NOTES END -->
 
 Rules:
