@@ -2,7 +2,7 @@
 
 ## Summary
 
-Create the attack system for the player character. The player has a melee sword attack triggered by a touch button. The attack uses an Area3D hitbox that detects overlapping enemy bodies. Attack has a cooldown timer. Deals damage to enemies via a signal. Optional: charge attack or projectile throw for ranged variant.
+Create the player attack system with Area3D hitbox, cooldown timer, and damage signal.
 
 ## Wave
 
@@ -25,22 +25,32 @@ planning
 
 todo
 
+## Trust
+
+- resolution_state: open
+- verification_state: suspect
+- finding_source: None
+- source_ticket_id: None
+- source_mode: None
+
 ## Depends On
 
-- SETUP-002
+SETUP-002
+
+## Follow-up Tickets
+
+None
 
 ## Decision Blockers
 
-- None
+None
 
 ## Acceptance Criteria
 
-- [ ] `scripts/player/attack_system.gd` exists
-- [ ] Attack triggered by "attack" Input action
-- [ ] Area3D hitbox activates on attack, detects collision layer 2 (enemies)
-- [ ] Cooldown timer prevents attack spam
-- [ ] Emits signal with damage value when hitting an enemy
-- [ ] Attack animation placeholder (rotate model or flash effect)
+- [ ] attack_system.gd exists
+- [ ] Area3D hitbox detects collision layer 2
+- [ ] Cooldown timer prevents spam
+- [ ] Damage signal emitted on hit
 - [ ] Scene loads without errors
 
 ## Artifacts

@@ -2,7 +2,7 @@
 
 ## Summary
 
-Create the wave spawner system that manages enemy waves. Spawns enemies at 3D positions around the arena edges. Each wave has a defined count, composition (horse types), and spawn delay. Waves progress in difficulty. Emits signals for wave start, wave clear, and all waves complete.
+Create wave spawner that spawns enemy horses at 3D arena edge positions with progressive difficulty.
 
 ## Wave
 
@@ -25,22 +25,32 @@ planning
 
 todo
 
+## Trust
+
+- resolution_state: open
+- verification_state: suspect
+- finding_source: None
+- source_ticket_id: None
+- source_mode: None
+
 ## Depends On
 
-- CORE-002
+CORE-002
+
+## Follow-up Tickets
+
+None
 
 ## Decision Blockers
 
-- None
+None
 
 ## Acceptance Criteria
 
-- [ ] `scripts/enemies/wave_spawner.gd` exists
-- [ ] Spawns enemies at randomized positions along arena edges (XZ plane)
-- [ ] Wave data structure: count, enemy types, spawn delay
+- [ ] wave_spawner.gd exists
+- [ ] Spawns at randomized arena edge positions
 - [ ] At least 5 waves with progressive difficulty
-- [ ] Emits `wave_started(wave_number)`, `wave_cleared`, `all_waves_complete` signals
-- [ ] Spawns enemies into the EnemyContainer node
+- [ ] Signals for wave_started, wave_cleared, all_waves_complete
 - [ ] Scene loads without errors
 
 ## Artifacts

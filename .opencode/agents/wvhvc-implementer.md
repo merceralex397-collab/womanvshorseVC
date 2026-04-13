@@ -1,6 +1,6 @@
 ---
 description: Hidden implementer for approved ticket work
-model: minimax-coding-plan/minimax-coding-plan/MiniMax-M2.7
+model: minimax-coding-plan/MiniMax-M2.7
 mode: subagent
 hidden: true
 temperature: 1.0
@@ -23,9 +23,6 @@ permission:
     "repo-navigation": allow
     "stack-standards": allow
     "ticket-execution": allow
-    "godot-3d-android-game": allow
-    "blender-mcp-workflow": allow
-    "asset-description": allow
     "local-git-specialist": allow
     "isolation-guidance": allow
   task:
@@ -36,9 +33,19 @@ permission:
     "ls *": allow
     "find *": allow
     "rg *": allow
+    "grep *": allow
     "cat *": allow
     "head *": allow
     "tail *": allow
+    "file *": allow
+    "echo *": allow
+    "test -f *": allow
+    "test -d *": allow
+    "[ -f *": allow
+    "[ -d *": allow
+    "mkdir *": allow
+    "cp *": allow
+    "mv *": allow
     "git status*": allow
     "git diff*": allow
     "npm *": allow
@@ -47,14 +54,20 @@ permission:
     "bun *": allow
     "node *": allow
     "python *": allow
+    "python3 *": allow
     "pytest *": allow
     "uv *": allow
+    "curl *": allow
+    "wget *": allow
+    "unzip *": allow
+    "tar *": allow
+    "zip *": allow
     "cargo *": allow
     "go *": allow
     "make *": allow
+    "/home/pc/.local/bin/godot *": allow
     "godot *": allow
     "godot4 *": allow
-    "blender *": allow
     "rm *": deny
     "git reset *": deny
     "git clean *": deny
@@ -92,18 +105,7 @@ Stack-specific notes:
 `opencode-team-bootstrap` must rewrite this section with project-specific build, verification, pitfalls, and configuration-file guidance before implementation begins.
 
 <!-- SCAFFORGE:STACK_SPECIFIC_IMPLEMENTATION_NOTES START -->
-- **Engine**: Godot 4.6, Forward+ renderer, GDScript
-- **Platform**: Android (landscape, touch-only)
-- **3D patterns**: Read `godot-3d-android-game` skill before implementing any scene or script
-- **Node types**: CharacterBody3D for player/enemies, Node3D for scene roots, Area3D for hitboxes, CanvasLayer for UI
-- **Camera**: Fixed top-down orthographic — do not add camera-follow scripts
-- **Models**: GLB files in `assets/models/`, loaded via `load("res://assets/models/<name>.glb")`
-- **Blender-MCP models**: MODEL tickets use the `blender-mcp-workflow` skill. Read the asset brief in `assets/briefs/<name>.md` before calling any Blender-MCP tool.
-- **Validation**: `godot --headless --check-only --path .` for project load, grep for broken `res://` references
-- **Collision layers**: Player=1, Enemies=2, PlayerAttacks=3, EnemyAttacks=4, Boundaries=5, Pickups=6
-- **Movement**: XZ plane movement, Y is up. Use `move_and_slide()` on CharacterBody3D.
-- **Android export**: `godot --headless --export-debug "Android" build/android/womanvshorsevc-debug.apk`
-- **Provenance**: After generating any model, add entry to `assets/PROVENANCE.md`
+- Pending project-specific stack notes.
 <!-- SCAFFORGE:STACK_SPECIFIC_IMPLEMENTATION_NOTES END -->
 
 Rules:

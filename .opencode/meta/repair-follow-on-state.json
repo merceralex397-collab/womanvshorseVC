@@ -1,0 +1,100 @@
+{
+  "tracking_mode": "persistent_recorded_state",
+  "assertion_input_mode": "legacy_manual_assertion",
+  "cycle_id": "2026-04-12T03:07:27Z",
+  "created_at": "2026-04-12T03:07:27Z",
+  "last_updated_at": "2026-04-12T03:09:17Z",
+  "process_version": 7,
+  "repair_package_commit": "72acfbad2d953b04f73d10fc873102b70b9e8907+dirty:b13b6acf4081",
+  "repair_basis_path": "/home/pc/projects/womanvshorseVC/diagnosis/20260412-030500",
+  "pruned_unknown_stages": [],
+  "required_stages": [
+    "ticket-pack-builder"
+  ],
+  "stage_records": {
+    "project-skill-bootstrap": {
+      "stage": "project-skill-bootstrap",
+      "owner": "project-skill-bootstrap",
+      "category": "repo_local_skills",
+      "status": "completed",
+      "reason": "Repo-local skills still contain generic placeholder/model drift that must be regenerated with project-specific content.",
+      "currently_required": false,
+      "last_checked_at": "2026-04-12T03:09:05Z",
+      "last_updated_at": "2026-04-12T03:09:05Z",
+      "completion_mode": "recorded_execution",
+      "completed_by": "project-skill-bootstrap",
+      "summary": "Regenerated stack standards with Godot Android and Blender-MCP project-specific validation guidance for current repair cycle.",
+      "evidence_paths": [
+        ".opencode/skills/stack-standards/SKILL.md",
+        ".opencode/state/artifacts/history/repair/project-skill-bootstrap-completion.md"
+      ],
+      "repair_package_commit": "72acfbad2d953b04f73d10fc873102b70b9e8907+dirty:b13b6acf4081",
+      "first_recorded_at": "2026-04-12T03:09:05Z",
+      "last_recorded_at": "2026-04-12T03:09:05Z"
+    },
+    "ticket-pack-builder": {
+      "stage": "ticket-pack-builder",
+      "owner": "ticket-pack-builder",
+      "category": "ticket_follow_up",
+      "status": "completed",
+      "reason": "Repair left remediation or reverification follow-up that must be routed into the repo ticket system.",
+      "currently_required": true,
+      "last_checked_at": "2026-04-12T03:09:17Z",
+      "last_updated_at": "2026-04-12T03:09:05Z",
+      "completion_mode": "recorded_execution",
+      "completed_by": "ticket-pack-builder",
+      "summary": "Ran remediation-follow-up mode for post-repair diagnosis and updated canonical remediation tickets.",
+      "evidence_paths": [
+        ".opencode/state/artifacts/history/repair/ticket-pack-builder-completion.md",
+        "diagnosis/20260412-030731/manifest.json",
+        "tickets/REMED-003.md",
+        "tickets/REMED-004.md",
+        "tickets/REMED-006.md",
+        "tickets/REMED-007.md",
+        "tickets/REMED-008.md"
+      ],
+      "repair_package_commit": "72acfbad2d953b04f73d10fc873102b70b9e8907+dirty:b13b6acf4081",
+      "first_recorded_at": "2026-04-12T03:09:05Z",
+      "last_recorded_at": "2026-04-12T03:09:05Z"
+    }
+  },
+  "history": [
+    {
+      "recorded_at": "2026-04-12T03:09:05Z",
+      "stage": "project-skill-bootstrap",
+      "owner": "project-skill-bootstrap",
+      "category": "repo_local_skills",
+      "status": "completed",
+      "completion_mode": "recorded_execution",
+      "completed_by": "project-skill-bootstrap",
+      "summary": "Regenerated stack standards with Godot Android and Blender-MCP project-specific validation guidance for current repair cycle.",
+      "evidence_paths": [
+        ".opencode/skills/stack-standards/SKILL.md",
+        ".opencode/state/artifacts/history/repair/project-skill-bootstrap-completion.md"
+      ],
+      "repair_package_commit": "72acfbad2d953b04f73d10fc873102b70b9e8907+dirty:b13b6acf4081",
+      "cycle_id": "2026-04-12T03:07:27Z"
+    },
+    {
+      "recorded_at": "2026-04-12T03:09:05Z",
+      "stage": "ticket-pack-builder",
+      "owner": "ticket-pack-builder",
+      "category": "ticket_follow_up",
+      "status": "completed",
+      "completion_mode": "recorded_execution",
+      "completed_by": "ticket-pack-builder",
+      "summary": "Ran remediation-follow-up mode for post-repair diagnosis and updated canonical remediation tickets.",
+      "evidence_paths": [
+        ".opencode/state/artifacts/history/repair/ticket-pack-builder-completion.md",
+        "diagnosis/20260412-030731/manifest.json",
+        "tickets/REMED-003.md",
+        "tickets/REMED-004.md",
+        "tickets/REMED-006.md",
+        "tickets/REMED-007.md",
+        "tickets/REMED-008.md"
+      ],
+      "repair_package_commit": "72acfbad2d953b04f73d10fc873102b70b9e8907+dirty:b13b6acf4081",
+      "cycle_id": "2026-04-12T03:07:27Z"
+    }
+  ]
+}

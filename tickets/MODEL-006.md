@@ -2,7 +2,7 @@
 
 ## Summary
 
-Use the blender-agent MCP server to generate the arena ground environment model following the asset brief at `assets/briefs/arena-ground.md`. Export as GLB to `assets/models/arena-ground.glb`. Validate and update PROVENANCE.md.
+Generate arena ground environment model via blender-agent MCP following assets/briefs/arena-ground.md. Export GLB to assets/models/.
 
 ## Wave
 
@@ -25,25 +25,33 @@ planning
 
 todo
 
+## Trust
+
+- resolution_state: open
+- verification_state: suspect
+- finding_source: None
+- source_ticket_id: None
+- source_mode: None
+
 ## Depends On
 
-- None
+None
+
+## Follow-up Tickets
+
+None
 
 ## Decision Blockers
 
-- None
+None
 
 ## Acceptance Criteria
 
-- [ ] `assets/models/arena-ground.glb` exists
-- [ ] Triangle count ≤ 500 (verified by quality_validate)
-- [ ] No inverted normals
-- [ ] Manifold mesh
-- [ ] Ground plane 20m × 20m, fence posts ~1m tall
-- [ ] Green grass / brown wood materials match brief palette
-- [ ] Reads clearly as fenced arena from top-down view
+- [ ] assets/models/arena-ground.glb exists
+- [ ] Triangle count ≤ 500
+- [ ] Manifold mesh, no inverted normals
 - [ ] Imports into Godot without errors
-- [ ] `assets/PROVENANCE.md` entry added
+- [ ] PROVENANCE.md entry added
 
 ## Artifacts
 

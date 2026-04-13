@@ -2,7 +2,7 @@
 
 ## Summary
 
-Create the in-game HUD as a CanvasLayer overlay. Displays player health (hearts or bar), current wave number, score, and enemy count. Updates reactively via signals from game systems. Must work at Android landscape resolution with touch-friendly sizing.
+Create in-game HUD overlay with health, wave number, score, enemy count, virtual joystick, and attack button.
 
 ## Wave
 
@@ -25,25 +25,32 @@ planning
 
 todo
 
+## Trust
+
+- resolution_state: open
+- verification_state: suspect
+- finding_source: None
+- source_ticket_id: None
+- source_mode: None
+
 ## Depends On
 
-- SETUP-001
+SETUP-001
+
+## Follow-up Tickets
+
+None
 
 ## Decision Blockers
 
-- None
+None
 
 ## Acceptance Criteria
 
-- [ ] `scenes/ui/hud.tscn` exists with CanvasLayer root
-- [ ] `scripts/ui/hud.gd` attached
-- [ ] Displays player health (bar or hearts)
-- [ ] Displays current wave number
-- [ ] Displays score
-- [ ] Displays remaining enemy count
-- [ ] Virtual joystick placeholder on left side of screen
-- [ ] Attack button placeholder on right side of screen
-- [ ] UI elements minimum 48dp for touch targets
+- [ ] hud.tscn exists with CanvasLayer root
+- [ ] Displays health, wave, score, enemy count
+- [ ] Virtual joystick and attack button placeholders
+- [ ] Touch-friendly sizing (48dp minimum)
 - [ ] Scene loads without errors
 
 ## Artifacts

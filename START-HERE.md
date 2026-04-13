@@ -3,92 +3,87 @@
 <!-- SCAFFORGE:START_HERE_BLOCK START -->
 ## What This Repo Is
 
-Woman vs Horse VC — A 3D low-poly arena action game for Android. Warrior woman fights waves of enemy horses. Built with Godot 4.6 (Forward+ renderer). 3D models generated via blender-agent MCP server.
+Woman vs Horse VC
 
 ## Current State
 
-Scaffold complete. Skills, asset briefs, agents, and tickets are populated and ready for execution. Model generation (Wave 1) can begin immediately — all MODEL tickets are parallel-safe with no dependencies.
+The repo is operating under the managed OpenCode workflow. Use the canonical state files below instead of memory or raw ticket prose.
 
 ## Read In This Order
 
 1. README.md
 2. AGENTS.md
-3. docs/spec/CANONICAL-BRIEF.md
-4. docs/process/workflow.md
-5. tickets/manifest.json
-6. tickets/BOARD.md
-
-## Key Skills
-
-| Skill | Purpose |
-|---|---|
-| `godot-3d-android-game` | Godot 4.6 3D patterns, GLB import, orthographic camera |
-| `blender-mcp-workflow` | Blender-MCP tool sequence for 3D model generation |
-| `asset-description` | How to write actionable asset briefs |
-| `model-operating-profile` | MiniMax-M2.7 prompting constraints |
-| `stack-standards` | Godot 4.6 + GDScript coding standards |
-
-## Asset Pipeline
-
-1. Asset briefs in `assets/briefs/` define each model
-2. Blender-MCP tools generate `.glb` files → `assets/models/`
-3. Godot auto-imports GLB on project load
-4. Provenance tracked in `assets/PROVENANCE.md`
-
-## Wave Execution Order
-
-- **Wave 1 (model-generation)**: MODEL-001 through MODEL-006 — all parallel-safe, no deps
-- **Wave 0 (scene-setup)**: SETUP-001 (needs MODEL-006), SETUP-002 (needs SETUP-001)
-- **Wave 2 (core + ui)**: CORE-001–006, UI-001–002 — see BOARD.md for deps
-- **Wave 3 (release)**: RELEASE-001 — depends on all above
+3. docs/AGENT-DELEGATION.md
+4. docs/spec/CANONICAL-BRIEF.md
+5. docs/process/workflow.md
+6. tickets/manifest.json
+7. tickets/BOARD.md
 
 ## Current Or Next Ticket
 
-- ID: MODEL-001
-- Title: Generate woman-warrior via Blender-MCP
-- Wave: 1
-- Lane: model-generation
-- Stage: planning
-- Status: todo
+- ID: REMED-003
+- Title: Remediation review artifact does not contain runnable command evidence
+- Wave: 6
+- Lane: remediation
+- Stage: review
+- Status: review
 - Resolution: open
 - Verification: suspect
 
 ## Dependency Status
 
 - current_ticket_done: no
-- dependent_tickets_waiting_on_current: CORE-006
-- split_child_tickets: none
+- dependent_tickets_waiting_on_current: none
+- split_child_tickets: REMED-004, REMED-006, REMED-007, REMED-008
 
 ## Generation Status
 
-- handoff_status: scaffold-kickoff complete
+- handoff_status: workflow verification pending
 - process_version: 7
-- parallel_mode: sequential (MODEL tickets are parallel-safe exceptions)
-- pending_process_verification: false
-- repair_follow_on_outcome: clean
+- parallel_mode: sequential
+- pending_process_verification: true
+- repair_follow_on_outcome: source_follow_up
 - repair_follow_on_required: false
 - repair_follow_on_next_stage: none
 - repair_follow_on_verification_passed: true
-- repair_follow_on_updated_at: Not yet recorded.
-- bootstrap_status: pending
-- bootstrap_proof: None
-- process_changed_at: Not yet recorded.
+- repair_follow_on_updated_at: 2026-04-12T03:09:17Z
+- pivot_in_progress: false
+- pivot_class: none
+- pivot_changed_surfaces: none
+- pivot_pending_stages: none
+- pivot_completed_stages: none
+- pivot_pending_ticket_lineage_actions: none
+- pivot_completed_ticket_lineage_actions: none
+- post_pivot_verification_passed: false
+- bootstrap_status: ready
+- bootstrap_proof: .opencode/state/artifacts/history/model-001/bootstrap/2026-04-09T22-20-16-559Z-environment-bootstrap.md
+- bootstrap_blockers: none
 
 ## Post-Generation Audit Status
 
-- audit_or_repair_follow_up: none recorded
+- audit_or_repair_follow_up: follow-up required
 - reopened_tickets: none
 - done_but_not_fully_trusted: none
 - pending_reverification: none
 - repair_follow_on_blockers: none
+- pivot_pending_stages: none
+- pivot_pending_ticket_lineage_actions: none
+
+## Code Quality Status
+
+- last_build_result: unknown @ 2026-04-11T19:02:03.732Z
+- last_test_run_result: fail @ 2026-04-10T22:04:57.743Z
+- open_remediation_tickets: 6
+- known_reference_integrity_issues: 0
 
 ## Known Risks
 
-- Blender-MCP server must be running before MODEL ticket execution.
-- GLB import depends on Godot editor or headless mode being available.
-- Android SDK/NDK must be configured for RELEASE-001.
+- Managed repair converged, but source-layer follow-up still remains in the ticket graph.
+- Historical completion should not be treated as fully trusted until pending process verification or explicit reverification is cleared.
+- The workflow still records pending process verification even though no done tickets remain affected; clear the workflow flag before relying on a clean-state restart narrative.
+- REMED-003 is an open split parent; child tickets REMED-004, REMED-006, REMED-007, REMED-008 remain the active foreground work.
 
 ## Next Action
 
-Begin Wave 1: Execute MODEL-001 through MODEL-006 via blender-agent MCP. Read `blender-mcp-workflow` skill and the corresponding asset brief before each model ticket.
+Keep REMED-003 open as a split parent and continue the child ticket lanes: REMED-004, REMED-006, REMED-007, REMED-008.
 <!-- SCAFFORGE:START_HERE_BLOCK END -->

@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "generated_at": "2026-04-11T16:28:06Z",
+  "repo_root": "/home/pc/projects/womanvshorseVC",
+  "audit_package_commit": "d82df7b2b0550e2378b02b10809153089e0eadd9+dirty:4917d6f21657",
+  "allowed_classes": [
+    "managed_blocker",
+    "manual_prerequisite_blocker",
+    "source_follow_up",
+    "process_state_only",
+    "advisory"
+  ],
+  "finding_count": 6,
+  "findings": [
+    {
+      "code": "SKILL001",
+      "severity": "warning",
+      "disposition_class": "manual_prerequisite_blocker",
+      "legacy_disposition_class": "managed_blocker",
+      "route": "scafforge-repair",
+      "repair_class": "safe Scafforge package change",
+      "evidence_grade": "repo-state validation",
+      "source_files": [
+        ".opencode/skills/stack-standards/SKILL.md"
+      ],
+      "provenance": "script"
+    },
+    {
+      "code": "EXEC-GODOT-004",
+      "severity": "error",
+      "disposition_class": "source_follow_up",
+      "legacy_disposition_class": "source_follow_up",
+      "route": "ticket-pack-builder",
+      "repair_class": "generated-repo remediation ticket",
+      "evidence_grade": "repo-state validation",
+      "source_files": [
+        "project.godot"
+      ],
+      "provenance": "script"
+    },
+    {
+      "code": "EXEC-GODOT-005a",
+      "severity": "error",
+      "disposition_class": "source_follow_up",
+      "legacy_disposition_class": "source_follow_up",
+      "route": "ticket-pack-builder",
+      "repair_class": "generated-repo remediation ticket",
+      "evidence_grade": "repo-state validation",
+      "source_files": [
+        "project.godot",
+        "export_presets.cfg",
+        "android"
+      ],
+      "provenance": "script"
+    },
+    {
+      "code": "WFLOW020",
+      "severity": "error",
+      "disposition_class": "managed_blocker",
+      "legacy_disposition_class": "managed_blocker",
+      "route": "scafforge-repair",
+      "repair_class": "safe Scafforge package change",
+      "evidence_grade": "repo-state validation",
+      "source_files": [
+        "tickets/manifest.json",
+        ".opencode/tools/ticket_create.ts",
+        ".opencode/lib/workflow.ts"
+      ],
+      "provenance": "script"
+    },
+    {
+      "code": "EXEC-REMED-001",
+      "severity": "error",
+      "disposition_class": "source_follow_up",
+      "legacy_disposition_class": "source_follow_up",
+      "route": "ticket-pack-builder",
+      "repair_class": "generated-repo remediation ticket",
+      "evidence_grade": "repo-state validation",
+      "source_files": [
+        "tickets/manifest.json",
+        ".opencode/state/reviews/remed-001-review-reverification.md"
+      ],
+      "provenance": "script"
+    },
+    {
+      "code": "EXEC-REMED-001",
+      "severity": "error",
+      "disposition_class": "source_follow_up",
+      "legacy_disposition_class": "source_follow_up",
+      "route": "ticket-pack-builder",
+      "repair_class": "generated-repo remediation ticket",
+      "evidence_grade": "repo-state validation",
+      "source_files": [
+        "tickets/manifest.json",
+        ".opencode/state/reviews/remed-002-review-reverification.md"
+      ],
+      "provenance": "script"
+    }
+  ],
+  "counts": {
+    "managed_blocker": 1,
+    "manual_prerequisite_blocker": 1,
+    "source_follow_up": 4,
+    "process_state_only": 0,
+    "advisory": 0
+  },
+  "shadow_mode_deltas": [
+    {
+      "code": "SKILL001",
+      "legacy_disposition_class": "managed_blocker",
+      "disposition_class": "manual_prerequisite_blocker",
+      "route": "scafforge-repair",
+      "reason": "Legacy prefix classification would label SKILL001 as managed_blocker, but the authoritative bundle assigns manual_prerequisite_blocker."
+    }
+  ]
+}

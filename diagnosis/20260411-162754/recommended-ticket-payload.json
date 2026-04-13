@@ -1,0 +1,142 @@
+[
+  {
+    "id": "REMED-001",
+    "title": "Repeated diagnosis packs are re-reporting the same repair-routed findings without any intervening package or process-version change",
+    "description": "Remediate CYCLE002 by correcting the validated issue and rerunning the relevant quality checks.",
+    "affected_files": [
+      "diagnosis/20260411-162723/manifest.json",
+      ".opencode/meta/bootstrap-provenance.json"
+    ],
+    "suggested_fix_approach": "Stop rerunning subject-repo audit until Scafforge package work changes the managed workflow contract or process version, then rerun one fresh audit against the updated package.",
+    "assignee": "implementer",
+    "source_finding_code": "CYCLE002",
+    "source_finding_codes": [
+      "CYCLE002"
+    ],
+    "severity": "error",
+    "route": "manual-prerequisite",
+    "repair_class": "Scafforge package work required before the next subject-repo run",
+    "summary": "Stop rerunning subject-repo audit until Scafforge package work changes the managed workflow contract or process version, then rerun one fresh audit against the updated package.",
+    "source_files": [
+      "diagnosis/20260411-162723/manifest.json",
+      ".opencode/meta/bootstrap-provenance.json"
+    ]
+  },
+  {
+    "id": "REMED-002",
+    "title": "Godot headless validation fails",
+    "description": "Remediate EXEC-GODOT-004 by correcting the validated issue and rerunning the relevant quality checks.",
+    "affected_files": [
+      "project.godot"
+    ],
+    "suggested_fix_approach": "Run a deterministic `godot --headless --path . --quit` validation during audit and keep the repo blocked until it succeeds or returns an explicit environment blocker instead.",
+    "assignee": "implementer",
+    "source_finding_code": "EXEC-GODOT-004",
+    "source_finding_codes": [
+      "EXEC-GODOT-004"
+    ],
+    "severity": "error",
+    "route": "ticket-pack-builder",
+    "repair_class": "generated-repo remediation ticket",
+    "summary": "Run a deterministic `godot --headless --path . --quit` validation during audit and keep the repo blocked until it succeeds or returns an explicit environment blocker instead.",
+    "source_files": [
+      "project.godot"
+    ]
+  },
+  {
+    "id": "REMED-003",
+    "title": "Android-targeted Godot repo is missing export surfaces or debug APK runnable proof",
+    "description": "Remediate EXEC-GODOT-005a by correcting the validated issue and rerunning the relevant quality checks.",
+    "affected_files": [
+      "project.godot",
+      "export_presets.cfg",
+      "android"
+    ],
+    "suggested_fix_approach": "Emit export_presets.cfg and android/ surfaces at scaffold time. Block RELEASE-001 closeout until debug APK runnable proof exists at the canonical path.",
+    "assignee": "implementer",
+    "source_finding_code": "EXEC-GODOT-005a",
+    "source_finding_codes": [
+      "EXEC-GODOT-005a"
+    ],
+    "severity": "error",
+    "route": "ticket-pack-builder",
+    "repair_class": "generated-repo remediation ticket",
+    "summary": "Emit export_presets.cfg and android/ surfaces at scaffold time. Block RELEASE-001 closeout until debug APK runnable proof exists at the canonical path.",
+    "source_files": [
+      "project.godot",
+      "export_presets.cfg",
+      "android"
+    ]
+  },
+  {
+    "id": "REMED-004",
+    "title": "Remediation review artifact does not contain runnable command evidence",
+    "description": "Remediate EXEC-REMED-001 by correcting the validated issue and rerunning the relevant quality checks.",
+    "affected_files": [
+      "tickets/manifest.json",
+      ".opencode/state/reviews/remed-001-review-reverification.md"
+    ],
+    "suggested_fix_approach": "For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure.",
+    "assignee": "implementer",
+    "source_finding_code": "EXEC-REMED-001",
+    "source_finding_codes": [
+      "EXEC-REMED-001"
+    ],
+    "severity": "error",
+    "route": "ticket-pack-builder",
+    "repair_class": "generated-repo remediation ticket",
+    "summary": "For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure.",
+    "source_files": [
+      "tickets/manifest.json",
+      ".opencode/state/reviews/remed-001-review-reverification.md"
+    ]
+  },
+  {
+    "id": "REMED-005",
+    "title": "Remediation review artifact does not contain runnable command evidence",
+    "description": "Remediate EXEC-REMED-001 by correcting the validated issue and rerunning the relevant quality checks.",
+    "affected_files": [
+      "tickets/manifest.json",
+      ".opencode/state/reviews/remed-002-review-reverification.md"
+    ],
+    "suggested_fix_approach": "For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure.",
+    "assignee": "implementer",
+    "source_finding_code": "EXEC-REMED-001",
+    "source_finding_codes": [
+      "EXEC-REMED-001"
+    ],
+    "severity": "error",
+    "route": "ticket-pack-builder",
+    "repair_class": "generated-repo remediation ticket",
+    "summary": "For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure.",
+    "source_files": [
+      "tickets/manifest.json",
+      ".opencode/state/reviews/remed-002-review-reverification.md"
+    ]
+  },
+  {
+    "id": "REMED-006",
+    "title": "Open-parent ticket decomposition is missing or routed through non-canonical source modes",
+    "description": "Remediate WFLOW020 by correcting the validated issue and rerunning the relevant quality checks.",
+    "affected_files": [
+      "tickets/manifest.json",
+      ".opencode/tools/ticket_create.ts",
+      ".opencode/lib/workflow.ts"
+    ],
+    "suggested_fix_approach": "Support `ticket_create(source_mode=split_scope)` for open-parent decomposition, keep the parent open and non-foreground, and keep open-parent child tickets out of `net_new_scope` and `post_completion_issue` routing.",
+    "assignee": "implementer",
+    "source_finding_code": "WFLOW020",
+    "source_finding_codes": [
+      "WFLOW020"
+    ],
+    "severity": "error",
+    "route": "scafforge-repair",
+    "repair_class": "safe Scafforge package change",
+    "summary": "Support `ticket_create(source_mode=split_scope)` for open-parent decomposition, keep the parent open and non-foreground, and keep open-parent child tickets out of `net_new_scope` and `post_completion_issue` routing.",
+    "source_files": [
+      "tickets/manifest.json",
+      ".opencode/tools/ticket_create.ts",
+      ".opencode/lib/workflow.ts"
+    ]
+  }
+]

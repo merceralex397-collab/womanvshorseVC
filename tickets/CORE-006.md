@@ -2,7 +2,7 @@
 
 ## Summary
 
-Create the enemy variant system that configures horse_base instances with different stats and GLB models. Each variant (brown, black, war, boss) loads its corresponding model from `assets/models/` and overrides base stats (speed, health, damage, score). The wave spawner uses variant IDs to spawn the correct type.
+Create variant system that configures horse_base with different GLB models and stats for brown, black, war, and boss types.
 
 ## Wave
 
@@ -25,28 +25,33 @@ planning
 
 todo
 
+## Trust
+
+- resolution_state: open
+- verification_state: suspect
+- finding_source: None
+- source_ticket_id: None
+- source_mode: None
+
 ## Depends On
 
-- CORE-002
-- MODEL-001
-- MODEL-002
-- MODEL-003
-- MODEL-004
-- MODEL-005
+CORE-002, MODEL-001, MODEL-002, MODEL-003, MODEL-004, MODEL-005
+
+## Follow-up Tickets
+
+None
 
 ## Decision Blockers
 
-- None
+None
 
 ## Acceptance Criteria
 
-- [ ] `scripts/enemies/horse_variants.gd` exists with variant definitions
-- [ ] Each variant defines: model_path, speed, health, damage, score_value
-- [ ] Variant data: brown (base), black (fast/low-hp), war (slow/high-hp), boss (large/high-hp)
-- [ ] horse_base.gd loads correct GLB model based on variant ID
-- [ ] Model swap works at runtime (instance model, add as child)
-- [ ] Wave spawner can request specific variant types
-- [ ] All variant models load without errors
+- [ ] horse_variants.gd with variant definitions
+- [ ] Each variant: model_path, speed, health, damage, score_value
+- [ ] horse_base loads correct GLB at runtime
+- [ ] Wave spawner can request variant types
+- [ ] All models load without errors
 
 ## Artifacts
 

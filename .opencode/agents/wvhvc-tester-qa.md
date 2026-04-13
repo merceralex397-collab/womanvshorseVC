@@ -1,6 +1,6 @@
 ---
 description: Hidden QA specialist for validation and closeout readiness
-model: minimax-coding-plan/minimax-coding-plan/MiniMax-M2.7
+model: minimax-coding-plan/MiniMax-M2.7
 mode: subagent
 hidden: true
 temperature: 1.0
@@ -22,9 +22,6 @@ permission:
     "stack-standards": allow
     "ticket-execution": allow
     "review-audit-bridge": allow
-    "godot-3d-android-game": allow
-    "blender-mcp-workflow": allow
-    "asset-description": allow
   task:
     "*": deny
   bash:
@@ -33,9 +30,15 @@ permission:
     "ls *": allow
     "find *": allow
     "rg *": allow
+    "grep *": allow
     "cat *": allow
     "head *": allow
     "tail *": allow
+    "echo *": allow
+    "test -f *": allow
+    "test -d *": allow
+    "[ -f *": allow
+    "[ -d *": allow
     "git diff*": allow
     "npm test*": allow
     "npm run test*": allow
@@ -61,6 +64,7 @@ permission:
     "bun run build*": allow
     "node --test*": allow
     "python -m pytest*": allow
+    "python3 -m pytest*": allow
     "pytest *": allow
     "uv run pytest*": allow
     "cargo test*": allow
@@ -71,9 +75,9 @@ permission:
     "make lint*": allow
     "make check*": allow
     "make build*": allow
+    "/home/pc/.local/bin/godot *": allow
     "godot *": allow
     "godot4 *": allow
-    "blender *": allow
 ---
 
 Run the minimum meaningful validation for the approved ticket. Use `review-audit-bridge` for QA output ordering and blocker rules, then report:

@@ -2,7 +2,7 @@
 
 ## Summary
 
-Create the main 3D arena scene with Node3D root, fixed top-down orthographic Camera3D, DirectionalLight3D for sun lighting, and an empty Node3D container for enemies. Import arena-ground.glb as the ground plane. This is the foundational scene that all gameplay happens in.
+Create the main 3D arena scene with Node3D root, fixed top-down orthographic Camera3D, DirectionalLight3D, and arena-ground.glb model.
 
 ## Wave
 
@@ -25,22 +25,34 @@ planning
 
 todo
 
+## Trust
+
+- resolution_state: open
+- verification_state: suspect
+- finding_source: None
+- source_ticket_id: None
+- source_mode: None
+
 ## Depends On
 
-- MODEL-006
+MODEL-006
+
+## Follow-up Tickets
+
+None
 
 ## Decision Blockers
 
-- None
+None
 
 ## Acceptance Criteria
 
-- [ ] `scenes/arena/arena.tscn` exists with Node3D root
-- [ ] Camera3D child with orthographic projection, size ~20, position (0, 15, 0), rotation (-90, 0, 0)
-- [ ] DirectionalLight3D child for sun lighting
+- [ ] scenes/arena/arena.tscn exists with Node3D root
+- [ ] Camera3D with orthographic projection
+- [ ] DirectionalLight3D for sun lighting
 - [ ] arena-ground.glb instanced as child
-- [ ] Empty Node3D "EnemyContainer" for wave spawner to populate
-- [ ] Scene loads without errors in `godot --headless --check-only --path .`
+- [ ] Empty EnemyContainer Node3D for spawner
+- [ ] Scene loads without errors
 
 ## Artifacts
 

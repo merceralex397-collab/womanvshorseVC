@@ -2,7 +2,7 @@
 
 ## Summary
 
-Configure and validate the Android export surfaces for this Godot project. Verify export_presets.cfg has correct package name, debug keystore path, and export path. Ensure the android/ support directory exists. Confirm the canonical debug export command can be invoked (even if models are not yet present).
+Configure and validate Android export surfaces: export_presets.cfg, debug keystore, package name, and canonical export command.
 
 ## Wave
 
@@ -19,34 +19,43 @@ android-export
 
 ## Stage
 
-planning
+plan_review
 
 ## Status
 
-todo
+plan_review
+
+## Trust
+
+- resolution_state: open
+- verification_state: suspect
+- finding_source: None
+- source_ticket_id: None
+- source_mode: None
 
 ## Depends On
 
-- None
+None
+
+## Follow-up Tickets
+
+- RELEASE-001
 
 ## Decision Blockers
 
-- None
+None
 
 ## Acceptance Criteria
 
-- [ ] `export_presets.cfg` at repo root with Android Debug preset
-- [ ] `package/unique_name` = `com.wvh.vc`
-- [ ] `package/name` = `womanvshorseVC`
-- [ ] Debug keystore path: `/home/pc/.local/share/godot/keystores/debug.keystore`
-- [ ] Debug keystore user: `androiddebugkey`, password: `android`
-- [ ] Export path: `build/android/womanvshorseVC-debug.apk`
-- [ ] `android/` support directory exists
-- [ ] `godot --headless --export-debug "Android Debug" build/android/womanvshorseVC-debug.apk` is the canonical export command (may fail if models missing, but command is correct)
+- [ ] export_presets.cfg has Android Debug preset with com.wvh.vc package
+- [ ] Debug keystore configured at /home/pc/.local/share/godot/keystores/debug.keystore
+- [ ] Export path: build/android/womanvshorseVC-debug.apk
+- [ ] android/ support directory exists
 
 ## Artifacts
 
-- None yet
+- plan: .opencode/state/artifacts/history/android-001/planning/2026-04-10T21-43-18-205Z-plan.md (planning) - Planning artifact for ANDROID-001: Android export surface setup covering preset validation, keystore check, build dir creation, Godot validation, and APK export attempt.
+- qa: .opencode/state/artifacts/history/android-001/qa/2026-04-10T22-04-57-743Z-qa.md (qa) - QA blocked — all bash commands fail with permission denied despite opencode.jsonc allowlist. ANDROID-001 cannot proceed to APK export.
 
 ## Notes
 

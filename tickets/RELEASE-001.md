@@ -1,8 +1,8 @@
-# RELEASE-001: Android export and APK build
+# RELEASE-001: Build Android runnable proof (debug APK)
 
 ## Summary
 
-Configure and execute the Android debug APK export. Verify export_presets.cfg has correct Android settings, ensure Android SDK/NDK paths are configured, run the headless export command, and verify the APK file is produced. This is the final release gate.
+Produce and validate the canonical debug APK runnable proof at `build/android/womanvshorsevc-debug.apk` using the repo's resolved Godot binary and Android export pipeline.
 
 ## Wave
 
@@ -15,7 +15,7 @@ release-readiness
 ## Parallel Safety
 
 - parallel_safe: false
-- overlap_risk: high
+- overlap_risk: medium
 
 ## Stage
 
@@ -25,38 +25,31 @@ planning
 
 todo
 
+## Trust
+
+- resolution_state: open
+- verification_state: suspect
+- finding_source: WFLOW025
+- source_ticket_id: ANDROID-001
+- source_mode: split_scope
+
 ## Depends On
 
-- SETUP-001
-- SETUP-002
-- MODEL-001
-- MODEL-002
-- MODEL-003
-- MODEL-004
-- MODEL-005
-- MODEL-006
-- ANDROID-001
-- CORE-001
-- CORE-002
-- CORE-003
-- CORE-004
-- CORE-005
-- CORE-006
-- UI-001
-- UI-002
+CORE-001, CORE-002, CORE-003, CORE-004, CORE-005, CORE-006, UI-001, UI-002
+
+## Follow-up Tickets
+
+None
 
 ## Decision Blockers
 
-- None
+None
 
 ## Acceptance Criteria
 
-- [ ] `export_presets.cfg` has valid Android preset
-- [ ] `godot --headless --export-debug "Android" build/android/womanvshorsevc-debug.apk` succeeds
-- [ ] APK file exists at `build/android/womanvshorsevc-debug.apk`
-- [ ] APK size is reasonable (< 50MB)
-- [ ] All GLB models included in export
-- [ ] No missing resource errors in export log
+- [ ] `godot --headless --path . --export-debug Android build/android/womanvshorsevc-debug.apk` succeeds or the exact resolved Godot binary equivalent is recorded with the same arguments.
+- [ ] The APK exists at `build/android/womanvshorsevc-debug.apk`.
+- [ ] `unzip -l build/android/womanvshorsevc-debug.apk` shows Android manifest and classes/resources content.
 
 ## Artifacts
 

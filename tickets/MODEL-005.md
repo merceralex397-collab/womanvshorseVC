@@ -2,7 +2,7 @@
 
 ## Summary
 
-Use the blender-agent MCP server to generate the boss horse model following the asset brief at `assets/briefs/horse-boss.md`. Export as GLB to `assets/models/horse-boss.glb`. Validate and update PROVENANCE.md.
+Generate boss horse model via blender-agent MCP following assets/briefs/horse-boss.md. Export GLB to assets/models/.
 
 ## Wave
 
@@ -25,25 +25,33 @@ planning
 
 todo
 
+## Trust
+
+- resolution_state: open
+- verification_state: suspect
+- finding_source: None
+- source_ticket_id: None
+- source_mode: None
+
 ## Depends On
 
-- None
+None
+
+## Follow-up Tickets
+
+None
 
 ## Decision Blockers
 
-- None
+None
 
 ## Acceptance Criteria
 
-- [ ] `assets/models/horse-boss.glb` exists
-- [ ] Triangle count ≤ 5000 (verified by quality_validate)
-- [ ] No inverted normals
-- [ ] Manifold mesh
-- [ ] Scale ~2.2m tall at head (visibly larger than other horses)
-- [ ] Gold armor / dark body materials match brief palette
-- [ ] Crown crest visible from top-down view
+- [ ] assets/models/horse-boss.glb exists
+- [ ] Triangle count ≤ 5000
+- [ ] Manifold mesh, no inverted normals
 - [ ] Imports into Godot without errors
-- [ ] `assets/PROVENANCE.md` entry added
+- [ ] PROVENANCE.md entry added
 
 ## Artifacts
 

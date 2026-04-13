@@ -1,0 +1,429 @@
+{
+  "generated_at": "2026-04-11T20:53:01Z",
+  "repo_root": "/home/pc/projects/womanvshorseVC",
+  "finding_count": 9,
+  "finding_codes": [
+    "EXEC-GODOT-004",
+    "EXEC-GODOT-005a",
+    "EXEC-REMED-001",
+    "SKILL002",
+    "WFLOW012",
+    "WFLOW019",
+    "WFLOW024"
+  ],
+  "source_findings": [
+    {
+      "code": "EXEC-GODOT-004",
+      "severity": "error"
+    },
+    {
+      "code": "EXEC-GODOT-005a",
+      "severity": "error"
+    },
+    {
+      "code": "EXEC-REMED-001",
+      "severity": "error"
+    },
+    {
+      "code": "EXEC-REMED-001",
+      "severity": "error"
+    },
+    {
+      "code": "EXEC-REMED-001",
+      "severity": "error"
+    }
+  ],
+  "result_state": "validated failures found",
+  "diagnosis_kind": "initial_diagnosis",
+  "evidence_mode": "current_state_only",
+  "audit_package_commit": "72acfbad2d953b04f73d10fc873102b70b9e8907+dirty:8d17d4779427",
+  "report_files": {
+    "report_1": "01-initial-codebase-review.md",
+    "report_2": "02-scafforge-process-failures.md",
+    "report_3": "03-scafforge-prevention-actions.md",
+    "report_4": "04-live-repo-repair-plan.md"
+  },
+  "disposition_bundle_file": "disposition-bundle.json",
+  "disposition_bundle": {
+    "version": 1,
+    "generated_at": "2026-04-11T20:53:01Z",
+    "repo_root": "/home/pc/projects/womanvshorseVC",
+    "audit_package_commit": "72acfbad2d953b04f73d10fc873102b70b9e8907+dirty:8d17d4779427",
+    "allowed_classes": [
+      "managed_blocker",
+      "manual_prerequisite_blocker",
+      "source_follow_up",
+      "process_state_only",
+      "advisory"
+    ],
+    "finding_count": 9,
+    "findings": [
+      {
+        "code": "WFLOW024",
+        "severity": "error",
+        "disposition_class": "managed_blocker",
+        "legacy_disposition_class": "managed_blocker",
+        "route": "scafforge-repair",
+        "repair_class": "safe Scafforge package change",
+        "evidence_grade": "repo-state validation",
+        "source_files": [
+          ".opencode/skills/ticket-execution/SKILL.md"
+        ],
+        "provenance": "script"
+      },
+      {
+        "code": "EXEC-GODOT-004",
+        "severity": "error",
+        "disposition_class": "source_follow_up",
+        "legacy_disposition_class": "source_follow_up",
+        "route": "ticket-pack-builder",
+        "repair_class": "generated-repo remediation ticket",
+        "evidence_grade": "repo-state validation",
+        "source_files": [
+          "project.godot"
+        ],
+        "provenance": "script"
+      },
+      {
+        "code": "EXEC-GODOT-005a",
+        "severity": "error",
+        "disposition_class": "source_follow_up",
+        "legacy_disposition_class": "source_follow_up",
+        "route": "ticket-pack-builder",
+        "repair_class": "generated-repo remediation ticket",
+        "evidence_grade": "repo-state validation",
+        "source_files": [
+          "project.godot",
+          "export_presets.cfg",
+          "android"
+        ],
+        "provenance": "script"
+      },
+      {
+        "code": "WFLOW012",
+        "severity": "error",
+        "disposition_class": "managed_blocker",
+        "legacy_disposition_class": "managed_blocker",
+        "route": "scafforge-repair",
+        "repair_class": "safe Scafforge package change",
+        "evidence_grade": "repo-state validation",
+        "source_files": [
+          "docs/process/workflow.md",
+          "tickets/README.md",
+          ".opencode/commands/kickoff.md",
+          ".opencode/commands/run-lane.md",
+          ".opencode/skills/ticket-execution/SKILL.md",
+          ".opencode/agents/wvhvc-team-leader.md",
+          ".opencode/agents/wvhvc-implementer.md",
+          ".opencode/agents/wvhvc-lane-executor.md",
+          ".opencode/agents/wvhvc-docs-handoff.md"
+        ],
+        "provenance": "script"
+      },
+      {
+        "code": "SKILL002",
+        "severity": "warning",
+        "disposition_class": "manual_prerequisite_blocker",
+        "legacy_disposition_class": "managed_blocker",
+        "route": "scafforge-repair",
+        "repair_class": "safe Scafforge package change",
+        "evidence_grade": "repo-state validation",
+        "source_files": [
+          ".opencode/skills/ticket-execution/SKILL.md"
+        ],
+        "provenance": "script"
+      },
+      {
+        "code": "WFLOW019",
+        "severity": "error",
+        "disposition_class": "managed_blocker",
+        "legacy_disposition_class": "managed_blocker",
+        "route": "scafforge-repair",
+        "repair_class": "safe Scafforge package change",
+        "evidence_grade": "repo-state validation",
+        "source_files": [
+          "tickets/manifest.json"
+        ],
+        "provenance": "script"
+      },
+      {
+        "code": "EXEC-REMED-001",
+        "severity": "error",
+        "disposition_class": "source_follow_up",
+        "legacy_disposition_class": "source_follow_up",
+        "route": "ticket-pack-builder",
+        "repair_class": "generated-repo remediation ticket",
+        "evidence_grade": "repo-state validation",
+        "source_files": [
+          "tickets/manifest.json",
+          ".opencode/state/reviews/remed-001-review-reverification.md"
+        ],
+        "provenance": "script"
+      },
+      {
+        "code": "EXEC-REMED-001",
+        "severity": "error",
+        "disposition_class": "source_follow_up",
+        "legacy_disposition_class": "source_follow_up",
+        "route": "ticket-pack-builder",
+        "repair_class": "generated-repo remediation ticket",
+        "evidence_grade": "repo-state validation",
+        "source_files": [
+          "tickets/manifest.json",
+          ".opencode/state/reviews/remed-002-review-reverification.md"
+        ],
+        "provenance": "script"
+      },
+      {
+        "code": "EXEC-REMED-001",
+        "severity": "error",
+        "disposition_class": "source_follow_up",
+        "legacy_disposition_class": "source_follow_up",
+        "route": "ticket-pack-builder",
+        "repair_class": "generated-repo remediation ticket",
+        "evidence_grade": "repo-state validation",
+        "source_files": [
+          "tickets/manifest.json",
+          ".opencode/state/reviews/remed-003-review-review.md"
+        ],
+        "provenance": "script"
+      }
+    ],
+    "counts": {
+      "managed_blocker": 3,
+      "manual_prerequisite_blocker": 1,
+      "source_follow_up": 5,
+      "process_state_only": 0,
+      "advisory": 0
+    },
+    "shadow_mode_deltas": [
+      {
+        "code": "SKILL002",
+        "legacy_disposition_class": "managed_blocker",
+        "disposition_class": "manual_prerequisite_blocker",
+        "route": "scafforge-repair",
+        "reason": "Legacy prefix classification would label SKILL002 as managed_blocker, but the authoritative bundle assigns manual_prerequisite_blocker."
+      }
+    ]
+  },
+  "ticket_recommendations": [
+    {
+      "id": "REMED-001",
+      "title": "Godot headless validation fails",
+      "description": "Remediate EXEC-GODOT-004 by correcting the validated issue and rerunning the relevant quality checks.",
+      "affected_files": [
+        "project.godot"
+      ],
+      "suggested_fix_approach": "Run a deterministic `godot --headless --path . --quit` validation during audit and keep the repo blocked until it succeeds or returns an explicit environment blocker instead.",
+      "assignee": "implementer",
+      "source_finding_code": "EXEC-GODOT-004",
+      "source_finding_codes": [
+        "EXEC-GODOT-004"
+      ],
+      "severity": "error",
+      "route": "ticket-pack-builder",
+      "repair_class": "generated-repo remediation ticket",
+      "summary": "Run a deterministic `godot --headless --path . --quit` validation during audit and keep the repo blocked until it succeeds or returns an explicit environment blocker instead.",
+      "source_files": [
+        "project.godot"
+      ]
+    },
+    {
+      "id": "REMED-002",
+      "title": "Android-targeted Godot repo is missing export surfaces or debug APK runnable proof",
+      "description": "Remediate EXEC-GODOT-005a by correcting the validated issue and rerunning the relevant quality checks.",
+      "affected_files": [
+        "project.godot",
+        "export_presets.cfg",
+        "android"
+      ],
+      "suggested_fix_approach": "Emit export_presets.cfg and android/ surfaces at scaffold time. Block RELEASE-001 closeout until debug APK runnable proof exists at the canonical path.",
+      "assignee": "implementer",
+      "source_finding_code": "EXEC-GODOT-005a",
+      "source_finding_codes": [
+        "EXEC-GODOT-005a"
+      ],
+      "severity": "error",
+      "route": "ticket-pack-builder",
+      "repair_class": "generated-repo remediation ticket",
+      "summary": "Emit export_presets.cfg and android/ surfaces at scaffold time. Block RELEASE-001 closeout until debug APK runnable proof exists at the canonical path.",
+      "source_files": [
+        "project.godot",
+        "export_presets.cfg",
+        "android"
+      ]
+    },
+    {
+      "id": "REMED-003",
+      "title": "Remediation review artifact does not contain runnable command evidence",
+      "description": "Remediate EXEC-REMED-001 by correcting the validated issue and rerunning the relevant quality checks.",
+      "affected_files": [
+        "tickets/manifest.json",
+        ".opencode/state/reviews/remed-001-review-reverification.md"
+      ],
+      "suggested_fix_approach": "For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure.",
+      "assignee": "implementer",
+      "source_finding_code": "EXEC-REMED-001",
+      "source_finding_codes": [
+        "EXEC-REMED-001"
+      ],
+      "severity": "error",
+      "route": "ticket-pack-builder",
+      "repair_class": "generated-repo remediation ticket",
+      "summary": "For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure.",
+      "source_files": [
+        "tickets/manifest.json",
+        ".opencode/state/reviews/remed-001-review-reverification.md"
+      ]
+    },
+    {
+      "id": "REMED-004",
+      "title": "Remediation review artifact does not contain runnable command evidence",
+      "description": "Remediate EXEC-REMED-001 by correcting the validated issue and rerunning the relevant quality checks.",
+      "affected_files": [
+        "tickets/manifest.json",
+        ".opencode/state/reviews/remed-002-review-reverification.md"
+      ],
+      "suggested_fix_approach": "For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure.",
+      "assignee": "implementer",
+      "source_finding_code": "EXEC-REMED-001",
+      "source_finding_codes": [
+        "EXEC-REMED-001"
+      ],
+      "severity": "error",
+      "route": "ticket-pack-builder",
+      "repair_class": "generated-repo remediation ticket",
+      "summary": "For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure.",
+      "source_files": [
+        "tickets/manifest.json",
+        ".opencode/state/reviews/remed-002-review-reverification.md"
+      ]
+    },
+    {
+      "id": "REMED-005",
+      "title": "Remediation review artifact does not contain runnable command evidence",
+      "description": "Remediate EXEC-REMED-001 by correcting the validated issue and rerunning the relevant quality checks.",
+      "affected_files": [
+        "tickets/manifest.json",
+        ".opencode/state/reviews/remed-003-review-review.md"
+      ],
+      "suggested_fix_approach": "For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure.",
+      "assignee": "implementer",
+      "source_finding_code": "EXEC-REMED-001",
+      "source_finding_codes": [
+        "EXEC-REMED-001"
+      ],
+      "severity": "error",
+      "route": "ticket-pack-builder",
+      "repair_class": "generated-repo remediation ticket",
+      "summary": "For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure.",
+      "source_files": [
+        "tickets/manifest.json",
+        ".opencode/state/reviews/remed-003-review-review.md"
+      ]
+    },
+    {
+      "id": "REMED-006",
+      "title": "The generated lease-ownership contract is split across coordinator and worker surfaces, so agents can disagree about who should claim a ticket and when bootstrap gates apply",
+      "description": "Remediate WFLOW012 by correcting the validated issue and rerunning the relevant quality checks.",
+      "affected_files": [
+        "docs/process/workflow.md",
+        "tickets/README.md",
+        ".opencode/commands/kickoff.md",
+        ".opencode/commands/run-lane.md",
+        ".opencode/skills/ticket-execution/SKILL.md",
+        ".opencode/agents/wvhvc-team-leader.md",
+        ".opencode/agents/wvhvc-implementer.md",
+        ".opencode/agents/wvhvc-lane-executor.md",
+        ".opencode/agents/wvhvc-docs-handoff.md"
+      ],
+      "suggested_fix_approach": "Adopt one lease model everywhere: the team leader owns `ticket_claim` and `ticket_release`, specialists work only inside the already-active ticket lease, and only Wave 0 setup work may claim before bootstrap is ready.",
+      "assignee": "implementer",
+      "source_finding_code": "WFLOW012",
+      "source_finding_codes": [
+        "WFLOW012"
+      ],
+      "severity": "error",
+      "route": "scafforge-repair",
+      "repair_class": "safe Scafforge package change",
+      "summary": "Adopt one lease model everywhere: the team leader owns `ticket_claim` and `ticket_release`, specialists work only inside the already-active ticket lease, and only Wave 0 setup work may claim before bootstrap is ready.",
+      "source_files": [
+        "docs/process/workflow.md",
+        "tickets/README.md",
+        ".opencode/commands/kickoff.md",
+        ".opencode/commands/run-lane.md",
+        ".opencode/skills/ticket-execution/SKILL.md",
+        ".opencode/agents/wvhvc-team-leader.md",
+        ".opencode/agents/wvhvc-implementer.md",
+        ".opencode/agents/wvhvc-lane-executor.md",
+        ".opencode/agents/wvhvc-docs-handoff.md"
+      ]
+    },
+    {
+      "id": "REMED-007",
+      "title": "The ticket graph contains stale or contradictory source/follow-up linkage",
+      "description": "Remediate WFLOW019 by correcting the validated issue and rerunning the relevant quality checks.",
+      "affected_files": [
+        "tickets/manifest.json"
+      ],
+      "suggested_fix_approach": "Use `ticket_reconcile` to atomically repair stale source/follow-up linkage, remove contradictory parent dependencies, and supersede invalidated follow-up tickets from current evidence.",
+      "assignee": "implementer",
+      "source_finding_code": "WFLOW019",
+      "source_finding_codes": [
+        "WFLOW019"
+      ],
+      "severity": "error",
+      "route": "scafforge-repair",
+      "repair_class": "safe Scafforge package change",
+      "summary": "Use `ticket_reconcile` to atomically repair stale source/follow-up linkage, remove contradictory parent dependencies, and supersede invalidated follow-up tickets from current evidence.",
+      "source_files": [
+        "tickets/manifest.json"
+      ]
+    },
+    {
+      "id": "REMED-008",
+      "title": "Fail-state routing is still under-specified in generated prompts or workflow skills",
+      "description": "Remediate WFLOW024 by correcting the validated issue and rerunning the relevant quality checks.",
+      "affected_files": [
+        ".opencode/skills/ticket-execution/SKILL.md"
+      ],
+      "suggested_fix_approach": "Document review, QA, smoke-test, and bootstrap failure recovery paths in ticket-execution, and instruct the team leader to follow transition_guidance.recovery_action whenever it is present.",
+      "assignee": "implementer",
+      "source_finding_code": "WFLOW024",
+      "source_finding_codes": [
+        "WFLOW024"
+      ],
+      "severity": "error",
+      "route": "scafforge-repair",
+      "repair_class": "safe Scafforge package change",
+      "summary": "Document review, QA, smoke-test, and bootstrap failure recovery paths in ticket-execution, and instruct the team leader to follow transition_guidance.recovery_action whenever it is present.",
+      "source_files": [
+        ".opencode/skills/ticket-execution/SKILL.md"
+      ]
+    },
+    {
+      "id": "REMED-009",
+      "title": "The repo-local `ticket-execution` skill is too thin to explain the actual lifecycle contract to weaker models",
+      "description": "Remediate SKILL002 by correcting the validated issue and rerunning the relevant quality checks.",
+      "affected_files": [
+        ".opencode/skills/ticket-execution/SKILL.md"
+      ],
+      "suggested_fix_approach": "Keep `ticket-execution` narrowly procedural: route from `ticket_lookup.transition_guidance`, stop after repeated lifecycle contradictions, reserve `smoke_test` as the only PASS producer, and keep slash commands human-only.",
+      "assignee": "implementer",
+      "source_finding_code": "SKILL002",
+      "source_finding_codes": [
+        "SKILL002"
+      ],
+      "severity": "warning",
+      "route": "scafforge-repair",
+      "repair_class": "safe Scafforge package change",
+      "summary": "Keep `ticket-execution` narrowly procedural: route from `ticket_lookup.transition_guidance`, stop after repeated lifecycle contradictions, reserve `smoke_test` as the only PASS producer, and keep slash commands human-only.",
+      "source_files": [
+        ".opencode/skills/ticket-execution/SKILL.md"
+      ]
+    }
+  ],
+  "package_work_required_first": false,
+  "recommended_next_step": "subject_repo_repair",
+  "recommended_ticket_payload": "recommended-ticket-payload.json"
+}

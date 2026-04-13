@@ -1,7 +1,7 @@
 {
   "version": 3,
   "project": "Woman vs Horse VC",
-  "active_ticket": "MODEL-001",
+  "active_ticket": "REMED-003",
   "tickets": [
     {
       "id": "SETUP-001",
@@ -12,13 +12,9 @@
       "overlap_risk": "high",
       "stage": "planning",
       "status": "todo",
-      "resolution_state": "open",
-      "verification_state": "suspect",
       "depends_on": [
         "MODEL-006"
       ],
-      "source_ticket_id": null,
-      "follow_up_ticket_ids": [],
       "summary": "Create the main 3D arena scene with Node3D root, fixed top-down orthographic Camera3D, DirectionalLight3D, and arena-ground.glb model.",
       "acceptance": [
         "scenes/arena/arena.tscn exists with Node3D root",
@@ -29,7 +25,10 @@
         "Scene loads without errors"
       ],
       "decision_blockers": [],
-      "artifacts": []
+      "artifacts": [],
+      "resolution_state": "open",
+      "verification_state": "suspect",
+      "follow_up_ticket_ids": []
     },
     {
       "id": "SETUP-002",
@@ -40,13 +39,9 @@
       "overlap_risk": "high",
       "stage": "planning",
       "status": "todo",
-      "resolution_state": "open",
-      "verification_state": "suspect",
       "depends_on": [
         "SETUP-001"
       ],
-      "source_ticket_id": null,
-      "follow_up_ticket_ids": [],
       "summary": "Create the player character scene with CharacterBody3D, CollisionShape3D, and GDScript controller with XZ movement.",
       "acceptance": [
         "scenes/player/player.tscn exists with CharacterBody3D root",
@@ -55,7 +50,10 @@
         "Scene loads without errors"
       ],
       "decision_blockers": [],
-      "artifacts": []
+      "artifacts": [],
+      "resolution_state": "open",
+      "verification_state": "suspect",
+      "follow_up_ticket_ids": []
     },
     {
       "id": "MODEL-001",
@@ -64,23 +62,106 @@
       "lane": "model-generation",
       "parallel_safe": true,
       "overlap_risk": "low",
-      "stage": "planning",
-      "status": "todo",
-      "resolution_state": "open",
-      "verification_state": "suspect",
+      "stage": "closeout",
+      "status": "done",
       "depends_on": [],
-      "source_ticket_id": null,
-      "follow_up_ticket_ids": [],
       "summary": "Generate woman-warrior 3D model via blender-agent MCP following assets/briefs/woman-warrior.md. Export GLB to assets/models/.",
       "acceptance": [
         "assets/models/woman-warrior.glb exists",
-        "Triangle count \u2264 3000",
+        "Triangle count ≤ 3000",
         "Manifold mesh, no inverted normals",
         "Imports into Godot without errors",
         "PROVENANCE.md entry added"
       ],
       "decision_blockers": [],
-      "artifacts": []
+      "artifacts": [
+        {
+          "kind": "environment-bootstrap",
+          "path": ".opencode/state/artifacts/history/model-001/bootstrap/2026-04-09T22-20-16-559Z-environment-bootstrap.md",
+          "source_path": ".opencode/state/bootstrap/model-001-bootstrap-environment-bootstrap.md",
+          "stage": "bootstrap",
+          "summary": "Environment bootstrap completed successfully.",
+          "created_at": "2026-04-09T22:20:16.559Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "plan",
+          "path": ".opencode/state/artifacts/history/model-001/planning/2026-04-09T22-21-28-472Z-plan.md",
+          "source_path": ".opencode/state/plans/model-001-planning-plan.md",
+          "stage": "planning",
+          "summary": "Planning artifact for MODEL-001: Generate woman-warrior via Blender-MCP. Covers 13-step implementation, quality validation, error recovery, and acceptance verification.",
+          "created_at": "2026-04-09T22:21:28.472Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "implementation",
+          "path": ".opencode/state/artifacts/history/model-001/implementation/2026-04-09T23-59-00-177Z-implementation.md",
+          "source_path": ".opencode/state/implementations/model-001-implementation-implementation.md",
+          "stage": "implementation",
+          "summary": "Blender-MCP workflow completed. Generated 9-part low-poly warrior woman with green armor, silver sword, skin materials. 108 triangles. Exported GLB to assets/models/. Godot validation passed.",
+          "created_at": "2026-04-09T23:59:00.177Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "review",
+          "path": ".opencode/state/artifacts/history/model-001/review/2026-04-10T00-07-28-485Z-review.md",
+          "source_path": ".opencode/state/reviews/model-001-review-review.md",
+          "stage": "review",
+          "summary": "Code review for MODEL-001: 5/5 acceptance criteria verified PASS. GLB exists (14012 bytes), 108 triangles (96% under 3000 budget), quality_validate clean with Godot certification, provenance entry confirmed. Verdict: APPROVE.",
+          "created_at": "2026-04-10T00:07:28.485Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "qa",
+          "path": ".opencode/state/artifacts/history/model-001/qa/2026-04-10T00-08-32-071Z-qa.md",
+          "source_path": ".opencode/state/qa/model-001-qa-qa.md",
+          "stage": "qa",
+          "summary": "QA validation passed - all 5 acceptance criteria verified PASS via implementation evidence and file checks",
+          "created_at": "2026-04-10T00:08:32.071Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "smoke-test",
+          "path": ".opencode/state/artifacts/history/model-001/smoke-test/2026-04-10T00-08-33-239Z-smoke-test.md",
+          "stage": "smoke-test",
+          "summary": "Deterministic smoke test failed.",
+          "created_at": "2026-04-10T00:08:33.239Z",
+          "trust_state": "superseded",
+          "superseded_at": "2026-04-10T00:08:44.912Z",
+          "superseded_by": ".opencode/state/artifacts/history/model-001/smoke-test/2026-04-10T00-08-44-912Z-smoke-test.md",
+          "supersession_reason": "Replaced by newer smoke-test/smoke-test artifact."
+        },
+        {
+          "kind": "smoke-test",
+          "path": ".opencode/state/artifacts/history/model-001/smoke-test/2026-04-10T00-08-44-912Z-smoke-test.md",
+          "source_path": ".opencode/state/smoke-tests/model-001-smoke-test-smoke-test.md",
+          "stage": "smoke-test",
+          "summary": "Deterministic smoke test passed.",
+          "created_at": "2026-04-10T00:08:44.912Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "backlog-verification",
+          "path": ".opencode/state/artifacts/history/model-001/review/2026-04-10T11-54-31-337Z-backlog-verification.md",
+          "source_path": ".opencode/state/reviews/model-001-review-backlog-verification.md",
+          "stage": "review",
+          "summary": "Backlog verification PASS — all 5 acceptance criteria verified, smoke-test passes, QA passes, review APPROVEs. Trust restored for process version 7.",
+          "created_at": "2026-04-10T11:54:31.337Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "reverification",
+          "path": ".opencode/state/artifacts/history/model-001/review/2026-04-10T11-54-47-617Z-reverification.md",
+          "source_path": ".opencode/state/reviews/model-001-review-reverification.md",
+          "stage": "review",
+          "summary": "Trust restored using MODEL-001.",
+          "created_at": "2026-04-10T11:54:47.617Z",
+          "trust_state": "current"
+        }
+      ],
+      "resolution_state": "done",
+      "verification_state": "reverified",
+      "follow_up_ticket_ids": []
     },
     {
       "id": "MODEL-002",
@@ -89,23 +170,152 @@
       "lane": "model-generation",
       "parallel_safe": true,
       "overlap_risk": "low",
-      "stage": "planning",
-      "status": "todo",
-      "resolution_state": "open",
-      "verification_state": "suspect",
+      "stage": "closeout",
+      "status": "done",
       "depends_on": [],
-      "source_ticket_id": null,
-      "follow_up_ticket_ids": [],
       "summary": "Generate brown horse enemy model via blender-agent MCP following assets/briefs/horse-brown.md. Export GLB to assets/models/.",
       "acceptance": [
         "assets/models/horse-brown.glb exists",
-        "Triangle count \u2264 2000",
+        "Triangle count ≤ 2000",
         "Manifold mesh, no inverted normals",
         "Imports into Godot without errors",
         "PROVENANCE.md entry added"
       ],
       "decision_blockers": [],
-      "artifacts": []
+      "artifacts": [
+        {
+          "kind": "plan",
+          "path": ".opencode/state/artifacts/history/model-002/planning/2026-04-10T00-28-20-607Z-plan.md",
+          "stage": "planning",
+          "summary": "Planning artifact for MODEL-002: Generate horse-brown via Blender-MCP. Covers 13-step implementation, quality validation, error recovery, and acceptance verification.",
+          "created_at": "2026-04-10T00:28:20.607Z",
+          "trust_state": "superseded",
+          "superseded_at": "2026-04-10T00:29:42.233Z",
+          "superseded_by": ".opencode/state/artifacts/history/model-002/planning/2026-04-10T00-29-42-233Z-plan.md",
+          "supersession_reason": "Replaced by newer planning/plan artifact."
+        },
+        {
+          "kind": "plan",
+          "path": ".opencode/state/artifacts/history/model-002/planning/2026-04-10T00-29-42-233Z-plan.md",
+          "source_path": ".opencode/state/plans/model-002-planning-plan.md",
+          "stage": "planning",
+          "summary": "Planning for MODEL-002: Generate low-poly brown horse via Blender-MCP. 13-step implementation following asset brief, targeting ≤2000 tris, 2 PBR materials, export to assets/models/horse-brown.glb.",
+          "created_at": "2026-04-10T00:29:42.233Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "implementation",
+          "path": ".opencode/state/artifacts/history/model-002/implementation/2026-04-10T00-38-52-788Z-implementation.md",
+          "source_path": ".opencode/state/implementations/model-002-implementation-implementation.md",
+          "stage": "implementation",
+          "summary": "Blender-MCP workflow completed. Generated low-poly brown horse with 2 PBR materials (BrownBody #8B4513, DarkMane #2F1B0E). 10 primitives joined into single mesh, triangulated and transforms applied. Godot certification passed. GLB exported to assets/models/horse-brown.glb.",
+          "created_at": "2026-04-10T00:38:52.788Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "review",
+          "path": ".opencode/state/artifacts/history/model-002/review/2026-04-10T00-41-56-782Z-review.md",
+          "stage": "review",
+          "summary": "Code review for MODEL-002: 5/5 acceptance criteria verified PASS. Triangle count 752 (62% under 2000 budget). Godot certification passed. N-gon warnings non-blocking for low-poly game art. Verdict: APPROVE.",
+          "created_at": "2026-04-10T00:41:56.782Z",
+          "trust_state": "superseded",
+          "superseded_at": "2026-04-10T00:42:31.555Z",
+          "superseded_by": ".opencode/state/artifacts/history/model-002/review/2026-04-10T00-42-31-555Z-review.md",
+          "supersession_reason": "Replaced by newer review/review artifact."
+        },
+        {
+          "kind": "review",
+          "path": ".opencode/state/artifacts/history/model-002/review/2026-04-10T00-42-31-555Z-review.md",
+          "source_path": ".opencode/state/reviews/model-002-review-review.md",
+          "stage": "review",
+          "summary": "Code review for MODEL-002: 5/5 acceptance criteria verified PASS. Triangle count 752 (62% under 2000 budget). Godot certification passed. N-gon warnings non-blocking for low-poly game art. Verdict: APPROVE.",
+          "created_at": "2026-04-10T00:42:31.555Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "qa",
+          "path": ".opencode/state/artifacts/history/model-002/qa/2026-04-10T03-48-29-990Z-qa.md",
+          "source_path": ".opencode/state/qa/model-002-qa-qa.md",
+          "stage": "qa",
+          "summary": "QA validation passed - all 5 acceptance criteria verified PASS via file checks, triangle analysis, mesh validation, Godot cert check, and PROVENANCE.md verification",
+          "created_at": "2026-04-10T03:48:29.990Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "smoke-test",
+          "path": ".opencode/state/artifacts/history/model-002/smoke-test/2026-04-10T03-49-09-724Z-smoke-test.md",
+          "stage": "smoke-test",
+          "summary": "Deterministic smoke test failed.",
+          "created_at": "2026-04-10T03:49:09.724Z",
+          "trust_state": "superseded",
+          "superseded_at": "2026-04-10T03:50:10.348Z",
+          "superseded_by": ".opencode/state/artifacts/history/model-002/smoke-test/2026-04-10T03-50-10-348Z-smoke-test.md",
+          "supersession_reason": "Replaced by newer smoke-test/smoke-test artifact."
+        },
+        {
+          "kind": "smoke-test",
+          "path": ".opencode/state/artifacts/history/model-002/smoke-test/2026-04-10T03-50-10-348Z-smoke-test.md",
+          "stage": "smoke-test",
+          "summary": "Deterministic smoke test failed.",
+          "created_at": "2026-04-10T03:50:10.348Z",
+          "trust_state": "superseded",
+          "superseded_at": "2026-04-10T03:50:53.574Z",
+          "superseded_by": ".opencode/state/artifacts/history/model-002/smoke-test/2026-04-10T03-50-53-574Z-smoke-test.md",
+          "supersession_reason": "Replaced by newer smoke-test/smoke-test artifact."
+        },
+        {
+          "kind": "smoke-test",
+          "path": ".opencode/state/artifacts/history/model-002/smoke-test/2026-04-10T03-50-53-574Z-smoke-test.md",
+          "stage": "smoke-test",
+          "summary": "Deterministic smoke test failed.",
+          "created_at": "2026-04-10T03:50:53.574Z",
+          "trust_state": "superseded",
+          "superseded_at": "2026-04-10T03:51:10.909Z",
+          "superseded_by": ".opencode/state/artifacts/history/model-002/smoke-test/2026-04-10T03-51-10-909Z-smoke-test.md",
+          "supersession_reason": "Replaced by newer smoke-test/smoke-test artifact."
+        },
+        {
+          "kind": "smoke-test",
+          "path": ".opencode/state/artifacts/history/model-002/smoke-test/2026-04-10T03-51-10-909Z-smoke-test.md",
+          "stage": "smoke-test",
+          "summary": "Deterministic smoke test failed.",
+          "created_at": "2026-04-10T03:51:10.909Z",
+          "trust_state": "superseded",
+          "superseded_at": "2026-04-10T04:15:46.379Z",
+          "superseded_by": ".opencode/state/artifacts/history/model-002/smoke-test/2026-04-10T04-15-46-379Z-smoke-test.md",
+          "supersession_reason": "Replaced by newer smoke-test/smoke-test artifact."
+        },
+        {
+          "kind": "smoke-test",
+          "path": ".opencode/state/artifacts/history/model-002/smoke-test/2026-04-10T04-15-46-379Z-smoke-test.md",
+          "source_path": ".opencode/state/smoke-tests/model-002-smoke-test-smoke-test.md",
+          "stage": "smoke-test",
+          "summary": "Deterministic smoke test passed.",
+          "created_at": "2026-04-10T04:15:46.379Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "backlog-verification",
+          "path": ".opencode/state/artifacts/history/model-002/review/2026-04-10T11-55-03-194Z-backlog-verification.md",
+          "source_path": ".opencode/state/reviews/model-002-review-backlog-verification.md",
+          "stage": "review",
+          "summary": "Backlog verification PASS — all 5 acceptance criteria verified, smoke-test passes, review APPROVED. Trust restored for process version 7.",
+          "created_at": "2026-04-10T11:55:03.194Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "reverification",
+          "path": ".opencode/state/artifacts/history/model-002/review/2026-04-10T11-55-13-059Z-reverification.md",
+          "source_path": ".opencode/state/reviews/model-002-review-reverification.md",
+          "stage": "review",
+          "summary": "Trust restored using MODEL-002.",
+          "created_at": "2026-04-10T11:55:13.059Z",
+          "trust_state": "current"
+        }
+      ],
+      "resolution_state": "done",
+      "verification_state": "reverified",
+      "follow_up_ticket_ids": []
     },
     {
       "id": "MODEL-003",
@@ -114,23 +324,71 @@
       "lane": "model-generation",
       "parallel_safe": true,
       "overlap_risk": "low",
-      "stage": "planning",
-      "status": "todo",
-      "resolution_state": "open",
-      "verification_state": "suspect",
+      "stage": "review",
+      "status": "review",
       "depends_on": [],
-      "source_ticket_id": null,
-      "follow_up_ticket_ids": [],
       "summary": "Generate black horse enemy model via blender-agent MCP following assets/briefs/horse-black.md. Export GLB to assets/models/.",
       "acceptance": [
         "assets/models/horse-black.glb exists",
-        "Triangle count \u2264 2000",
+        "Triangle count ≤ 2000",
         "Manifold mesh, no inverted normals",
         "Imports into Godot without errors",
         "PROVENANCE.md entry added"
       ],
       "decision_blockers": [],
-      "artifacts": []
+      "artifacts": [
+        {
+          "kind": "plan",
+          "path": ".opencode/state/artifacts/history/model-003/planning/2026-04-10T12-20-16-695Z-plan.md",
+          "source_path": ".opencode/state/plans/model-003-planning-plan.md",
+          "stage": "planning",
+          "summary": "Planning artifact for MODEL-003: Generate horse-black via Blender-MCP. Covers 11-step implementation (probe → scene init → geometry build → refine → mesh cleanup → materials → UV → preview → quality validate → GLB export → godot import → provenance), quality validation plan, risk register, and 5-criterion AC mapping.",
+          "created_at": "2026-04-10T12:20:16.695Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "implementation",
+          "path": ".opencode/state/artifacts/history/model-003/implementation/2026-04-10T22-03-42-108Z-implementation.md",
+          "source_path": ".opencode/state/implementations/model-003-implementation-implementation.md",
+          "stage": "implementation",
+          "summary": "MODEL-003 blocked — Blender MCP stateless bridge cannot chain scene_batch_edit operations. 20+ calls confirmed: create_primitive auto-names objects as Cube.XXX ignoring the object parameter; set_transform fails to find user-specified names; output_blend=null never persists scene state; --factory-startup always starts fresh. Inline Python disabled. Remediation ticket needed.",
+          "created_at": "2026-04-10T22:03:42.108Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "review",
+          "path": ".opencode/state/artifacts/history/model-003/review/2026-04-11T15-59-36-725Z-review.md",
+          "source_path": ".opencode/state/reviews/model-003-review-review.md",
+          "stage": "review",
+          "summary": "Review REJECT for MODEL-003: all 5 ACs fail. Blender MCP stateless bridge cannot chain scene_batch_edit operations. Root cause confirmed at bridge level. Managed blocker. REMED-003 split child created.",
+          "created_at": "2026-04-11T15:59:36.725Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "ticket-reconciliation",
+          "path": ".opencode/state/artifacts/history/model-003/review/2026-04-11T16-53-47-159Z-ticket-reconciliation.md",
+          "source_path": ".opencode/state/reviews/model-003-review-ticket-reconciliation.md",
+          "stage": "review",
+          "summary": "Reconciled REMED-003 against MODEL-003.",
+          "created_at": "2026-04-11T16:53:47.159Z",
+          "trust_state": "superseded",
+          "superseded_at": "2026-04-11T16:53:47.449Z",
+          "superseded_by": ".opencode/state/artifacts/history/model-003/review/2026-04-11T16-53-47-449Z-ticket-reconciliation.md",
+          "supersession_reason": "Replaced by newer review/ticket-reconciliation artifact."
+        },
+        {
+          "kind": "ticket-reconciliation",
+          "path": ".opencode/state/artifacts/history/model-003/review/2026-04-11T16-53-47-449Z-ticket-reconciliation.md",
+          "source_path": ".opencode/state/reviews/model-003-review-ticket-reconciliation.md",
+          "stage": "review",
+          "summary": "Reconciled REMED-004 against MODEL-003.",
+          "created_at": "2026-04-11T16:53:47.449Z",
+          "trust_state": "current"
+        }
+      ],
+      "resolution_state": "open",
+      "verification_state": "suspect",
+      "follow_up_ticket_ids": []
     },
     {
       "id": "MODEL-004",
@@ -139,23 +397,71 @@
       "lane": "model-generation",
       "parallel_safe": true,
       "overlap_risk": "low",
-      "stage": "planning",
-      "status": "todo",
-      "resolution_state": "open",
-      "verification_state": "suspect",
+      "stage": "review",
+      "status": "review",
       "depends_on": [],
-      "source_ticket_id": null,
-      "follow_up_ticket_ids": [],
       "summary": "Generate armored war horse model via blender-agent MCP following assets/briefs/horse-war.md. Export GLB to assets/models/.",
       "acceptance": [
         "assets/models/horse-war.glb exists",
-        "Triangle count \u2264 4000",
+        "Triangle count ≤ 4000",
         "Manifold mesh, no inverted normals",
         "Imports into Godot without errors",
         "PROVENANCE.md entry added"
       ],
       "decision_blockers": [],
-      "artifacts": []
+      "artifacts": [
+        {
+          "kind": "plan",
+          "path": ".opencode/state/artifacts/history/model-004/planning/2026-04-11T16-14-27-270Z-plan.md",
+          "source_path": ".opencode/state/plans/model-004-planning-plan.md",
+          "stage": "planning",
+          "summary": "Planning artifact for MODEL-004: Generate horse-war via Blender-MCP. Covers 11-step implementation workflow with 3-material PBR setup (gray body, red armor, dark trim), bulkier horse proportions, armor plate geometry (chamfron, peytral, flanks, shoulder guards), triangle budget strategy (≤4000), Blender MCP workaround plan for known bridge issues, quality validation approach, and full 5-criterion AC mapping.",
+          "created_at": "2026-04-11T16:14:27.270Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "review",
+          "path": ".opencode/state/artifacts/history/model-004/review/2026-04-11T16-16-09-927Z-review.md",
+          "source_path": ".opencode/state/reviews/model-004-review-review.md",
+          "stage": "review",
+          "summary": "Review APPROVE for MODEL-004: plan correctly applies Blender-MCP workarounds, all 5 ACs mapped, triangle budget realistic, no blockers.",
+          "created_at": "2026-04-11T16:16:09.927Z",
+          "trust_state": "superseded",
+          "superseded_at": "2026-04-11T16:22:46.995Z",
+          "superseded_by": ".opencode/state/artifacts/history/model-004/review/2026-04-11T16-22-46-995Z-review.md",
+          "supersession_reason": "Replaced by newer review/review artifact."
+        },
+        {
+          "kind": "implementation",
+          "path": ".opencode/state/artifacts/history/model-004/implementation/2026-04-11T16-21-46-873Z-implementation.md",
+          "source_path": ".opencode/state/implementations/model-004-implementation-implementation.md",
+          "stage": "implementation",
+          "summary": "MODEL-004 blocked — Blender MCP bridge cannot forward input_blend/output_blend parameters to scene_batch_edit; same systemic BLENDER-MCP-CHAIN issue as MODEL-003; inline Python disabled by policy; all 5 ACs FAIL",
+          "created_at": "2026-04-11T16:21:46.873Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "review",
+          "path": ".opencode/state/artifacts/history/model-004/review/2026-04-11T16-22-46-995Z-review.md",
+          "source_path": ".opencode/state/reviews/model-004-review-review.md",
+          "stage": "review",
+          "summary": "Review REJECT for MODEL-004: same BLENDER-MCP-CHAIN systemic blocker as MODEL-003; bridge does not forward input_blend/output_blend; all 5 ACs FAIL; managed blocker confirmed.",
+          "created_at": "2026-04-11T16:22:46.995Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "ticket-reconciliation",
+          "path": ".opencode/state/artifacts/history/model-004/review/2026-04-11T16-53-47-746Z-ticket-reconciliation.md",
+          "source_path": ".opencode/state/reviews/model-004-review-ticket-reconciliation.md",
+          "stage": "review",
+          "summary": "Reconciled REMED-005 against MODEL-004.",
+          "created_at": "2026-04-11T16:53:47.746Z",
+          "trust_state": "current"
+        }
+      ],
+      "resolution_state": "open",
+      "verification_state": "suspect",
+      "follow_up_ticket_ids": []
     },
     {
       "id": "MODEL-005",
@@ -166,21 +472,20 @@
       "overlap_risk": "low",
       "stage": "planning",
       "status": "todo",
-      "resolution_state": "open",
-      "verification_state": "suspect",
       "depends_on": [],
-      "source_ticket_id": null,
-      "follow_up_ticket_ids": [],
       "summary": "Generate boss horse model via blender-agent MCP following assets/briefs/horse-boss.md. Export GLB to assets/models/.",
       "acceptance": [
         "assets/models/horse-boss.glb exists",
-        "Triangle count \u2264 5000",
+        "Triangle count ≤ 5000",
         "Manifold mesh, no inverted normals",
         "Imports into Godot without errors",
         "PROVENANCE.md entry added"
       ],
       "decision_blockers": [],
-      "artifacts": []
+      "artifacts": [],
+      "resolution_state": "open",
+      "verification_state": "suspect",
+      "follow_up_ticket_ids": []
     },
     {
       "id": "MODEL-006",
@@ -191,21 +496,20 @@
       "overlap_risk": "low",
       "stage": "planning",
       "status": "todo",
-      "resolution_state": "open",
-      "verification_state": "suspect",
       "depends_on": [],
-      "source_ticket_id": null,
-      "follow_up_ticket_ids": [],
       "summary": "Generate arena ground environment model via blender-agent MCP following assets/briefs/arena-ground.md. Export GLB to assets/models/.",
       "acceptance": [
         "assets/models/arena-ground.glb exists",
-        "Triangle count \u2264 500",
+        "Triangle count ≤ 500",
         "Manifold mesh, no inverted normals",
         "Imports into Godot without errors",
         "PROVENANCE.md entry added"
       ],
       "decision_blockers": [],
-      "artifacts": []
+      "artifacts": [],
+      "resolution_state": "open",
+      "verification_state": "suspect",
+      "follow_up_ticket_ids": []
     },
     {
       "id": "ANDROID-001",
@@ -214,15 +518,9 @@
       "lane": "android-export",
       "parallel_safe": true,
       "overlap_risk": "low",
-      "stage": "planning",
-      "status": "todo",
-      "resolution_state": "open",
-      "verification_state": "suspect",
+      "stage": "plan_review",
+      "status": "plan_review",
       "depends_on": [],
-      "source_ticket_id": null,
-      "follow_up_ticket_ids": [
-        "RELEASE-001"
-      ],
       "summary": "Configure and validate Android export surfaces: export_presets.cfg, debug keystore, package name, and canonical export command.",
       "acceptance": [
         "export_presets.cfg has Android Debug preset with com.wvh.vc package",
@@ -231,7 +529,31 @@
         "android/ support directory exists"
       ],
       "decision_blockers": [],
-      "artifacts": []
+      "artifacts": [
+        {
+          "kind": "plan",
+          "path": ".opencode/state/artifacts/history/android-001/planning/2026-04-10T21-43-18-205Z-plan.md",
+          "source_path": ".opencode/state/plans/android-001-planning-plan.md",
+          "stage": "planning",
+          "summary": "Planning artifact for ANDROID-001: Android export surface setup covering preset validation, keystore check, build dir creation, Godot validation, and APK export attempt.",
+          "created_at": "2026-04-10T21:43:18.205Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "qa",
+          "path": ".opencode/state/artifacts/history/android-001/qa/2026-04-10T22-04-57-743Z-qa.md",
+          "source_path": ".opencode/state/qa/android-001-qa-qa.md",
+          "stage": "qa",
+          "summary": "QA blocked — all bash commands fail with permission denied despite opencode.jsonc allowlist. ANDROID-001 cannot proceed to APK export.",
+          "created_at": "2026-04-10T22:04:57.743Z",
+          "trust_state": "current"
+        }
+      ],
+      "resolution_state": "open",
+      "verification_state": "suspect",
+      "follow_up_ticket_ids": [
+        "RELEASE-001"
+      ]
     },
     {
       "id": "CORE-001",
@@ -242,13 +564,9 @@
       "overlap_risk": "medium",
       "stage": "planning",
       "status": "todo",
-      "resolution_state": "open",
-      "verification_state": "suspect",
       "depends_on": [
         "SETUP-002"
       ],
-      "source_ticket_id": null,
-      "follow_up_ticket_ids": [],
       "summary": "Create the player attack system with Area3D hitbox, cooldown timer, and damage signal.",
       "acceptance": [
         "attack_system.gd exists",
@@ -258,7 +576,10 @@
         "Scene loads without errors"
       ],
       "decision_blockers": [],
-      "artifacts": []
+      "artifacts": [],
+      "resolution_state": "open",
+      "verification_state": "suspect",
+      "follow_up_ticket_ids": []
     },
     {
       "id": "CORE-002",
@@ -269,13 +590,9 @@
       "overlap_risk": "medium",
       "stage": "planning",
       "status": "todo",
-      "resolution_state": "open",
-      "verification_state": "suspect",
       "depends_on": [
         "SETUP-001"
       ],
-      "source_ticket_id": null,
-      "follow_up_ticket_ids": [],
       "summary": "Create base enemy horse scene with CharacterBody3D, NavigationAgent3D, health system, and contact damage.",
       "acceptance": [
         "horse_base.tscn exists with CharacterBody3D root",
@@ -286,7 +603,10 @@
         "Scene loads without errors"
       ],
       "decision_blockers": [],
-      "artifacts": []
+      "artifacts": [],
+      "resolution_state": "open",
+      "verification_state": "suspect",
+      "follow_up_ticket_ids": []
     },
     {
       "id": "CORE-003",
@@ -297,13 +617,9 @@
       "overlap_risk": "medium",
       "stage": "planning",
       "status": "todo",
-      "resolution_state": "open",
-      "verification_state": "suspect",
       "depends_on": [
         "CORE-002"
       ],
-      "source_ticket_id": null,
-      "follow_up_ticket_ids": [],
       "summary": "Create wave spawner that spawns enemy horses at 3D arena edge positions with progressive difficulty.",
       "acceptance": [
         "wave_spawner.gd exists",
@@ -313,7 +629,10 @@
         "Scene loads without errors"
       ],
       "decision_blockers": [],
-      "artifacts": []
+      "artifacts": [],
+      "resolution_state": "open",
+      "verification_state": "suspect",
+      "follow_up_ticket_ids": []
     },
     {
       "id": "CORE-004",
@@ -324,13 +643,9 @@
       "overlap_risk": "low",
       "stage": "planning",
       "status": "todo",
-      "resolution_state": "open",
-      "verification_state": "suspect",
       "depends_on": [
         "SETUP-001"
       ],
-      "source_ticket_id": null,
-      "follow_up_ticket_ids": [],
       "summary": "Create in-game HUD overlay with health, wave number, score, enemy count, virtual joystick, and attack button.",
       "acceptance": [
         "hud.tscn exists with CanvasLayer root",
@@ -340,7 +655,10 @@
         "Scene loads without errors"
       ],
       "decision_blockers": [],
-      "artifacts": []
+      "artifacts": [],
+      "resolution_state": "open",
+      "verification_state": "suspect",
+      "follow_up_ticket_ids": []
     },
     {
       "id": "CORE-005",
@@ -351,14 +669,10 @@
       "overlap_risk": "high",
       "stage": "planning",
       "status": "todo",
-      "resolution_state": "open",
-      "verification_state": "suspect",
       "depends_on": [
         "CORE-001",
         "CORE-002"
       ],
-      "source_ticket_id": null,
-      "follow_up_ticket_ids": [],
       "summary": "Connect player attacks to enemy health and enemy contact to player health with collision layers and damage signals.",
       "acceptance": [
         "Collision layers configured correctly",
@@ -369,7 +683,10 @@
         "No friendly fire"
       ],
       "decision_blockers": [],
-      "artifacts": []
+      "artifacts": [],
+      "resolution_state": "open",
+      "verification_state": "suspect",
+      "follow_up_ticket_ids": []
     },
     {
       "id": "CORE-006",
@@ -380,8 +697,6 @@
       "overlap_risk": "medium",
       "stage": "planning",
       "status": "todo",
-      "resolution_state": "open",
-      "verification_state": "suspect",
       "depends_on": [
         "CORE-002",
         "MODEL-001",
@@ -390,8 +705,6 @@
         "MODEL-004",
         "MODEL-005"
       ],
-      "source_ticket_id": null,
-      "follow_up_ticket_ids": [],
       "summary": "Create variant system that configures horse_base with different GLB models and stats for brown, black, war, and boss types.",
       "acceptance": [
         "horse_variants.gd with variant definitions",
@@ -401,7 +714,10 @@
         "All models load without errors"
       ],
       "decision_blockers": [],
-      "artifacts": []
+      "artifacts": [],
+      "resolution_state": "open",
+      "verification_state": "suspect",
+      "follow_up_ticket_ids": []
     },
     {
       "id": "UI-001",
@@ -412,11 +728,7 @@
       "overlap_risk": "low",
       "stage": "planning",
       "status": "todo",
-      "resolution_state": "open",
-      "verification_state": "suspect",
       "depends_on": [],
-      "source_ticket_id": null,
-      "follow_up_ticket_ids": [],
       "summary": "Create title screen with game title, Start Game button, and scene transition to arena.",
       "acceptance": [
         "title_screen.tscn exists with Control root",
@@ -426,7 +738,10 @@
         "Scene loads without errors"
       ],
       "decision_blockers": [],
-      "artifacts": []
+      "artifacts": [],
+      "resolution_state": "open",
+      "verification_state": "suspect",
+      "follow_up_ticket_ids": []
     },
     {
       "id": "UI-002",
@@ -437,11 +752,7 @@
       "overlap_risk": "low",
       "stage": "planning",
       "status": "todo",
-      "resolution_state": "open",
-      "verification_state": "suspect",
       "depends_on": [],
-      "source_ticket_id": null,
-      "follow_up_ticket_ids": [],
       "summary": "Create game over / victory screen with score, wave reached, Play Again and Main Menu buttons.",
       "acceptance": [
         "game_over.tscn exists with Control root",
@@ -451,29 +762,21 @@
         "Scene loads without errors"
       ],
       "decision_blockers": [],
-      "artifacts": []
+      "artifacts": [],
+      "resolution_state": "open",
+      "verification_state": "suspect",
+      "follow_up_ticket_ids": []
     },
     {
       "id": "RELEASE-001",
-      "title": "Android export and APK build",
+      "title": "Build Android runnable proof (debug APK)",
       "wave": 3,
       "lane": "release-readiness",
       "parallel_safe": false,
-      "overlap_risk": "high",
+      "overlap_risk": "medium",
       "stage": "planning",
       "status": "todo",
-      "resolution_state": "open",
-      "verification_state": "suspect",
       "depends_on": [
-        "SETUP-001",
-        "SETUP-002",
-        "MODEL-001",
-        "MODEL-002",
-        "MODEL-003",
-        "MODEL-004",
-        "MODEL-005",
-        "MODEL-006",
-        "ANDROID-001",
         "CORE-001",
         "CORE-002",
         "CORE-003",
@@ -483,17 +786,520 @@
         "UI-001",
         "UI-002"
       ],
-      "source_ticket_id": null,
-      "follow_up_ticket_ids": [],
-      "summary": "Configure and execute the Android debug APK export. Verify APK is produced and all resources included.",
+      "summary": "Produce and validate the canonical debug APK runnable proof at `build/android/womanvshorsevc-debug.apk` using the repo's resolved Godot binary and Android export pipeline.",
       "acceptance": [
-        "export_presets.cfg has valid Android preset",
-        "godot --headless --export-debug succeeds",
-        "APK file exists at build/android/womanvshorsevc-debug.apk",
-        "All GLB models included in export"
+        "`godot --headless --path . --export-debug Android build/android/womanvshorsevc-debug.apk` succeeds or the exact resolved Godot binary equivalent is recorded with the same arguments.",
+        "The APK exists at `build/android/womanvshorsevc-debug.apk`.",
+        "`unzip -l build/android/womanvshorsevc-debug.apk` shows Android manifest and classes/resources content."
       ],
       "decision_blockers": [],
-      "artifacts": []
+      "artifacts": [],
+      "resolution_state": "open",
+      "verification_state": "suspect",
+      "finding_source": "WFLOW025",
+      "source_ticket_id": "ANDROID-001",
+      "follow_up_ticket_ids": [],
+      "source_mode": "split_scope",
+      "split_kind": "sequential_dependent"
+    },
+    {
+      "id": "REMED-001",
+      "title": "Godot headless validation fails",
+      "wave": 4,
+      "lane": "remediation",
+      "parallel_safe": false,
+      "overlap_risk": "low",
+      "stage": "closeout",
+      "status": "done",
+      "depends_on": [],
+      "summary": "Remediate EXEC-GODOT-004 by correcting the validated issue and rerunning the relevant quality checks. Affected surfaces: project.godot.",
+      "acceptance": [
+        "The validated finding `EXEC-GODOT-004` no longer reproduces.",
+        "Current quality checks rerun with evidence tied to the fix approach: Run a deterministic `godot --headless --path . --quit` validation during audit and keep the repo blocked until it succeeds or returns an explicit environment blocker instead."
+      ],
+      "decision_blockers": [],
+      "artifacts": [
+        {
+          "kind": "plan",
+          "path": ".opencode/state/artifacts/history/remed-001/planning/2026-04-10T00-13-58-287Z-plan.md",
+          "stage": "planning",
+          "summary": "Planning artifact for REMED-001: confirm godot binary at /home/pc/.local/bin/godot is accessible and run headless validation to resolve EXEC-GODOT-004.",
+          "created_at": "2026-04-10T00:13:58.287Z",
+          "trust_state": "superseded",
+          "superseded_at": "2026-04-10T00:14:54.462Z",
+          "superseded_by": ".opencode/state/artifacts/history/remed-001/planning/2026-04-10T00-14-54-462Z-plan.md",
+          "supersession_reason": "Replaced by newer planning/plan artifact."
+        },
+        {
+          "kind": "plan",
+          "path": ".opencode/state/artifacts/history/remed-001/planning/2026-04-10T00-14-54-462Z-plan.md",
+          "source_path": ".opencode/state/plans/remed-001-planning-plan.md",
+          "stage": "planning",
+          "summary": "Planning for REMED-001: Godot headless validation remediation. Simple environment confirmation to run `/home/pc/.local/bin/godot --headless --path /home/pc/projects/womanvshorseVC --quit` and verify clean exit.",
+          "created_at": "2026-04-10T00:14:54.462Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "implementation",
+          "path": ".opencode/state/artifacts/history/remed-001/implementation/2026-04-10T00-20-51-906Z-implementation.md",
+          "source_path": ".opencode/state/implementations/remed-001-implementation-implementation.md",
+          "stage": "implementation",
+          "summary": "Godot headless validation executed successfully. EXEC-GODOT-004 (godot not in PATH) is resolved. Godot v4.6.2 starts correctly, project.godot parses without errors. Exit code 1 due to no main scene defined (expected state).",
+          "created_at": "2026-04-10T00:20:51.906Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "review",
+          "path": ".opencode/state/artifacts/history/remed-001/review/2026-04-10T00-22-47-556Z-review.md",
+          "stage": "review",
+          "summary": "Review for REMED-001: EXEC-GODOT-004 resolved. Godot binary accessible, headless validation functional, no main scene error is expected project state.",
+          "created_at": "2026-04-10T00:22:47.556Z",
+          "trust_state": "superseded",
+          "superseded_at": "2026-04-10T00:23:08.781Z",
+          "superseded_by": ".opencode/state/artifacts/history/remed-001/review/2026-04-10T00-23-08-781Z-review.md",
+          "supersession_reason": "Replaced by newer review/review artifact."
+        },
+        {
+          "kind": "review",
+          "path": ".opencode/state/artifacts/history/remed-001/review/2026-04-10T00-23-08-781Z-review.md",
+          "source_path": ".opencode/state/reviews/remed-001-review-review.md",
+          "stage": "review",
+          "summary": "Review for REMED-001: EXEC-GODOT-004 resolved. Godot binary accessible, headless validation functional, no main scene error is expected project state.",
+          "created_at": "2026-04-10T00:23:08.781Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "qa",
+          "path": ".opencode/state/artifacts/history/remed-001/qa/2026-04-10T00-24-41-858Z-qa.md",
+          "stage": "qa",
+          "summary": "QA validation passed - godot headless validation confirmed working, EXEC-GODOT-004 resolved",
+          "created_at": "2026-04-10T00:24:41.858Z",
+          "trust_state": "superseded",
+          "superseded_at": "2026-04-10T00:25:02.873Z",
+          "superseded_by": ".opencode/state/artifacts/history/remed-001/qa/2026-04-10T00-25-02-873Z-qa.md",
+          "supersession_reason": "Replaced by newer qa/qa artifact."
+        },
+        {
+          "kind": "qa",
+          "path": ".opencode/state/artifacts/history/remed-001/qa/2026-04-10T00-25-02-873Z-qa.md",
+          "source_path": ".opencode/state/qa/remed-001-qa-qa.md",
+          "stage": "qa",
+          "summary": "QA validation passed - godot headless validation confirmed working, EXEC-GODOT-004 resolved",
+          "created_at": "2026-04-10T00:25:02.873Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "smoke-test",
+          "path": ".opencode/state/artifacts/history/remed-001/smoke-test/2026-04-10T00-25-23-039Z-smoke-test.md",
+          "stage": "smoke-test",
+          "summary": "Deterministic smoke test failed.",
+          "created_at": "2026-04-10T00:25:23.039Z",
+          "trust_state": "superseded",
+          "superseded_at": "2026-04-10T00:25:45.602Z",
+          "superseded_by": ".opencode/state/artifacts/history/remed-001/smoke-test/2026-04-10T00-25-45-602Z-smoke-test.md",
+          "supersession_reason": "Replaced by newer smoke-test/smoke-test artifact."
+        },
+        {
+          "kind": "smoke-test",
+          "path": ".opencode/state/artifacts/history/remed-001/smoke-test/2026-04-10T00-25-45-602Z-smoke-test.md",
+          "source_path": ".opencode/state/smoke-tests/remed-001-smoke-test-smoke-test.md",
+          "stage": "smoke-test",
+          "summary": "Deterministic smoke test passed.",
+          "created_at": "2026-04-10T00:25:45.602Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "backlog-verification",
+          "path": ".opencode/state/artifacts/history/remed-001/review/2026-04-10T11-54-58-089Z-backlog-verification.md",
+          "source_path": ".opencode/state/reviews/remed-001-review-backlog-verification.md",
+          "stage": "review",
+          "summary": "Backlog verification PASS — all checks verified, no workflow drift, no material proof gaps. Trust confirmed for process version 7.",
+          "created_at": "2026-04-10T11:54:58.089Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "reverification",
+          "path": ".opencode/state/artifacts/history/remed-001/review/2026-04-10T11-55-08-760Z-reverification.md",
+          "source_path": ".opencode/state/reviews/remed-001-review-reverification.md",
+          "stage": "review",
+          "summary": "Trust restored using REMED-001.",
+          "created_at": "2026-04-10T11:55:08.760Z",
+          "trust_state": "current"
+        }
+      ],
+      "resolution_state": "done",
+      "verification_state": "reverified",
+      "finding_source": "EXEC-GODOT-004",
+      "source_ticket_id": "REMED-003",
+      "follow_up_ticket_ids": [],
+      "source_mode": "split_scope",
+      "split_kind": "sequential_dependent"
+    },
+    {
+      "id": "REMED-002",
+      "title": "Android-targeted Godot repo is missing export surfaces or debug APK runnable proof",
+      "wave": 5,
+      "lane": "remediation",
+      "parallel_safe": false,
+      "overlap_risk": "low",
+      "stage": "closeout",
+      "status": "done",
+      "depends_on": [],
+      "summary": "Remediate EXEC-GODOT-005a by correcting the validated issue and rerunning the relevant quality checks. Affected surfaces: project.godot, export_presets.cfg, android.",
+      "acceptance": [
+        "The validated finding `EXEC-GODOT-005a` no longer reproduces.",
+        "Current quality checks rerun with evidence tied to the fix approach: Emit export_presets.cfg and android/ surfaces at scaffold time. Block RELEASE-001 closeout until debug APK runnable proof exists at the canonical path."
+      ],
+      "decision_blockers": [],
+      "artifacts": [
+        {
+          "kind": "plan",
+          "path": ".opencode/state/artifacts/history/remed-002/planning/2026-04-10T04-17-56-420Z-plan.md",
+          "stage": "planning",
+          "summary": "Planning artifact for REMED-002: covers 8 sections — scope, files/systems, 5-step implementation, validation plan, risks/assumptions, blockers, AC mapping, and process fix confirmation. Primary fix is regenerating the REMED-001 review artifact with direct command evidence per EXEC-REMED-001.",
+          "created_at": "2026-04-10T04:17:56.420Z",
+          "trust_state": "superseded",
+          "superseded_at": "2026-04-10T04:22:39.589Z",
+          "superseded_by": ".opencode/state/artifacts/history/remed-002/planning/2026-04-10T04-22-39-589Z-plan.md",
+          "supersession_reason": "Replaced by newer planning/plan artifact."
+        },
+        {
+          "kind": "plan",
+          "path": ".opencode/state/artifacts/history/remed-002/planning/2026-04-10T04-22-39-589Z-plan.md",
+          "source_path": ".opencode/state/plans/remed-002-planning-plan.md",
+          "stage": "planning",
+          "summary": "Revised planning artifact for REMED-002: includes Step 0 lane lease expansion addressing prior review blocker, 5-step implementation to regenerate REMED-001 review with direct command evidence per EXEC-REMED-001.",
+          "created_at": "2026-04-10T04:22:39.589Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "implementation",
+          "path": ".opencode/state/artifacts/history/remed-002/implementation/2026-04-10T04-28-58-110Z-implementation.md",
+          "source_path": ".opencode/state/implementations/remed-002-implementation-implementation.md",
+          "stage": "implementation",
+          "summary": "Implementation artifact for REMED-002 with direct command evidence captured. Contains godot --version and godot --headless command outputs.",
+          "created_at": "2026-04-10T04:28:58.110Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "review",
+          "path": ".opencode/state/artifacts/history/remed-002/review/2026-04-10T04-29-15-168Z-review.md",
+          "stage": "review",
+          "summary": "Review artifact containing regenerated REMED-001 review with direct command evidence. Supersedes original review that cited implementation artifact.",
+          "created_at": "2026-04-10T04:29:15.168Z",
+          "trust_state": "superseded",
+          "superseded_at": "2026-04-10T04:33:21.943Z",
+          "superseded_by": ".opencode/state/artifacts/history/remed-002/review/2026-04-10T04-33-21-943Z-review.md",
+          "supersession_reason": "Replaced by newer review/review artifact."
+        },
+        {
+          "kind": "ticket-reconciliation",
+          "path": ".opencode/state/artifacts/history/remed-002/review/2026-04-10T04-29-43-404Z-ticket-reconciliation.md",
+          "source_path": ".opencode/state/reviews/remed-002-review-ticket-reconciliation.md",
+          "stage": "review",
+          "summary": "Reconciled REMED-001 against REMED-002.",
+          "created_at": "2026-04-10T04:29:43.404Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "review",
+          "path": ".opencode/state/artifacts/history/remed-002/review/2026-04-10T04-33-21-943Z-review.md",
+          "source_path": ".opencode/state/reviews/remed-002-review-review.md",
+          "stage": "review",
+          "summary": "Review artifact for REMED-002: all five verification checks PASS. EXEC-REMED-001 is resolved. Regenerated review artifact for REMED-001 now contains direct command evidence.",
+          "created_at": "2026-04-10T04:33:21.943Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "qa",
+          "path": ".opencode/state/artifacts/history/remed-002/qa/2026-04-10T11-14-42-338Z-qa.md",
+          "source_path": ".opencode/state/qa/remed-002-qa-qa.md",
+          "stage": "qa",
+          "summary": "QA validation passed - both AC-1 (EXEC-REMED-001 no longer reproduces) and AC-2 (review artifact has direct command evidence with PASS/FAIL) verified PASS",
+          "created_at": "2026-04-10T11:14:42.338Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "smoke-test",
+          "path": ".opencode/state/artifacts/history/remed-002/smoke-test/2026-04-10T11-15-13-772Z-smoke-test.md",
+          "source_path": ".opencode/state/smoke-tests/remed-002-smoke-test-smoke-test.md",
+          "stage": "smoke-test",
+          "summary": "Deterministic smoke test failed.",
+          "created_at": "2026-04-10T11:15:13.772Z",
+          "trust_state": "superseded",
+          "superseded_at": "2026-04-10T11:15:59.924Z",
+          "superseded_by": ".opencode/state/artifacts/history/remed-002/smoke-test/2026-04-10T11-15-59-924Z-smoke-test.md",
+          "supersession_reason": "Replaced by newer smoke-test/smoke-test artifact."
+        },
+        {
+          "kind": "smoke-test",
+          "path": ".opencode/state/artifacts/history/remed-002/smoke-test/2026-04-10T11-15-59-924Z-smoke-test.md",
+          "source_path": ".opencode/state/smoke-tests/remed-002-smoke-test-smoke-test.md",
+          "stage": "smoke-test",
+          "summary": "Deterministic smoke test failed.",
+          "created_at": "2026-04-10T11:15:59.924Z",
+          "trust_state": "superseded",
+          "superseded_at": "2026-04-10T11:51:53.525Z",
+          "superseded_by": ".opencode/state/artifacts/history/remed-002/smoke-test/2026-04-10T11-51-53-525Z-smoke-test.md",
+          "supersession_reason": "Replaced by newer smoke-test/smoke-test artifact."
+        },
+        {
+          "kind": "smoke-test",
+          "path": ".opencode/state/artifacts/history/remed-002/smoke-test/2026-04-10T11-51-53-525Z-smoke-test.md",
+          "source_path": ".opencode/state/smoke-tests/remed-002-smoke-test-smoke-test.md",
+          "stage": "smoke-test",
+          "summary": "Deterministic smoke test failed.",
+          "created_at": "2026-04-10T11:51:53.525Z",
+          "trust_state": "superseded",
+          "superseded_at": "2026-04-10T11:52:19.080Z",
+          "superseded_by": ".opencode/state/artifacts/history/remed-002/smoke-test/2026-04-10T11-52-19-080Z-smoke-test.md",
+          "supersession_reason": "Replaced by newer smoke-test/smoke-test artifact."
+        },
+        {
+          "kind": "smoke-test",
+          "path": ".opencode/state/artifacts/history/remed-002/smoke-test/2026-04-10T11-52-19-080Z-smoke-test.md",
+          "source_path": ".opencode/state/smoke-tests/remed-002-smoke-test-smoke-test.md",
+          "stage": "smoke-test",
+          "summary": "Deterministic smoke test failed.",
+          "created_at": "2026-04-10T11:52:19.080Z",
+          "trust_state": "superseded",
+          "superseded_at": "2026-04-10T11:52:24.341Z",
+          "superseded_by": ".opencode/state/artifacts/history/remed-002/smoke-test/2026-04-10T11-52-24-341Z-smoke-test.md",
+          "supersession_reason": "Replaced by newer smoke-test/smoke-test artifact."
+        },
+        {
+          "kind": "smoke-test",
+          "path": ".opencode/state/artifacts/history/remed-002/smoke-test/2026-04-10T11-52-24-341Z-smoke-test.md",
+          "source_path": ".opencode/state/smoke-tests/remed-002-smoke-test-smoke-test.md",
+          "stage": "smoke-test",
+          "summary": "Deterministic smoke test failed.",
+          "created_at": "2026-04-10T11:52:24.341Z",
+          "trust_state": "superseded",
+          "superseded_at": "2026-04-10T11:52:42.176Z",
+          "superseded_by": ".opencode/state/artifacts/history/remed-002/smoke-test/2026-04-10T11-52-42-176Z-smoke-test.md",
+          "supersession_reason": "Replaced by newer smoke-test/smoke-test artifact."
+        },
+        {
+          "kind": "smoke-test",
+          "path": ".opencode/state/artifacts/history/remed-002/smoke-test/2026-04-10T11-52-42-176Z-smoke-test.md",
+          "source_path": ".opencode/state/smoke-tests/remed-002-smoke-test-smoke-test.md",
+          "stage": "smoke-test",
+          "summary": "Deterministic smoke test passed.",
+          "created_at": "2026-04-10T11:52:42.176Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "backlog-verification",
+          "path": ".opencode/state/artifacts/history/remed-002/review/2026-04-11T16-10-14-409Z-backlog-verification.md",
+          "source_path": ".opencode/state/reviews/remed-002-review-backlog-verification.md",
+          "stage": "review",
+          "summary": "Backlog verification PASS — REMED-002 verification complete. All stage artifacts verified current, smoke-test PASS, QA PASS, workflow drift none, proof gaps none. Trust intact for process version 7.",
+          "created_at": "2026-04-11T16:10:14.409Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "reverification",
+          "path": ".opencode/state/artifacts/history/remed-002/review/2026-04-11T16-10-33-254Z-reverification.md",
+          "source_path": ".opencode/state/reviews/remed-002-review-reverification.md",
+          "stage": "review",
+          "summary": "Trust restored using REMED-002.",
+          "created_at": "2026-04-11T16:10:33.254Z",
+          "trust_state": "current"
+        }
+      ],
+      "resolution_state": "done",
+      "verification_state": "reverified",
+      "finding_source": "EXEC-GODOT-005a",
+      "source_ticket_id": "REMED-003",
+      "follow_up_ticket_ids": [],
+      "source_mode": "split_scope",
+      "split_kind": "sequential_dependent"
+    },
+    {
+      "id": "REMED-003",
+      "title": "Remediation review artifact does not contain runnable command evidence",
+      "wave": 6,
+      "lane": "remediation",
+      "parallel_safe": false,
+      "overlap_risk": "low",
+      "stage": "review",
+      "status": "review",
+      "depends_on": [],
+      "summary": "Remediate EXEC-REMED-001 by correcting the validated issue and rerunning the relevant quality checks. Affected surfaces: tickets/manifest.json, .opencode/state/reviews/remed-001-review-reverification.md.",
+      "acceptance": [
+        "The validated finding `EXEC-REMED-001` no longer reproduces.",
+        "Current quality checks rerun with evidence tied to the fix approach: For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure."
+      ],
+      "decision_blockers": [],
+      "artifacts": [
+        {
+          "kind": "plan",
+          "path": ".opencode/state/artifacts/history/remed-003/planning/2026-04-11T18-59-25-862Z-plan.md",
+          "source_path": ".opencode/state/plans/remed-003-planning-plan.md",
+          "stage": "planning",
+          "summary": "Planning artifact for REMED-003: finding EXEC-REMED-001 is stale — REMED-001 review already contains direct command evidence. Proposes ticket_reconcile to supersede REMED-003 as stale.",
+          "created_at": "2026-04-11T18:59:25.862Z",
+          "trust_state": "superseded",
+          "superseded_at": "2026-04-11T19:00:05.678Z",
+          "superseded_by": ".opencode/state/artifacts/history/remed-003/planning/2026-04-11T19-00-05-678Z-plan.md",
+          "supersession_reason": "Replaced by newer planning/plan artifact."
+        },
+        {
+          "kind": "plan",
+          "path": ".opencode/state/artifacts/history/remed-003/planning/2026-04-11T19-00-05-678Z-plan.md",
+          "source_path": ".opencode/state/plans/remed-003-planning-plan.md",
+          "stage": "planning",
+          "summary": "Planning artifact for REMED-003: finding EXEC-REMED-001 is stale — REMED-001 review already contains command evidence. Plan proposes ticket_reconcile with supersede_target:true to close REMED-003 as superseded.",
+          "created_at": "2026-04-11T19:00:05.678Z",
+          "trust_state": "current"
+        },
+        {
+          "kind": "review",
+          "path": ".opencode/state/artifacts/history/remed-003/review/2026-04-11T19-02-03-732Z-review.md",
+          "source_path": ".opencode/state/reviews/remed-003-review-review.md",
+          "stage": "review",
+          "summary": "Review APPROVE for REMED-003: plan correctly identifies EXEC-REMED-001 as stale, proposes ticket_reconcile with supersede_target:true. All three evidence elements confirmed in REMED-001 review artifact. REMED-005 precedent applicable.",
+          "created_at": "2026-04-11T19:02:03.732Z",
+          "trust_state": "current"
+        }
+      ],
+      "resolution_state": "open",
+      "verification_state": "suspect",
+      "finding_source": "EXEC-REMED-001",
+      "follow_up_ticket_ids": [
+        "REMED-001",
+        "REMED-002",
+        "REMED-004",
+        "REMED-006",
+        "REMED-007",
+        "REMED-008"
+      ],
+      "source_mode": "net_new_scope"
+    },
+    {
+      "id": "REMED-004",
+      "title": "Remediation review artifact does not contain runnable command evidence",
+      "wave": 7,
+      "lane": "remediation",
+      "parallel_safe": false,
+      "overlap_risk": "low",
+      "stage": "planning",
+      "status": "todo",
+      "depends_on": [],
+      "summary": "Remediate EXEC-REMED-001 by correcting the validated issue and rerunning the relevant quality checks. Affected surfaces: tickets/manifest.json, .opencode/state/reviews/remed-002-review-reverification.md.",
+      "acceptance": [
+        "The validated finding `EXEC-REMED-001` no longer reproduces.",
+        "Current quality checks rerun with evidence tied to the fix approach: For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure."
+      ],
+      "decision_blockers": [],
+      "artifacts": [],
+      "resolution_state": "open",
+      "verification_state": "suspect",
+      "finding_source": "EXEC-REMED-001",
+      "source_ticket_id": "REMED-003",
+      "follow_up_ticket_ids": [],
+      "source_mode": "split_scope",
+      "split_kind": "parallel_independent"
+    },
+    {
+      "id": "REMED-005",
+      "title": "Remediation review artifact does not contain runnable command evidence",
+      "wave": 8,
+      "lane": "remediation",
+      "parallel_safe": false,
+      "overlap_risk": "low",
+      "stage": "closeout",
+      "status": "done",
+      "depends_on": [],
+      "summary": "Remediate EXEC-REMED-001 by correcting the validated issue and rerunning the relevant quality checks. Affected surfaces: tickets/manifest.json, .opencode/state/reviews/remed-003-review-review.md.",
+      "acceptance": [
+        "The validated finding `EXEC-REMED-001` no longer reproduces.",
+        "Current quality checks rerun with evidence tied to the fix approach: For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure."
+      ],
+      "decision_blockers": [],
+      "artifacts": [],
+      "resolution_state": "superseded",
+      "verification_state": "reverified",
+      "finding_source": "EXEC-REMED-001",
+      "source_ticket_id": "REMED-003",
+      "follow_up_ticket_ids": [],
+      "source_mode": "split_scope",
+      "split_kind": "parallel_independent"
+    },
+    {
+      "id": "REMED-006",
+      "title": "Godot headless validation fails",
+      "wave": 9,
+      "lane": "remediation",
+      "parallel_safe": false,
+      "overlap_risk": "low",
+      "stage": "planning",
+      "status": "todo",
+      "depends_on": [],
+      "summary": "Remediate EXEC-GODOT-004 by correcting the validated issue and rerunning the relevant quality checks. Affected surfaces: project.godot.",
+      "acceptance": [
+        "The validated finding `EXEC-GODOT-004` no longer reproduces.",
+        "Current quality checks rerun with evidence tied to the fix approach: Run a deterministic `godot --headless --path . --quit` validation during audit and keep the repo blocked until it succeeds or returns an explicit environment blocker instead."
+      ],
+      "decision_blockers": [],
+      "artifacts": [],
+      "resolution_state": "open",
+      "verification_state": "suspect",
+      "finding_source": "EXEC-GODOT-004",
+      "source_ticket_id": "REMED-003",
+      "follow_up_ticket_ids": [],
+      "source_mode": "split_scope",
+      "split_kind": "sequential_dependent"
+    },
+    {
+      "id": "REMED-007",
+      "title": "Android-targeted Godot repo is missing export surfaces or debug APK runnable proof",
+      "wave": 10,
+      "lane": "remediation",
+      "parallel_safe": false,
+      "overlap_risk": "low",
+      "stage": "planning",
+      "status": "todo",
+      "depends_on": [],
+      "summary": "Remediate EXEC-GODOT-005a by correcting the validated issue and rerunning the relevant quality checks. Affected surfaces: project.godot, export_presets.cfg, android.",
+      "acceptance": [
+        "The validated finding `EXEC-GODOT-005a` no longer reproduces.",
+        "Current quality checks rerun with evidence tied to the fix approach: Emit export_presets.cfg and android/ surfaces at scaffold time. Block RELEASE-001 closeout until debug APK runnable proof exists at the canonical path."
+      ],
+      "decision_blockers": [],
+      "artifacts": [],
+      "resolution_state": "open",
+      "verification_state": "suspect",
+      "finding_source": "EXEC-GODOT-005a",
+      "source_ticket_id": "REMED-003",
+      "follow_up_ticket_ids": [],
+      "source_mode": "split_scope",
+      "split_kind": "sequential_dependent"
+    },
+    {
+      "id": "REMED-008",
+      "title": "Remediation review artifact does not contain runnable command evidence",
+      "wave": 11,
+      "lane": "remediation",
+      "parallel_safe": false,
+      "overlap_risk": "low",
+      "stage": "planning",
+      "status": "todo",
+      "depends_on": [],
+      "summary": "Remediate EXEC-REMED-001 by correcting the validated issue and rerunning the relevant quality checks. Affected surfaces: tickets/manifest.json, .opencode/state/reviews/remed-003-review-review.md.",
+      "acceptance": [
+        "The validated finding `EXEC-REMED-001` no longer reproduces.",
+        "Current quality checks rerun with evidence tied to the fix approach: For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure."
+      ],
+      "decision_blockers": [],
+      "artifacts": [],
+      "resolution_state": "open",
+      "verification_state": "suspect",
+      "finding_source": "EXEC-REMED-001",
+      "source_ticket_id": "REMED-003",
+      "follow_up_ticket_ids": [],
+      "source_mode": "split_scope",
+      "split_kind": "parallel_independent"
     }
   ]
 }
