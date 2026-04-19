@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "ticket_id": "CORE-001",
+  "qa_artifact": ".opencode/state/artifacts/history/core-001/qa/2026-04-17T13-33-29-054Z-qa.md",
+  "scope": "attack_system",
+  "test_paths": [],
+  "command_signatures": [
+    "ls /home/rowan/womanvshorseVC/scripts/attack_system.gd",
+    "grep -c collision.mask /home/rowan/womanvshorseVC/scripts/attack_system.gd",
+    "grep -c signal hit /home/rowan/womanvshorseVC/scripts/attack_system.gd",
+    "grep -c hit.emit /home/rowan/womanvshorseVC/scripts/attack_system.gd",
+    "godot4 --headless --path /home/rowan/womanvshorseVC --quit"
+  ],
+  "commands_total": 5,
+  "commands_completed": 5,
+  "completed": true,
+  "passed": true,
+  "updated_at": "2026-04-17T13:34:37.800Z",
+  "commands": [
+    {
+      "label": "command override 1",
+      "argv": [
+        "ls",
+        "/home/rowan/womanvshorseVC/scripts/attack_system.gd"
+      ],
+      "reason": "Explicit smoke-test command override supplied by the caller.",
+      "exit_code": 0,
+      "duration_ms": 1,
+      "stdout": "/home/rowan/womanvshorseVC/scripts/attack_system.gd\n",
+      "stderr": ""
+    },
+    {
+      "label": "command override 2",
+      "argv": [
+        "grep",
+        "-c",
+        "collision.mask",
+        "/home/rowan/womanvshorseVC/scripts/attack_system.gd"
+      ],
+      "reason": "Explicit smoke-test command override supplied by the caller.",
+      "exit_code": 0,
+      "duration_ms": 1,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "label": "command override 3",
+      "argv": [
+        "grep",
+        "-c",
+        "signal hit",
+        "/home/rowan/womanvshorseVC/scripts/attack_system.gd"
+      ],
+      "reason": "Explicit smoke-test command override supplied by the caller.",
+      "exit_code": 0,
+      "duration_ms": 1,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "label": "command override 4",
+      "argv": [
+        "grep",
+        "-c",
+        "hit.emit",
+        "/home/rowan/womanvshorseVC/scripts/attack_system.gd"
+      ],
+      "reason": "Explicit smoke-test command override supplied by the caller.",
+      "exit_code": 0,
+      "duration_ms": 1,
+      "stdout": "1\n",
+      "stderr": ""
+    },
+    {
+      "label": "command override 5",
+      "argv": [
+        "godot4",
+        "--headless",
+        "--path",
+        "/home/rowan/womanvshorseVC",
+        "--quit"
+      ],
+      "reason": "Explicit smoke-test command override supplied by the caller.",
+      "exit_code": 0,
+      "duration_ms": 159,
+      "stdout": "Godot Engine v4.6.1.stable.official.14d19694e - https://godotengine.org\n\n",
+      "stderr": ""
+    }
+  ]
+}

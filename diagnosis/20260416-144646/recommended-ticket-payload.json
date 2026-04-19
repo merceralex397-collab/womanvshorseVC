@@ -1,0 +1,163 @@
+[
+  {
+    "id": "REMED-009",
+    "title": "Repeated diagnosis packs are re-reporting the same repair-routed findings without any intervening package or process-version change",
+    "description": "Remediate CYCLE002 by correcting the validated issue and rerunning the relevant quality checks.",
+    "affected_files": [
+      "diagnosis/20260416-144639/manifest.json",
+      ".opencode/meta/bootstrap-provenance.json"
+    ],
+    "suggested_fix_approach": "Stop rerunning subject-repo audit until Scafforge package work changes the managed workflow contract or process version, then rerun one fresh audit against the updated package.",
+    "assignee": "implementer",
+    "source_finding_code": "CYCLE002",
+    "source_finding_codes": [
+      "CYCLE002"
+    ],
+    "severity": "error",
+    "route": "manual-prerequisite",
+    "repair_class": "Scafforge package work required before the next subject-repo run",
+    "summary": "Stop rerunning subject-repo audit until Scafforge package work changes the managed workflow contract or process version, then rerun one fresh audit against the updated package.",
+    "source_files": [
+      "diagnosis/20260416-144639/manifest.json",
+      ".opencode/meta/bootstrap-provenance.json"
+    ]
+  },
+  {
+    "id": "REMED-010",
+    "title": "Recorded Blender-MCP mutating calls violated the stateless saved-blend chaining contract",
+    "description": "Remediate EXEC-BLENDER-001 by correcting the validated issue and rerunning the relevant quality checks.",
+    "affected_files": [
+      ".opencode/meta/asset-pipeline-bootstrap.json",
+      "assets/pipeline.json",
+      ".blender-mcp/audit/audit_20260409.jsonl",
+      ".blender-mcp/audit/audit_20260410.jsonl",
+      ".blender-mcp/audit/audit_20260411.jsonl"
+    ],
+    "suggested_fix_approach": "Before escalating a Blender-MCP defect, prove one correct chain: `project_initialize(output_blend=...)`, then a mutating follow-up that reuses the returned `persistence.saved_blend` as `input_blend`, and verify `.blender-mcp/audit/*.jsonl` records non-null `input_blend` / `output_blend` on the matching `job_start`.",
+    "assignee": "implementer",
+    "source_finding_code": "EXEC-BLENDER-001",
+    "source_finding_codes": [
+      "EXEC-BLENDER-001"
+    ],
+    "severity": "error",
+    "route": "ticket-pack-builder",
+    "repair_class": "generated-repo remediation ticket",
+    "summary": "Before escalating a Blender-MCP defect, prove one correct chain: `project_initialize(output_blend=...)`, then a mutating follow-up that reuses the returned `persistence.saved_blend` as `input_blend`, and verify `.blender-mcp/audit/*.jsonl` records non-null `input_blend` / `output_blend` on the matching `job_start`.",
+    "source_files": [
+      ".opencode/meta/asset-pipeline-bootstrap.json",
+      "assets/pipeline.json",
+      ".blender-mcp/audit/audit_20260409.jsonl",
+      ".blender-mcp/audit/audit_20260410.jsonl",
+      ".blender-mcp/audit/audit_20260411.jsonl"
+    ]
+  },
+  {
+    "id": "REMED-011",
+    "title": "Remediation review artifact does not contain runnable command evidence",
+    "description": "Remediate EXEC-REMED-001 by correcting the validated issue and rerunning the relevant quality checks.",
+    "affected_files": [
+      "tickets/manifest.json",
+      ".opencode/state/reviews/remed-001-review-ticket-reconciliation.md"
+    ],
+    "suggested_fix_approach": "For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure.",
+    "assignee": "implementer",
+    "source_finding_code": "EXEC-REMED-001",
+    "source_finding_codes": [
+      "EXEC-REMED-001"
+    ],
+    "severity": "error",
+    "route": "ticket-pack-builder",
+    "repair_class": "generated-repo remediation ticket",
+    "summary": "For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure.",
+    "source_files": [
+      "tickets/manifest.json",
+      ".opencode/state/reviews/remed-001-review-ticket-reconciliation.md"
+    ]
+  },
+  {
+    "id": "REMED-012",
+    "title": "Remediation review artifact does not contain runnable command evidence",
+    "description": "Remediate EXEC-REMED-001 by correcting the validated issue and rerunning the relevant quality checks.",
+    "affected_files": [
+      "tickets/manifest.json",
+      ".opencode/state/reviews/remed-003-review-ticket-reconciliation.md"
+    ],
+    "suggested_fix_approach": "For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure.",
+    "assignee": "implementer",
+    "source_finding_code": "EXEC-REMED-001",
+    "source_finding_codes": [
+      "EXEC-REMED-001"
+    ],
+    "severity": "error",
+    "route": "ticket-pack-builder",
+    "repair_class": "generated-repo remediation ticket",
+    "summary": "For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure.",
+    "source_files": [
+      "tickets/manifest.json",
+      ".opencode/state/reviews/remed-003-review-ticket-reconciliation.md"
+    ]
+  },
+  {
+    "id": "REMED-013",
+    "title": "Repo claims ready or finished state, but the finish contract forbids placeholder output and finish-owning tickets are still open",
+    "description": "Remediate FINISH002 by correcting the validated issue and rerunning the relevant quality checks.",
+    "affected_files": [
+      "docs/spec/CANONICAL-BRIEF.md"
+    ],
+    "suggested_fix_approach": "Either close or supersede the open finish tickets with real content proof, or update the restart narrative to stop claiming finished-product ready state until the finish bar is met.",
+    "assignee": "implementer",
+    "source_finding_code": "FINISH002",
+    "source_finding_codes": [
+      "FINISH002"
+    ],
+    "severity": "error",
+    "route": "scafforge-repair",
+    "repair_class": "safe Scafforge package change",
+    "summary": "Either close or supersede the open finish tickets with real content proof, or update the restart narrative to stop claiming finished-product ready state until the finish bar is met.",
+    "source_files": [
+      "docs/spec/CANONICAL-BRIEF.md"
+    ]
+  },
+  {
+    "id": "REMED-014",
+    "title": "The supplied session transcript shows the agent searching for workflow bypasses or soft dependency overrides instead of following the lifecycle contract",
+    "description": "Remediate SESSION003 by correcting the validated issue and rerunning the relevant quality checks.",
+    "affected_files": [
+      "wvhvclogblender1.md"
+    ],
+    "suggested_fix_approach": "Reject unsupported stages and dependency overrides up front, tell the coordinator not to probe alternate transitions or close blocked tickets anyway, and return the contract contradiction as a blocker when the required proof is missing.",
+    "assignee": "implementer",
+    "source_finding_code": "SESSION003",
+    "source_finding_codes": [
+      "SESSION003"
+    ],
+    "severity": "error",
+    "route": "ticket-pack-builder",
+    "repair_class": "generated-repo remediation ticket",
+    "summary": "Reject unsupported stages and dependency overrides up front, tell the coordinator not to probe alternate transitions or close blocked tickets anyway, and return the contract contradiction as a blocker when the required proof is missing.",
+    "source_files": [
+      "wvhvclogblender1.md"
+    ]
+  },
+  {
+    "id": "REMED-015",
+    "title": "The repo requires Blender-MCP for its asset route but is missing mandatory Blender operating surfaces",
+    "description": "Remediate SKILL002 by correcting the validated issue and rerunning the relevant quality checks.",
+    "affected_files": [
+      ".opencode/agents/blender-asset-creator.md"
+    ],
+    "suggested_fix_approach": "When asset-pipeline metadata requires Blender-MCP, keep `asset-description`, `blender-mcp-workflow`, and a dedicated `blender-asset-creator` in sync with the managed `blender_agent` MCP entry and the repo's asset/audit paths.",
+    "assignee": "implementer",
+    "source_finding_code": "SKILL002",
+    "source_finding_codes": [
+      "SKILL002"
+    ],
+    "severity": "warning",
+    "route": "scafforge-repair",
+    "repair_class": "safe Scafforge package change",
+    "summary": "When asset-pipeline metadata requires Blender-MCP, keep `asset-description`, `blender-mcp-workflow`, and a dedicated `blender-asset-creator` in sync with the managed `blender_agent` MCP entry and the repo's asset/audit paths.",
+    "source_files": [
+      ".opencode/agents/blender-asset-creator.md"
+    ]
+  }
+]

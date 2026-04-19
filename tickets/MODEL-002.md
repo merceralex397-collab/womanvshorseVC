@@ -74,3 +74,4 @@ None
 - Follow `blender-mcp-workflow` skill for exact tool sequence
 - Read asset brief at `assets/briefs/horse-brown.md`
 - Most common enemy — appears in large groups
+

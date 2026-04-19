@@ -12,7 +12,7 @@ import {
   saveWorkflowState,
   ticketsManifestPath,
   workflowStatePath,
-} from "../lib/workflow"
+} from "../lib/workflow.ts"
 
 export default tool({
   description: "Claim a ticket lane lease before write-capable work begins.",

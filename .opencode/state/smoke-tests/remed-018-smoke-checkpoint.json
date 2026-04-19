@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "ticket_id": "REMED-018",
+  "qa_artifact": ".opencode/state/artifacts/history/remed-018/qa/2026-04-17T21-09-22-898Z-qa.md",
+  "scope": "full-suite",
+  "test_paths": [],
+  "command_signatures": [
+    "grep -c input_blend .blender-mcp/audit/audit_20260417.jsonl"
+  ],
+  "commands_total": 1,
+  "commands_completed": 1,
+  "completed": true,
+  "passed": true,
+  "updated_at": "2026-04-17T21:10:22.783Z",
+  "commands": [
+    {
+      "label": "command override 1",
+      "argv": [
+        "grep",
+        "-c",
+        "input_blend",
+        ".blender-mcp/audit/audit_20260417.jsonl"
+      ],
+      "reason": "Explicit smoke-test command override supplied by the caller.",
+      "exit_code": 0,
+      "duration_ms": 7,
+      "stdout": "536\n",
+      "stderr": ""
+    }
+  ]
+}

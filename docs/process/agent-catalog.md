@@ -36,3 +36,4 @@ Workflow contract:
 - the backlog verifier reads canonical artifact bodies through `ticket_lookup` before deciding whether old completion still holds
 - the team leader runs the deterministic `smoke_test` tool between QA and closeout instead of delegating that stage to another agent
 - post-migration, remediation, or reverification follow-up tickets are created only from current registered evidence through the guarded ticket flow
+- when the asset pipeline requires Blender-MCP, `wvhvc-blender-asset-creator` owns repo-scoped 3D asset generation via the managed `blender_agent` MCP, the local `asset-description` / `blender-mcp-workflow` skills, and audit-backed saved-blend chaining

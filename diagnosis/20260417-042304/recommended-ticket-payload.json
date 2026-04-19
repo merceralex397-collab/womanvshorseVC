@@ -1,0 +1,98 @@
+[
+  {
+    "id": "REMED-010",
+    "title": "Recorded Blender-MCP mutating calls violated the stateless saved-blend chaining contract",
+    "description": "Remediate EXEC-BLENDER-001 by correcting the validated issue and rerunning the relevant quality checks.",
+    "affected_files": [
+      ".opencode/meta/asset-pipeline-bootstrap.json",
+      "assets/pipeline.json",
+      ".blender-mcp/audit/audit_20260409.jsonl",
+      ".blender-mcp/audit/audit_20260410.jsonl",
+      ".blender-mcp/audit/audit_20260411.jsonl",
+      ".blender-mcp/audit/audit_20260417.jsonl"
+    ],
+    "suggested_fix_approach": "Before escalating a Blender-MCP defect, prove one correct chain: `project_initialize(output_blend=...)`, then a mutating follow-up that reuses the returned `persistence.saved_blend` as `input_blend`, and verify `.blender-mcp/audit/*.jsonl` records non-null `input_blend` / `output_blend` on the matching `job_start`.",
+    "assignee": "implementer",
+    "source_finding_code": "EXEC-BLENDER-001",
+    "source_finding_codes": [
+      "EXEC-BLENDER-001"
+    ],
+    "severity": "error",
+    "route": "ticket-pack-builder",
+    "repair_class": "generated-repo remediation ticket",
+    "summary": "Before escalating a Blender-MCP defect, prove one correct chain: `project_initialize(output_blend=...)`, then a mutating follow-up that reuses the returned `persistence.saved_blend` as `input_blend`, and verify `.blender-mcp/audit/*.jsonl` records non-null `input_blend` / `output_blend` on the matching `job_start`.",
+    "source_files": [
+      ".opencode/meta/asset-pipeline-bootstrap.json",
+      "assets/pipeline.json",
+      ".blender-mcp/audit/audit_20260409.jsonl",
+      ".blender-mcp/audit/audit_20260410.jsonl",
+      ".blender-mcp/audit/audit_20260411.jsonl",
+      ".blender-mcp/audit/audit_20260417.jsonl"
+    ]
+  },
+  {
+    "id": "REMED-011",
+    "title": "Repo claims ready or finished state, but the finish contract forbids placeholder output and finish-owning tickets are still open",
+    "description": "Remediate FINISH002 by correcting the validated issue and rerunning the relevant quality checks.",
+    "affected_files": [
+      "docs/spec/CANONICAL-BRIEF.md"
+    ],
+    "suggested_fix_approach": "Either close or supersede the open finish tickets with real content proof, or update the restart narrative to stop claiming finished-product ready state until the finish bar is met.",
+    "assignee": "implementer",
+    "source_finding_code": "FINISH002",
+    "source_finding_codes": [
+      "FINISH002"
+    ],
+    "severity": "error",
+    "route": "scafforge-repair",
+    "repair_class": "safe Scafforge package change",
+    "summary": "Either close or supersede the open finish tickets with real content proof, or update the restart narrative to stop claiming finished-product ready state until the finish bar is met.",
+    "source_files": [
+      "docs/spec/CANONICAL-BRIEF.md"
+    ]
+  },
+  {
+    "id": "REMED-012",
+    "title": "Gameplay-oriented repo claims completion without a current finish-validation artifact that proves the shipped gameplay loop",
+    "description": "Remediate FINISH005 by correcting the validated issue and rerunning the relevant quality checks.",
+    "affected_files": [
+      "docs/spec/CANONICAL-BRIEF.md",
+      "tickets/manifest.json"
+    ],
+    "suggested_fix_approach": "Before a gameplay repo claims completion, keep FINISH-VALIDATE-001 current and publish an artifact that records controls/input proof, progression proof, fail-state or end-state proof, and any player-facing state reporting exercised during validation.",
+    "assignee": "implementer",
+    "source_finding_code": "FINISH005",
+    "source_finding_codes": [
+      "FINISH005"
+    ],
+    "severity": "error",
+    "route": "scafforge-repair",
+    "repair_class": "safe Scafforge package change",
+    "summary": "Before a gameplay repo claims completion, keep FINISH-VALIDATE-001 current and publish an artifact that records controls/input proof, progression proof, fail-state or end-state proof, and any player-facing state reporting exercised during validation.",
+    "source_files": [
+      "docs/spec/CANONICAL-BRIEF.md",
+      "tickets/manifest.json"
+    ]
+  },
+  {
+    "id": "REMED-013",
+    "title": "The supplied session transcript shows the agent searching for workflow bypasses or soft dependency overrides instead of following the lifecycle contract",
+    "description": "Remediate SESSION003 by correcting the validated issue and rerunning the relevant quality checks.",
+    "affected_files": [
+      "/home/rowan/Scafforge/reports/agent-runs/wvhvc-opencode-2026-04-17T04-14-07.log"
+    ],
+    "suggested_fix_approach": "Reject unsupported stages and dependency overrides up front, tell the coordinator not to probe alternate transitions or close blocked tickets anyway, and return the contract contradiction as a blocker when the required proof is missing.",
+    "assignee": "implementer",
+    "source_finding_code": "SESSION003",
+    "source_finding_codes": [
+      "SESSION003"
+    ],
+    "severity": "error",
+    "route": "scafforge-repair",
+    "repair_class": "safe Scafforge package change",
+    "summary": "Reject unsupported stages and dependency overrides up front, tell the coordinator not to probe alternate transitions or close blocked tickets anyway, and return the contract contradiction as a blocker when the required proof is missing.",
+    "source_files": [
+      "/home/rowan/Scafforge/reports/agent-runs/wvhvc-opencode-2026-04-17T04-14-07.log"
+    ]
+  }
+]

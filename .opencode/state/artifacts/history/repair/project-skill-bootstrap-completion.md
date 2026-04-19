@@ -1,9 +1,9 @@
 # Repair Follow-On Completion
 
 - completed_stage: project-skill-bootstrap
-- cycle_id: 2026-04-12T03:07:27Z
+- cycle_id: 2026-04-18T00:28:44Z
 - completed_by: project-skill-bootstrap
 
 ## Summary
 
-- Regenerated the repo-local stack standards with Woman vs Horse VC's Godot 4.6 Android validation commands, Blender-MCP asset constraints, release-proof gates, and no-placeholder finish rules for the current repair cycle.
+- Regenerated the repo-local skill pack for the current repair cycle and replaced the scaffold placeholder `stack-standards` skill with Woman vs Horse VC specific Godot 4.6, Android export, and Blender-MCP rules.

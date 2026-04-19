@@ -1,0 +1,13 @@
+{
+  "job_id": "20260417T093019Z-5baa476fe5",
+  "tool": "quality_validate",
+  "project_root": "/home/rowan/womanvshorseVC",
+  "input_blend": "/home/rowan/womanvshorseVC/assets/models/horse-black.glb",
+  "output_blend": null,
+  "payload": {
+    "profile": "game-ready"
+  },
+  "timeout_seconds": 180,
+  "factory_startup": true,
+  "generated_at": "2026-04-17T09:30:19.219002+00:00"
+}

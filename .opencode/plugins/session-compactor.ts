@@ -1,5 +1,5 @@
 import { type Plugin } from "@opencode-ai/plugin"
-import { writeJson } from "../lib/workflow"
+import { writeJson } from "../lib/workflow.ts"
 
 export const SessionCompactor: Plugin = async () => {
   return {

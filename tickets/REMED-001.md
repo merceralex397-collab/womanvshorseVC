@@ -63,6 +63,8 @@ None
 - smoke-test: .opencode/state/artifacts/history/remed-001/smoke-test/2026-04-10T00-25-45-602Z-smoke-test.md (smoke-test) - Deterministic smoke test passed.
 - backlog-verification: .opencode/state/artifacts/history/remed-001/review/2026-04-10T11-54-58-089Z-backlog-verification.md (review) - Backlog verification PASS — all checks verified, no workflow drift, no material proof gaps. Trust confirmed for process version 7.
 - reverification: .opencode/state/artifacts/history/remed-001/review/2026-04-10T11-55-08-760Z-reverification.md (review) - Trust restored using REMED-001.
+- ticket-reconciliation: .opencode/state/artifacts/history/remed-001/review/2026-04-16T00-43-56-618Z-ticket-reconciliation.md (review) - Reconciled REMED-003 against REMED-001.
 
 ## Notes
+
 

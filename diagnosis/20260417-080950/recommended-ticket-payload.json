@@ -1,0 +1,75 @@
+[
+  {
+    "id": "REMED-010",
+    "title": "Recorded Blender-MCP mutating calls violated the stateless saved-blend chaining contract",
+    "description": "Remediate EXEC-BLENDER-001 by correcting the validated issue and rerunning the relevant quality checks.",
+    "affected_files": [
+      ".opencode/meta/asset-pipeline-bootstrap.json",
+      "assets/pipeline.json",
+      ".blender-mcp/audit/audit_20260409.jsonl",
+      ".blender-mcp/audit/audit_20260410.jsonl",
+      ".blender-mcp/audit/audit_20260411.jsonl",
+      ".blender-mcp/audit/audit_20260417.jsonl"
+    ],
+    "suggested_fix_approach": "Before escalating a Blender-MCP defect, prove one correct chain: `project_initialize(output_blend=...)`, then a mutating follow-up that reuses the returned `persistence.saved_blend` as `input_blend`, and verify `.blender-mcp/audit/*.jsonl` records non-null `input_blend` / `output_blend` on the matching `job_start`.",
+    "assignee": "implementer",
+    "source_finding_code": "EXEC-BLENDER-001",
+    "source_finding_codes": [
+      "EXEC-BLENDER-001"
+    ],
+    "severity": "error",
+    "route": "ticket-pack-builder",
+    "repair_class": "generated-repo remediation ticket",
+    "summary": "Before escalating a Blender-MCP defect, prove one correct chain: `project_initialize(output_blend=...)`, then a mutating follow-up that reuses the returned `persistence.saved_blend` as `input_blend`, and verify `.blender-mcp/audit/*.jsonl` records non-null `input_blend` / `output_blend` on the matching `job_start`.",
+    "source_files": [
+      ".opencode/meta/asset-pipeline-bootstrap.json",
+      "assets/pipeline.json",
+      ".blender-mcp/audit/audit_20260409.jsonl",
+      ".blender-mcp/audit/audit_20260410.jsonl",
+      ".blender-mcp/audit/audit_20260411.jsonl",
+      ".blender-mcp/audit/audit_20260417.jsonl"
+    ]
+  },
+  {
+    "id": "REMED-011",
+    "title": "The supplied session transcript shows the agent searching for workflow bypasses or soft dependency overrides instead of following the lifecycle contract",
+    "description": "Remediate SESSION003 by correcting the validated issue and rerunning the relevant quality checks.",
+    "affected_files": [
+      "/home/rowan/Scafforge/reports/agent-runs/wvhvc-opencode-2026-04-17T04-14-07.log"
+    ],
+    "suggested_fix_approach": "Reject unsupported stages and dependency overrides up front, tell the coordinator not to probe alternate transitions or close blocked tickets anyway, and return the contract contradiction as a blocker when the required proof is missing.",
+    "assignee": "implementer",
+    "source_finding_code": "SESSION003",
+    "source_finding_codes": [
+      "SESSION003"
+    ],
+    "severity": "error",
+    "route": "scafforge-repair",
+    "repair_class": "safe Scafforge package change",
+    "summary": "Reject unsupported stages and dependency overrides up front, tell the coordinator not to probe alternate transitions or close blocked tickets anyway, and return the contract contradiction as a blocker when the required proof is missing.",
+    "source_files": [
+      "/home/rowan/Scafforge/reports/agent-runs/wvhvc-opencode-2026-04-17T04-14-07.log"
+    ]
+  },
+  {
+    "id": "REMED-012",
+    "title": "One or more repo-local skills still contain generic placeholder text or stale synthesized guidance instead of current project-specific procedure",
+    "description": "Remediate SKILL001 by correcting the validated issue and rerunning the relevant quality checks.",
+    "affected_files": [
+      ".opencode/skills/stack-standards/SKILL.md"
+    ],
+    "suggested_fix_approach": "Populate every required repo-local skill with concrete current rules and validation commands; generated `.opencode/skills/` files must not retain template filler or stale synthesized workflow guidance.",
+    "assignee": "implementer",
+    "source_finding_code": "SKILL001",
+    "source_finding_codes": [
+      "SKILL001"
+    ],
+    "severity": "warning",
+    "route": "scafforge-repair",
+    "repair_class": "safe Scafforge package change",
+    "summary": "Populate every required repo-local skill with concrete current rules and validation commands; generated `.opencode/skills/` files must not retain template filler or stale synthesized workflow guidance.",
+    "source_files": [
+      ".opencode/skills/stack-standards/SKILL.md"
+    ]
+  }
+]

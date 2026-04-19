@@ -1,0 +1,261 @@
+{
+  "generated_at": "2026-04-16T14:46:39Z",
+  "repo_root": "/home/rowan/womanvshorseVC",
+  "finding_count": 5,
+  "finding_codes": [
+    "EXEC-BLENDER-001",
+    "EXEC-REMED-001",
+    "FINISH002",
+    "SKILL002"
+  ],
+  "source_findings": [
+    {
+      "code": "EXEC-BLENDER-001",
+      "severity": "error"
+    },
+    {
+      "code": "EXEC-REMED-001",
+      "severity": "error"
+    },
+    {
+      "code": "EXEC-REMED-001",
+      "severity": "error"
+    }
+  ],
+  "result_state": "validated failures found",
+  "diagnosis_kind": "initial_diagnosis",
+  "evidence_mode": "current_state_only",
+  "audit_package_commit": "2bdef2533fc214601e4bc795eb74b0520494e382+dirty:66df35729800",
+  "report_files": {
+    "report_1": "01-initial-codebase-review.md",
+    "report_2": "02-scafforge-process-failures.md",
+    "report_3": "03-scafforge-prevention-actions.md",
+    "report_4": "04-live-repo-repair-plan.md"
+  },
+  "disposition_bundle_file": "disposition-bundle.json",
+  "disposition_bundle": {
+    "version": 1,
+    "generated_at": "2026-04-16T14:46:39Z",
+    "repo_root": "/home/rowan/womanvshorseVC",
+    "audit_package_commit": "2bdef2533fc214601e4bc795eb74b0520494e382+dirty:66df35729800",
+    "allowed_classes": [
+      "managed_blocker",
+      "manual_prerequisite_blocker",
+      "source_follow_up",
+      "process_state_only",
+      "advisory"
+    ],
+    "finding_count": 5,
+    "findings": [
+      {
+        "code": "SKILL002",
+        "severity": "warning",
+        "disposition_class": "manual_prerequisite_blocker",
+        "legacy_disposition_class": "managed_blocker",
+        "route": "scafforge-repair",
+        "repair_class": "safe Scafforge package change",
+        "evidence_grade": "repo-state validation",
+        "source_files": [
+          ".opencode/agents/blender-asset-creator.md"
+        ],
+        "provenance": "script"
+      },
+      {
+        "code": "FINISH002",
+        "severity": "error",
+        "disposition_class": "managed_blocker",
+        "legacy_disposition_class": "managed_blocker",
+        "route": "scafforge-repair",
+        "repair_class": "safe Scafforge package change",
+        "evidence_grade": "repo-state validation",
+        "source_files": [
+          "docs/spec/CANONICAL-BRIEF.md"
+        ],
+        "provenance": "script"
+      },
+      {
+        "code": "EXEC-BLENDER-001",
+        "severity": "error",
+        "disposition_class": "source_follow_up",
+        "legacy_disposition_class": "source_follow_up",
+        "route": "ticket-pack-builder",
+        "repair_class": "generated-repo remediation ticket",
+        "evidence_grade": "repo-state validation",
+        "source_files": [
+          ".opencode/meta/asset-pipeline-bootstrap.json",
+          "assets/pipeline.json",
+          ".blender-mcp/audit/audit_20260409.jsonl",
+          ".blender-mcp/audit/audit_20260410.jsonl",
+          ".blender-mcp/audit/audit_20260411.jsonl"
+        ],
+        "provenance": "script"
+      },
+      {
+        "code": "EXEC-REMED-001",
+        "severity": "error",
+        "disposition_class": "source_follow_up",
+        "legacy_disposition_class": "source_follow_up",
+        "route": "ticket-pack-builder",
+        "repair_class": "generated-repo remediation ticket",
+        "evidence_grade": "repo-state validation",
+        "source_files": [
+          "tickets/manifest.json",
+          ".opencode/state/reviews/remed-001-review-ticket-reconciliation.md"
+        ],
+        "provenance": "script"
+      },
+      {
+        "code": "EXEC-REMED-001",
+        "severity": "error",
+        "disposition_class": "source_follow_up",
+        "legacy_disposition_class": "source_follow_up",
+        "route": "ticket-pack-builder",
+        "repair_class": "generated-repo remediation ticket",
+        "evidence_grade": "repo-state validation",
+        "source_files": [
+          "tickets/manifest.json",
+          ".opencode/state/reviews/remed-003-review-ticket-reconciliation.md"
+        ],
+        "provenance": "script"
+      }
+    ],
+    "counts": {
+      "managed_blocker": 1,
+      "manual_prerequisite_blocker": 1,
+      "source_follow_up": 3,
+      "process_state_only": 0,
+      "advisory": 0
+    },
+    "shadow_mode_deltas": [
+      {
+        "code": "SKILL002",
+        "legacy_disposition_class": "managed_blocker",
+        "disposition_class": "manual_prerequisite_blocker",
+        "route": "scafforge-repair",
+        "reason": "Legacy prefix classification would label SKILL002 as managed_blocker, but the authoritative bundle assigns manual_prerequisite_blocker."
+      }
+    ]
+  },
+  "ticket_recommendations": [
+    {
+      "id": "REMED-009",
+      "title": "Recorded Blender-MCP mutating calls violated the stateless saved-blend chaining contract",
+      "description": "Remediate EXEC-BLENDER-001 by correcting the validated issue and rerunning the relevant quality checks.",
+      "affected_files": [
+        ".opencode/meta/asset-pipeline-bootstrap.json",
+        "assets/pipeline.json",
+        ".blender-mcp/audit/audit_20260409.jsonl",
+        ".blender-mcp/audit/audit_20260410.jsonl",
+        ".blender-mcp/audit/audit_20260411.jsonl"
+      ],
+      "suggested_fix_approach": "Before escalating a Blender-MCP defect, prove one correct chain: `project_initialize(output_blend=...)`, then a mutating follow-up that reuses the returned `persistence.saved_blend` as `input_blend`, and verify `.blender-mcp/audit/*.jsonl` records non-null `input_blend` / `output_blend` on the matching `job_start`.",
+      "assignee": "implementer",
+      "source_finding_code": "EXEC-BLENDER-001",
+      "source_finding_codes": [
+        "EXEC-BLENDER-001"
+      ],
+      "severity": "error",
+      "route": "ticket-pack-builder",
+      "repair_class": "generated-repo remediation ticket",
+      "summary": "Before escalating a Blender-MCP defect, prove one correct chain: `project_initialize(output_blend=...)`, then a mutating follow-up that reuses the returned `persistence.saved_blend` as `input_blend`, and verify `.blender-mcp/audit/*.jsonl` records non-null `input_blend` / `output_blend` on the matching `job_start`.",
+      "source_files": [
+        ".opencode/meta/asset-pipeline-bootstrap.json",
+        "assets/pipeline.json",
+        ".blender-mcp/audit/audit_20260409.jsonl",
+        ".blender-mcp/audit/audit_20260410.jsonl",
+        ".blender-mcp/audit/audit_20260411.jsonl"
+      ]
+    },
+    {
+      "id": "REMED-010",
+      "title": "Remediation review artifact does not contain runnable command evidence",
+      "description": "Remediate EXEC-REMED-001 by correcting the validated issue and rerunning the relevant quality checks.",
+      "affected_files": [
+        "tickets/manifest.json",
+        ".opencode/state/reviews/remed-001-review-ticket-reconciliation.md"
+      ],
+      "suggested_fix_approach": "For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure.",
+      "assignee": "implementer",
+      "source_finding_code": "EXEC-REMED-001",
+      "source_finding_codes": [
+        "EXEC-REMED-001"
+      ],
+      "severity": "error",
+      "route": "ticket-pack-builder",
+      "repair_class": "generated-repo remediation ticket",
+      "summary": "For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure.",
+      "source_files": [
+        "tickets/manifest.json",
+        ".opencode/state/reviews/remed-001-review-ticket-reconciliation.md"
+      ]
+    },
+    {
+      "id": "REMED-011",
+      "title": "Remediation review artifact does not contain runnable command evidence",
+      "description": "Remediate EXEC-REMED-001 by correcting the validated issue and rerunning the relevant quality checks.",
+      "affected_files": [
+        "tickets/manifest.json",
+        ".opencode/state/reviews/remed-003-review-ticket-reconciliation.md"
+      ],
+      "suggested_fix_approach": "For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure.",
+      "assignee": "implementer",
+      "source_finding_code": "EXEC-REMED-001",
+      "source_finding_codes": [
+        "EXEC-REMED-001"
+      ],
+      "severity": "error",
+      "route": "ticket-pack-builder",
+      "repair_class": "generated-repo remediation ticket",
+      "summary": "For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure.",
+      "source_files": [
+        "tickets/manifest.json",
+        ".opencode/state/reviews/remed-003-review-ticket-reconciliation.md"
+      ]
+    },
+    {
+      "id": "REMED-012",
+      "title": "Repo claims ready or finished state, but the finish contract forbids placeholder output and finish-owning tickets are still open",
+      "description": "Remediate FINISH002 by correcting the validated issue and rerunning the relevant quality checks.",
+      "affected_files": [
+        "docs/spec/CANONICAL-BRIEF.md"
+      ],
+      "suggested_fix_approach": "Either close or supersede the open finish tickets with real content proof, or update the restart narrative to stop claiming finished-product ready state until the finish bar is met.",
+      "assignee": "implementer",
+      "source_finding_code": "FINISH002",
+      "source_finding_codes": [
+        "FINISH002"
+      ],
+      "severity": "error",
+      "route": "scafforge-repair",
+      "repair_class": "safe Scafforge package change",
+      "summary": "Either close or supersede the open finish tickets with real content proof, or update the restart narrative to stop claiming finished-product ready state until the finish bar is met.",
+      "source_files": [
+        "docs/spec/CANONICAL-BRIEF.md"
+      ]
+    },
+    {
+      "id": "REMED-013",
+      "title": "The repo requires Blender-MCP for its asset route but is missing mandatory Blender operating surfaces",
+      "description": "Remediate SKILL002 by correcting the validated issue and rerunning the relevant quality checks.",
+      "affected_files": [
+        ".opencode/agents/blender-asset-creator.md"
+      ],
+      "suggested_fix_approach": "When asset-pipeline metadata requires Blender-MCP, keep `asset-description`, `blender-mcp-workflow`, and a dedicated `blender-asset-creator` in sync with the managed `blender_agent` MCP entry and the repo's asset/audit paths.",
+      "assignee": "implementer",
+      "source_finding_code": "SKILL002",
+      "source_finding_codes": [
+        "SKILL002"
+      ],
+      "severity": "warning",
+      "route": "scafforge-repair",
+      "repair_class": "safe Scafforge package change",
+      "summary": "When asset-pipeline metadata requires Blender-MCP, keep `asset-description`, `blender-mcp-workflow`, and a dedicated `blender-asset-creator` in sync with the managed `blender_agent` MCP entry and the repo's asset/audit paths.",
+      "source_files": [
+        ".opencode/agents/blender-asset-creator.md"
+      ]
+    }
+  ],
+  "package_work_required_first": false,
+  "recommended_next_step": "subject_repo_repair",
+  "recommended_ticket_payload": "recommended-ticket-payload.json"
+}

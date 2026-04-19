@@ -1,5 +1,5 @@
 import { type Plugin } from "@opencode-ai/plugin"
-import { appendJsonl, invocationLogPath } from "../lib/workflow"
+import { appendJsonl, invocationLogPath } from "../lib/workflow.ts"
 
 export const InvocationTracker: Plugin = async (pluginInput) => {
   const path = invocationLogPath(pluginInput.directory)

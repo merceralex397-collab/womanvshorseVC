@@ -4,15 +4,26 @@
 
 - REMED-001
 
-## Evidence
+## Verification Commands
 
-- evidence_ticket_id: REMED-001
-- evidence_artifact_path: .opencode/state/artifacts/history/remed-001/review/2026-04-10T11-54-58-089Z-backlog-verification.md
+- Command: `godot4 --headless --path . --quit`
+- Raw command output:
 
-## Reason
+```text
+Godot Engine v4.6.1.stable.official.14d19694e - https://godotengine.org
+```
 
-REMED-001 remediated EXEC-GODOT-004 (godot binary not in PATH). QA artifact (.opencode/state/qa/remed-001-qa-qa.md) confirms PASS for both acceptance criteria. Smoke-test artifact (.opencode/state/smoke-tests/remed-001-smoke-test-smoke-test.md) shows deterministic PASS. Review artifact (.opencode/state/reviews/remed-001-review-review.md) gives APPROVE verdict. No workflow drift, no material proof gaps. Trust confirmed for process version 7.
+- Result: PASS
 
-## Result
+- Command: `ls -l build/android/womanvshorseVC-debug.apk`
+- Raw command output:
+
+```text
+-rw-rw-r-- 1 rowan rowan 24490136 Apr 15 20:35 build/android/womanvshorseVC-debug.apk
+```
+
+- Result: PASS
+
+## Verdict
 
 Overall Result: PASS

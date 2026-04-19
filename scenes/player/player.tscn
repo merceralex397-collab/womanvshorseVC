@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://cxk8v5q6ywq"]
+
+[ext_resource type="Script" path="res://scripts/player_controller.gd" id="1_controller"]
+[ext_resource type="Script" path="res://scripts/attack_system.gd" id="2_attack"]
+[ext_resource type="Script" path="res://scripts/enemies/HealthComponent.gd" id="3_health"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1"]
+radius = 0.4
+height = 1.6
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1"]
+radius = 1.2
+
+[node name="Player" type="CharacterBody3D"]
+collision_layer = 4
+script = ExtResource("1_controller")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_1")
+
+[node name="AttackArea" type="Area3D" parent="."]
+script = ExtResource("2_attack")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackArea"]
+shape = SubResource("SphereShape3D_1")
+
+[node name="Timer" type="Timer" parent="AttackArea"]
+one_shot = true
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("3_health")
+
+[node name="PlayerHitFlash" type="Node3D" parent="."]
+
+[node name="ModelContainer" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ModelContainer"]

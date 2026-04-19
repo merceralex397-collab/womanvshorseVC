@@ -1,0 +1,14 @@
+{
+  "job_id": "20260417T115036Z-c32336f593",
+  "tool": "quality_validate",
+  "project_root": "/home/rowan/womanvshorseVC",
+  "input_blend": "/home/rowan/womanvshorseVC/assets/blender/work/horse-war/stage15.blend",
+  "output_blend": null,
+  "payload": {
+    "profile": "game-ready",
+    "engine": "GODOT"
+  },
+  "timeout_seconds": 180,
+  "factory_startup": true,
+  "generated_at": "2026-04-17T11:50:36.980894+00:00"
+}

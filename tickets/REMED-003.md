@@ -19,18 +19,18 @@ remediation
 
 ## Stage
 
-review
+closeout
 
 ## Status
 
-review
+done
 
 ## Trust
 
-- resolution_state: open
-- verification_state: suspect
+- resolution_state: superseded
+- verification_state: reverified
 - finding_source: EXEC-REMED-001
-- source_ticket_id: None
+- source_ticket_id: REMED-001
 - source_mode: net_new_scope
 
 ## Depends On
@@ -41,10 +41,6 @@ None
 
 - REMED-001
 - REMED-002
-- REMED-004
-- REMED-006
-- REMED-007
-- REMED-008
 
 ## Decision Blockers
 
@@ -60,6 +56,11 @@ None
 - plan: .opencode/state/artifacts/history/remed-003/planning/2026-04-11T18-59-25-862Z-plan.md (planning) [superseded] - Planning artifact for REMED-003: finding EXEC-REMED-001 is stale — REMED-001 review already contains direct command evidence. Proposes ticket_reconcile to supersede REMED-003 as stale.
 - plan: .opencode/state/artifacts/history/remed-003/planning/2026-04-11T19-00-05-678Z-plan.md (planning) - Planning artifact for REMED-003: finding EXEC-REMED-001 is stale — REMED-001 review already contains command evidence. Plan proposes ticket_reconcile with supersede_target:true to close REMED-003 as superseded.
 - review: .opencode/state/artifacts/history/remed-003/review/2026-04-11T19-02-03-732Z-review.md (review) - Review APPROVE for REMED-003: plan correctly identifies EXEC-REMED-001 as stale, proposes ticket_reconcile with supersede_target:true. All three evidence elements confirmed in REMED-001 review artifact. REMED-005 precedent applicable.
+- ticket-reconciliation: .opencode/state/artifacts/history/remed-003/review/2026-04-16T00-45-46-075Z-ticket-reconciliation.md (review) [superseded] - Reconciled REMED-004 against REMED-002.
+- ticket-reconciliation: .opencode/state/artifacts/history/remed-003/review/2026-04-16T00-46-17-844Z-ticket-reconciliation.md (review) [superseded] - Reconciled REMED-006 against REMED-001.
+- ticket-reconciliation: .opencode/state/artifacts/history/remed-003/review/2026-04-16T00-46-29-036Z-ticket-reconciliation.md (review) [superseded] - Reconciled REMED-007 against REMED-002.
+- ticket-reconciliation: .opencode/state/artifacts/history/remed-003/review/2026-04-16T00-46-47-832Z-ticket-reconciliation.md (review) - Reconciled REMED-008 against REMED-002.
 
 ## Notes
+
 

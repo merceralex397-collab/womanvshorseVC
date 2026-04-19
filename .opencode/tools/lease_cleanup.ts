@@ -1,5 +1,5 @@
 import { tool } from "@opencode-ai/plugin"
-import { loadWorkflowState, pruneExpiredLeases, saveWorkflowState } from "../lib/workflow"
+import { loadWorkflowState, pruneExpiredLeases, saveWorkflowState } from "../lib/workflow.ts"
 
 export default tool({
   description: "Prune expired ticket lane leases so a new session can recover from stale ownership after crashes or abandoned runs.",

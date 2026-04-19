@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://bArena001"]
+
+[ext_resource type="PackedScene" path="res://assets/models/arena-ground.glb" id="1_arena_ground"]
+[ext_resource type="PackedScene" path="res://scenes/wave_spawner/wave_spawner.tscn" id="2_wave_spawner"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fence"]
+size = Vector3(20, 0.5, 0.15)
+
+[sub_resource type="StandardMaterial3D" id="Material_fence"]
+albedo_color = Color(0.290, 0.215, 0.157, 1)
+
+[node name="Arena" type="Node3D"]
+
+[node name="ArenaGround" type="Node3D" parent="."]
+
+[node name="ArenaGround_Mesh" type="MeshInstance3D" parent="Arena/ArenaGround"]
+mesh = ExtResource("1_arena_ground")
+
+[node name="Camera3D" type="Camera3D" parent="Arena"]
+transform = Transform3D(1, 0, 0, 0, 0.02, -0.999, 0, 0.999, 0.02, 0, 15, 0)
+projection = 1
+current = true
+size = 10.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Arena"]
+transform = Transform3D(0.866, -0.354, 0.354, 0, 0.707, 0.707, -0.5, -0.612, 0.612, 0, 10, 0)
+energy = 1.4
+shadow_enabled = true
+
+[node name="EnemyContainer" type="Node3D" parent="Arena"]
+
+[node name="WaveSpawner" parent="Arena" instance=ExtResource("2_wave_spawner")]
+
+[node name="FenceContainer" type="Node3D" parent="Arena"]
+
+[node name="FenceEast" type="MeshInstance3D" parent="Arena/FenceContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 0.25, 0)
+mesh = SubResource("BoxMesh_fence")
+surface_material_override/0 = SubResource("Material_fence")
+
+[node name="FenceWest" type="MeshInstance3D" parent="Arena/FenceContainer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0.25, 0)
+mesh = SubResource("BoxMesh_fence")
+surface_material_override/0 = SubResource("Material_fence")
+
+[node name="FenceNorth" type="MeshInstance3D" parent="Arena/FenceContainer"]
+transform = Transform3D(Basis.from_euler(Vector3(0, 1.5708, 0)), Vector3(0, 0.25, 10.5))
+mesh = SubResource("BoxMesh_fence")
+surface_material_override/0 = SubResource("Material_fence")
+
+[node name="FenceSouth" type="MeshInstance3D" parent="Arena/FenceContainer"]
+transform = Transform3D(Basis.from_euler(Vector3(0, 1.5708, 0)), Vector3(0, 0.25, -10.5))
+mesh = SubResource("BoxMesh_fence")
+surface_material_override/0 = SubResource("Material_fence")

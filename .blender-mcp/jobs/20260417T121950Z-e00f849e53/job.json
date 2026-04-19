@@ -1,0 +1,11 @@
+{
+  "job_id": "20260417T121950Z-e00f849e53",
+  "tool": "scene_query",
+  "project_root": "/home/rowan/womanvshorseVC",
+  "input_blend": "/home/rowan/womanvshorseVC/assets/models/horse-boss.glb",
+  "output_blend": null,
+  "payload": {},
+  "timeout_seconds": 180,
+  "factory_startup": true,
+  "generated_at": "2026-04-17T12:19:50.991677+00:00"
+}

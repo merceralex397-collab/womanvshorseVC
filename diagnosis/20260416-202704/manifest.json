@@ -1,0 +1,211 @@
+{
+  "generated_at": "2026-04-16T20:27:04Z",
+  "repo_root": "/home/rowan/womanvshorseVC",
+  "finding_count": 4,
+  "finding_codes": [
+    "CONFIG012",
+    "EXEC-BLENDER-001",
+    "SKILL001",
+    "SKILL003"
+  ],
+  "source_findings": [
+    {
+      "code": "EXEC-BLENDER-001",
+      "severity": "error"
+    }
+  ],
+  "result_state": "validated failures found",
+  "diagnosis_kind": "post_repair_verification",
+  "evidence_mode": "current_state_only",
+  "audit_package_commit": "b9f1187c3f67f023d2aeb089e14832b77ba34cc3+dirty:6c3d97f0102f",
+  "report_files": {
+    "report_1": "01-initial-codebase-review.md",
+    "report_2": "02-scafforge-process-failures.md",
+    "report_3": "03-scafforge-prevention-actions.md",
+    "report_4": "04-live-repo-repair-plan.md"
+  },
+  "disposition_bundle_file": "disposition-bundle.json",
+  "disposition_bundle": {
+    "version": 1,
+    "generated_at": "2026-04-16T20:27:04Z",
+    "repo_root": "/home/rowan/womanvshorseVC",
+    "audit_package_commit": "b9f1187c3f67f023d2aeb089e14832b77ba34cc3+dirty:6c3d97f0102f",
+    "allowed_classes": [
+      "managed_blocker",
+      "manual_prerequisite_blocker",
+      "source_follow_up",
+      "process_state_only",
+      "advisory"
+    ],
+    "finding_count": 4,
+    "findings": [
+      {
+        "code": "SKILL001",
+        "severity": "warning",
+        "disposition_class": "managed_blocker",
+        "legacy_disposition_class": "managed_blocker",
+        "route": "scafforge-repair",
+        "repair_class": "safe Scafforge package change",
+        "evidence_grade": "repo-state validation",
+        "source_files": [
+          ".opencode/skills/stack-standards/SKILL.md"
+        ],
+        "provenance": "script"
+      },
+      {
+        "code": "SKILL003",
+        "severity": "warning",
+        "disposition_class": "managed_blocker",
+        "legacy_disposition_class": "managed_blocker",
+        "route": "scafforge-repair",
+        "repair_class": "safe Scafforge package change",
+        "evidence_grade": "repo-state validation",
+        "source_files": [
+          ".opencode/agents/blender-asset-creator.md"
+        ],
+        "provenance": "script"
+      },
+      {
+        "code": "CONFIG012",
+        "severity": "warning",
+        "disposition_class": "managed_blocker",
+        "legacy_disposition_class": "managed_blocker",
+        "route": "scafforge-repair",
+        "repair_class": "safe Scafforge package change",
+        "evidence_grade": "repo-state validation",
+        "source_files": [
+          "opencode.jsonc"
+        ],
+        "provenance": "script"
+      },
+      {
+        "code": "EXEC-BLENDER-001",
+        "severity": "error",
+        "disposition_class": "source_follow_up",
+        "legacy_disposition_class": "source_follow_up",
+        "route": "ticket-pack-builder",
+        "repair_class": "generated-repo remediation ticket",
+        "evidence_grade": "repo-state validation",
+        "source_files": [
+          ".opencode/meta/asset-pipeline-bootstrap.json",
+          "assets/pipeline.json",
+          ".blender-mcp/audit/audit_20260409.jsonl",
+          ".blender-mcp/audit/audit_20260410.jsonl",
+          ".blender-mcp/audit/audit_20260411.jsonl"
+        ],
+        "provenance": "script"
+      }
+    ],
+    "counts": {
+      "managed_blocker": 3,
+      "manual_prerequisite_blocker": 0,
+      "source_follow_up": 1,
+      "process_state_only": 0,
+      "advisory": 0
+    },
+    "shadow_mode_deltas": []
+  },
+  "ticket_recommendations": [
+    {
+      "id": "REMED-009",
+      "title": "Recorded Blender-MCP mutating calls violated the stateless saved-blend chaining contract",
+      "description": "Remediate EXEC-BLENDER-001 by correcting the validated issue and rerunning the relevant quality checks.",
+      "affected_files": [
+        ".opencode/meta/asset-pipeline-bootstrap.json",
+        "assets/pipeline.json",
+        ".blender-mcp/audit/audit_20260409.jsonl",
+        ".blender-mcp/audit/audit_20260410.jsonl",
+        ".blender-mcp/audit/audit_20260411.jsonl"
+      ],
+      "suggested_fix_approach": "Before escalating a Blender-MCP defect, prove one correct chain: `project_initialize(output_blend=...)`, then a mutating follow-up that reuses the returned `persistence.saved_blend` as `input_blend`, and verify `.blender-mcp/audit/*.jsonl` records non-null `input_blend` / `output_blend` on the matching `job_start`.",
+      "assignee": "implementer",
+      "source_finding_code": "EXEC-BLENDER-001",
+      "source_finding_codes": [
+        "EXEC-BLENDER-001"
+      ],
+      "severity": "error",
+      "route": "ticket-pack-builder",
+      "repair_class": "generated-repo remediation ticket",
+      "summary": "Before escalating a Blender-MCP defect, prove one correct chain: `project_initialize(output_blend=...)`, then a mutating follow-up that reuses the returned `persistence.saved_blend` as `input_blend`, and verify `.blender-mcp/audit/*.jsonl` records non-null `input_blend` / `output_blend` on the matching `job_start`.",
+      "source_files": [
+        ".opencode/meta/asset-pipeline-bootstrap.json",
+        "assets/pipeline.json",
+        ".blender-mcp/audit/audit_20260409.jsonl",
+        ".blender-mcp/audit/audit_20260410.jsonl",
+        ".blender-mcp/audit/audit_20260411.jsonl"
+      ]
+    },
+    {
+      "id": "REMED-010",
+      "title": "blender_agent is disabled even though the current asset route requires Blender-MCP",
+      "description": "Remediate CONFIG012 by correcting the validated issue and rerunning the relevant quality checks.",
+      "affected_files": [
+        "opencode.jsonc"
+      ],
+      "suggested_fix_approach": "Enable blender_agent only when the inferred asset route requires Blender-MCP and the host exposes the required Blender MCP paths.",
+      "assignee": "implementer",
+      "source_finding_code": "CONFIG012",
+      "source_finding_codes": [
+        "CONFIG012"
+      ],
+      "severity": "warning",
+      "route": "scafforge-repair",
+      "repair_class": "safe Scafforge package change",
+      "summary": "Enable blender_agent only when the inferred asset route requires Blender-MCP and the host exposes the required Blender MCP paths.",
+      "source_files": [
+        "opencode.jsonc"
+      ]
+    },
+    {
+      "id": "REMED-011",
+      "title": "One or more repo-local skills still contain generic placeholder text or stale synthesized guidance instead of current project-specific procedure",
+      "description": "Remediate SKILL001 by correcting the validated issue and rerunning the relevant quality checks.",
+      "affected_files": [
+        ".opencode/skills/stack-standards/SKILL.md"
+      ],
+      "suggested_fix_approach": "Populate every required repo-local skill with concrete current rules and validation commands; generated `.opencode/skills/` files must not retain template filler or stale synthesized workflow guidance.",
+      "assignee": "implementer",
+      "source_finding_code": "SKILL001",
+      "source_finding_codes": [
+        "SKILL001"
+      ],
+      "severity": "warning",
+      "route": "scafforge-repair",
+      "repair_class": "safe Scafforge package change",
+      "summary": "Populate every required repo-local skill with concrete current rules and validation commands; generated `.opencode/skills/` files must not retain template filler or stale synthesized workflow guidance.",
+      "source_files": [
+        ".opencode/skills/stack-standards/SKILL.md"
+      ]
+    },
+    {
+      "id": "REMED-012",
+      "title": "The repo requires Blender-MCP for its asset route but is missing mandatory Blender operating surfaces",
+      "description": "Remediate SKILL003 by correcting the validated issue and rerunning the relevant quality checks.",
+      "affected_files": [
+        ".opencode/agents/blender-asset-creator.md"
+      ],
+      "suggested_fix_approach": "When asset-pipeline metadata requires Blender-MCP, keep `asset-description`, `blender-mcp-workflow`, and a dedicated `blender-asset-creator` in sync with the managed `blender_agent` MCP entry and the repo's asset/audit paths.",
+      "assignee": "implementer",
+      "source_finding_code": "SKILL003",
+      "source_finding_codes": [
+        "SKILL003"
+      ],
+      "severity": "warning",
+      "route": "scafforge-repair",
+      "repair_class": "safe Scafforge package change",
+      "summary": "When asset-pipeline metadata requires Blender-MCP, keep `asset-description`, `blender-mcp-workflow`, and a dedicated `blender-asset-creator` in sync with the managed `blender_agent` MCP entry and the repo's asset/audit paths.",
+      "source_files": [
+        ".opencode/agents/blender-asset-creator.md"
+      ]
+    }
+  ],
+  "package_work_required_first": false,
+  "recommended_next_step": "subject_repo_repair",
+  "verification_kind": "post_repair",
+  "repair_package_commit": "b9f1187c3f67f023d2aeb089e14832b77ba34cc3+dirty:6c3d97f0102f",
+  "repair_basis_path": "/home/rowan/womanvshorseVC/diagnosis/20260416-202637",
+  "current_state_clean": false,
+  "causal_regression_verified": false,
+  "verification_basis": "current_state_only",
+  "recommended_ticket_payload": "recommended-ticket-payload.json"
+}

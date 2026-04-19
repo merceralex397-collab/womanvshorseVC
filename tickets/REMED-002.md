@@ -56,7 +56,7 @@ None
 - plan: .opencode/state/artifacts/history/remed-002/planning/2026-04-10T04-22-39-589Z-plan.md (planning) - Revised planning artifact for REMED-002: includes Step 0 lane lease expansion addressing prior review blocker, 5-step implementation to regenerate REMED-001 review with direct command evidence per EXEC-REMED-001.
 - implementation: .opencode/state/artifacts/history/remed-002/implementation/2026-04-10T04-28-58-110Z-implementation.md (implementation) - Implementation artifact for REMED-002 with direct command evidence captured. Contains godot --version and godot --headless command outputs.
 - review: .opencode/state/artifacts/history/remed-002/review/2026-04-10T04-29-15-168Z-review.md (review) [superseded] - Review artifact containing regenerated REMED-001 review with direct command evidence. Supersedes original review that cited implementation artifact.
-- ticket-reconciliation: .opencode/state/artifacts/history/remed-002/review/2026-04-10T04-29-43-404Z-ticket-reconciliation.md (review) - Reconciled REMED-001 against REMED-002.
+- ticket-reconciliation: .opencode/state/artifacts/history/remed-002/review/2026-04-10T04-29-43-404Z-ticket-reconciliation.md (review) [superseded] - Reconciled REMED-001 against REMED-002.
 - review: .opencode/state/artifacts/history/remed-002/review/2026-04-10T04-33-21-943Z-review.md (review) - Review artifact for REMED-002: all five verification checks PASS. EXEC-REMED-001 is resolved. Regenerated review artifact for REMED-001 now contains direct command evidence.
 - qa: .opencode/state/artifacts/history/remed-002/qa/2026-04-10T11-14-42-338Z-qa.md (qa) - QA validation passed - both AC-1 (EXEC-REMED-001 no longer reproduces) and AC-2 (review artifact has direct command evidence with PASS/FAIL) verified PASS
 - smoke-test: .opencode/state/artifacts/history/remed-002/smoke-test/2026-04-10T11-15-13-772Z-smoke-test.md (smoke-test) [superseded] - Deterministic smoke test failed.
@@ -67,6 +67,15 @@ None
 - smoke-test: .opencode/state/artifacts/history/remed-002/smoke-test/2026-04-10T11-52-42-176Z-smoke-test.md (smoke-test) - Deterministic smoke test passed.
 - backlog-verification: .opencode/state/artifacts/history/remed-002/review/2026-04-11T16-10-14-409Z-backlog-verification.md (review) - Backlog verification PASS — REMED-002 verification complete. All stage artifacts verified current, smoke-test PASS, QA PASS, workflow drift none, proof gaps none. Trust intact for process version 7.
 - reverification: .opencode/state/artifacts/history/remed-002/review/2026-04-11T16-10-33-254Z-reverification.md (review) - Trust restored using REMED-002.
+- ticket-reconciliation: .opencode/state/artifacts/history/remed-002/review/2026-04-17T09-59-35-358Z-ticket-reconciliation.md (review) [superseded] - Reconciled REMED-012 against REMED-002.
+- ticket-reconciliation: .opencode/state/artifacts/history/remed-002/review/2026-04-17T21-10-58-194Z-ticket-reconciliation.md (review) [superseded] - Reconciled REMED-021 against REMED-002.
+- ticket-reconciliation: .opencode/state/artifacts/history/remed-002/review/2026-04-17T22-23-14-172Z-ticket-reconciliation.md (review) [superseded] - Reconciled REMED-022 against REMED-002.
+- ticket-reconciliation: .opencode/state/artifacts/history/remed-002/review/2026-04-17T22-23-45-568Z-ticket-reconciliation.md (review) [superseded] - Reconciled REMED-022 against REMED-002.
+- ticket-reconciliation: .opencode/state/artifacts/history/remed-002/review/2026-04-18T00-14-20-064Z-ticket-reconciliation.md (review) [superseded] - Reconciled REMED-024 against REMED-002.
+- ticket-reconciliation: .opencode/state/artifacts/history/remed-002/review/2026-04-18T00-15-55-506Z-ticket-reconciliation.md (review) [superseded] - Reconciled REMED-025 against REMED-002.
+- ticket-reconciliation: .opencode/state/artifacts/history/remed-002/review/2026-04-18T00-43-17-575Z-ticket-reconciliation.md (review) [superseded] - Reconciled REMED-027 against REMED-002.
+- ticket-reconciliation: .opencode/state/artifacts/history/remed-002/review/2026-04-18T00-45-55-090Z-ticket-reconciliation.md (review) - Reconciled REMED-028 against REMED-002.
 
 ## Notes
+
 

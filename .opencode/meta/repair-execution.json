@@ -1,6 +1,6 @@
 {
   "repair_plan": {
-    "repo_root": "/home/pc/projects/womanvshorseVC",
+    "repo_root": "/home/rowan/womanvshorseVC",
     "required_follow_on_stages": [
       {
         "stage": "ticket-pack-builder",
@@ -33,8 +33,7 @@
         "surfaces": [],
         "reason": "Ticket follow-up is required when source findings still need explicit routing through ticket-pack-builder.",
         "finding_codes": [
-          "EXEC-GODOT-004",
-          "EXEC-GODOT-005a",
+          "EXEC-BLENDER-001",
           "EXEC-REMED-001"
         ]
       },
@@ -72,20 +71,20 @@
       "stage": "project-skill-bootstrap",
       "status": "recorded_completed",
       "completion_mode": "recorded_execution",
-      "recorded_at": "2026-04-12T03:09:05Z"
+      "recorded_at": "2026-04-18T00:32:50Z"
     },
     {
       "stage": "ticket-pack-builder",
       "status": "recorded_completed",
       "completion_mode": "recorded_execution",
-      "recorded_at": "2026-04-12T03:09:05Z"
+      "recorded_at": "2026-04-18T00:32:50Z"
     }
   ],
   "execution_record": {
-    "repo_root": "/home/pc/projects/womanvshorseVC",
-    "repair_package_commit": "72acfbad2d953b04f73d10fc873102b70b9e8907+dirty:77159f2ab867",
+    "repo_root": "/home/rowan/womanvshorseVC",
+    "repair_package_commit": "b2205a14fc57390317ff7b52a5c79e7a6a29adf4+dirty:b6dfa118779a",
     "repair_id": null,
-    "repair_basis_path": "/home/pc/projects/womanvshorseVC/diagnosis/20260412-030500",
+    "repair_basis_path": "/home/rowan/womanvshorseVC/diagnosis/20260418-002831",
     "required_follow_on_stages": [
       "ticket-pack-builder"
     ],
@@ -117,12 +116,12 @@
     "follow_on_tracking_state": {
       "tracking_mode": "persistent_recorded_state",
       "assertion_input_mode": "legacy_manual_assertion",
-      "cycle_id": "2026-04-12T03:07:27Z",
-      "created_at": "2026-04-12T03:07:27Z",
-      "last_updated_at": "2026-04-12T03:09:17Z",
+      "cycle_id": "2026-04-18T00:28:44Z",
+      "created_at": "2026-04-18T00:28:44Z",
+      "last_updated_at": "2026-04-18T00:33:16Z",
       "process_version": 7,
-      "repair_package_commit": "72acfbad2d953b04f73d10fc873102b70b9e8907+dirty:b13b6acf4081",
-      "repair_basis_path": "/home/pc/projects/womanvshorseVC/diagnosis/20260412-030500",
+      "repair_package_commit": "b2205a14fc57390317ff7b52a5c79e7a6a29adf4+dirty:b6dfa118779a",
+      "repair_basis_path": "/home/rowan/womanvshorseVC/diagnosis/20260418-002831",
       "pruned_unknown_stages": [],
       "required_stages": [
         "ticket-pack-builder"
@@ -135,18 +134,18 @@
           "status": "completed",
           "reason": "Repo-local skills still contain generic placeholder/model drift that must be regenerated with project-specific content.",
           "currently_required": false,
-          "last_checked_at": "2026-04-12T03:09:05Z",
-          "last_updated_at": "2026-04-12T03:09:05Z",
+          "last_checked_at": "2026-04-18T00:32:50Z",
+          "last_updated_at": "2026-04-18T00:32:50Z",
           "completion_mode": "recorded_execution",
           "completed_by": "project-skill-bootstrap",
-          "summary": "Regenerated stack standards with Godot Android and Blender-MCP project-specific validation guidance for current repair cycle.",
+          "summary": "Regenerated repo-local skills for the 2026-04-18 repair cycle and restored VC-specific stack standards.",
           "evidence_paths": [
             ".opencode/skills/stack-standards/SKILL.md",
             ".opencode/state/artifacts/history/repair/project-skill-bootstrap-completion.md"
           ],
-          "repair_package_commit": "72acfbad2d953b04f73d10fc873102b70b9e8907+dirty:b13b6acf4081",
-          "first_recorded_at": "2026-04-12T03:09:05Z",
-          "last_recorded_at": "2026-04-12T03:09:05Z"
+          "repair_package_commit": "b2205a14fc57390317ff7b52a5c79e7a6a29adf4+dirty:b6dfa118779a",
+          "first_recorded_at": "2026-04-18T00:32:50Z",
+          "last_recorded_at": "2026-04-18T00:32:50Z"
         },
         "ticket-pack-builder": {
           "stage": "ticket-pack-builder",
@@ -155,62 +154,56 @@
           "status": "completed",
           "reason": "Repair left remediation or reverification follow-up that must be routed into the repo ticket system.",
           "currently_required": true,
-          "last_checked_at": "2026-04-12T03:09:17Z",
-          "last_updated_at": "2026-04-12T03:09:05Z",
+          "last_checked_at": "2026-04-18T00:33:16Z",
+          "last_updated_at": "2026-04-18T00:32:50Z",
           "completion_mode": "recorded_execution",
           "completed_by": "ticket-pack-builder",
-          "summary": "Ran remediation-follow-up mode for post-repair diagnosis and updated canonical remediation tickets.",
+          "summary": "Applied remediation follow-up from diagnosis 20260418-002831 and created current remediation tickets.",
           "evidence_paths": [
             ".opencode/state/artifacts/history/repair/ticket-pack-builder-completion.md",
-            "diagnosis/20260412-030731/manifest.json",
-            "tickets/REMED-003.md",
-            "tickets/REMED-004.md",
-            "tickets/REMED-006.md",
-            "tickets/REMED-007.md",
-            "tickets/REMED-008.md"
+            "tickets/REMED-026.md",
+            "tickets/REMED-027.md",
+            "tickets/REMED-028.md"
           ],
-          "repair_package_commit": "72acfbad2d953b04f73d10fc873102b70b9e8907+dirty:b13b6acf4081",
-          "first_recorded_at": "2026-04-12T03:09:05Z",
-          "last_recorded_at": "2026-04-12T03:09:05Z"
+          "repair_package_commit": "b2205a14fc57390317ff7b52a5c79e7a6a29adf4+dirty:b6dfa118779a",
+          "first_recorded_at": "2026-04-18T00:32:50Z",
+          "last_recorded_at": "2026-04-18T00:32:50Z"
         }
       },
       "history": [
         {
-          "recorded_at": "2026-04-12T03:09:05Z",
+          "recorded_at": "2026-04-18T00:32:50Z",
           "stage": "project-skill-bootstrap",
           "owner": "project-skill-bootstrap",
           "category": "repo_local_skills",
           "status": "completed",
           "completion_mode": "recorded_execution",
           "completed_by": "project-skill-bootstrap",
-          "summary": "Regenerated stack standards with Godot Android and Blender-MCP project-specific validation guidance for current repair cycle.",
+          "summary": "Regenerated repo-local skills for the 2026-04-18 repair cycle and restored VC-specific stack standards.",
           "evidence_paths": [
             ".opencode/skills/stack-standards/SKILL.md",
             ".opencode/state/artifacts/history/repair/project-skill-bootstrap-completion.md"
           ],
-          "repair_package_commit": "72acfbad2d953b04f73d10fc873102b70b9e8907+dirty:b13b6acf4081",
-          "cycle_id": "2026-04-12T03:07:27Z"
+          "repair_package_commit": "b2205a14fc57390317ff7b52a5c79e7a6a29adf4+dirty:b6dfa118779a",
+          "cycle_id": "2026-04-18T00:28:44Z"
         },
         {
-          "recorded_at": "2026-04-12T03:09:05Z",
+          "recorded_at": "2026-04-18T00:32:50Z",
           "stage": "ticket-pack-builder",
           "owner": "ticket-pack-builder",
           "category": "ticket_follow_up",
           "status": "completed",
           "completion_mode": "recorded_execution",
           "completed_by": "ticket-pack-builder",
-          "summary": "Ran remediation-follow-up mode for post-repair diagnosis and updated canonical remediation tickets.",
+          "summary": "Applied remediation follow-up from diagnosis 20260418-002831 and created current remediation tickets.",
           "evidence_paths": [
             ".opencode/state/artifacts/history/repair/ticket-pack-builder-completion.md",
-            "diagnosis/20260412-030731/manifest.json",
-            "tickets/REMED-003.md",
-            "tickets/REMED-004.md",
-            "tickets/REMED-006.md",
-            "tickets/REMED-007.md",
-            "tickets/REMED-008.md"
+            "tickets/REMED-026.md",
+            "tickets/REMED-027.md",
+            "tickets/REMED-028.md"
           ],
-          "repair_package_commit": "72acfbad2d953b04f73d10fc873102b70b9e8907+dirty:b13b6acf4081",
-          "cycle_id": "2026-04-12T03:07:27Z"
+          "repair_package_commit": "b2205a14fc57390317ff7b52a5c79e7a6a29adf4+dirty:b6dfa118779a",
+          "cycle_id": "2026-04-18T00:28:44Z"
         }
       ]
     },
@@ -236,43 +229,40 @@
     },
     "verification_status": {
       "performed": true,
-      "finding_count": 5,
-      "error_count": 5,
+      "finding_count": 4,
+      "error_count": 4,
       "warning_count": 0,
       "codes": [
-        "EXEC-GODOT-004",
-        "EXEC-GODOT-005a",
+        "EXEC-BLENDER-001",
         "EXEC-REMED-001",
         "EXEC-REMED-001",
-        "EXEC-REMED-001"
+        "SESSION009"
       ],
       "blocking_codes": [],
       "manual_prerequisite_codes": [],
       "source_follow_up_codes": [
-        "EXEC-GODOT-004",
-        "EXEC-GODOT-005a",
-        "EXEC-REMED-001",
+        "EXEC-BLENDER-001",
         "EXEC-REMED-001",
         "EXEC-REMED-001"
       ],
       "process_state_codes": [],
-      "advisory_codes": [],
+      "advisory_codes": [
+        "SESSION009"
+      ],
       "pending_process_verification": true,
-      "verification_basis": "current_state_only",
-      "basis_requires_causal_replay": false,
-      "repair_basis_path": "/home/pc/projects/womanvshorseVC/diagnosis/20260412-030500",
+      "verification_basis": "transcript_backed",
+      "basis_requires_causal_replay": true,
+      "repair_basis_path": "/home/rowan/womanvshorseVC/diagnosis/20260418-002831",
       "current_state_clean": false,
       "causal_regression_verified": true,
       "source_regression_summary": {
         "comparison_available": true,
         "pre_existing_codes": [
-          "EXEC-GODOT-004",
-          "EXEC-GODOT-005a",
+          "EXEC-BLENDER-001",
           "EXEC-REMED-001"
         ],
         "persistent_codes": [
-          "EXEC-GODOT-004",
-          "EXEC-GODOT-005a",
+          "EXEC-BLENDER-001",
           "EXEC-REMED-001"
         ],
         "resolved_codes": [],
@@ -282,19 +272,21 @@
       "contract_failures": [],
       "contract_passed": true,
       "verification_passed": true,
-      "supporting_logs": [],
+      "supporting_logs": [
+        "/home/rowan/Scafforge/reports/agent-runs/wvhvc-opencode-2026-04-17T23-58-59.log"
+      ],
       "disposition_shadow_mode": {
         "bundle_available": true,
         "bundle_version": 1,
-        "bundle_finding_count": 9,
+        "bundle_finding_count": 5,
         "delta_count": 1,
         "deltas": [
           {
-            "code": "SKILL002",
+            "code": "SESSION009",
             "legacy_disposition_class": "managed_blocker",
-            "disposition_class": "manual_prerequisite_blocker",
+            "disposition_class": "advisory",
             "route": "scafforge-repair",
-            "reason": "Legacy prefix classification would label SKILL002 as managed_blocker, but the authoritative bundle assigns manual_prerequisite_blocker."
+            "reason": "Legacy prefix classification would label SESSION009 as managed_blocker, but the authoritative bundle assigns advisory."
           }
         ]
       }
@@ -302,15 +294,15 @@
     "disposition_shadow_mode": {
       "bundle_available": true,
       "bundle_version": 1,
-      "bundle_finding_count": 9,
+      "bundle_finding_count": 5,
       "delta_count": 1,
       "deltas": [
         {
-          "code": "SKILL002",
+          "code": "SESSION009",
           "legacy_disposition_class": "managed_blocker",
-          "disposition_class": "manual_prerequisite_blocker",
+          "disposition_class": "advisory",
           "route": "scafforge-repair",
-          "reason": "Legacy prefix classification would label SKILL002 as managed_blocker, but the authoritative bundle assigns manual_prerequisite_blocker."
+          "reason": "Legacy prefix classification would label SESSION009 as managed_blocker, but the authoritative bundle assigns advisory."
         }
       ]
     },
@@ -319,38 +311,118 @@
     "backup_path": null,
     "repair_escalation_path": ".opencode/state/repair-escalation.json",
     "remediation_ticket_ids": [
-      "REMED-006",
-      "REMED-007",
-      "REMED-003",
-      "REMED-004",
-      "REMED-008"
+      "REMED-026",
+      "REMED-027",
+      "REMED-028"
     ],
     "workflow_selection_sync": {
       "performed": false,
-      "selected_ticket_id": "REMED-003",
-      "stage": "review",
-      "status": "review",
+      "selected_ticket_id": "MODEL-007",
+      "stage": "implementation",
+      "status": "in_progress",
       "approved_plan": true,
       "before": {
-        "manifest_active_ticket": "REMED-003",
-        "workflow_active_ticket": "REMED-003",
-        "workflow_stage": "review",
-        "workflow_status": "review",
+        "manifest_active_ticket": "MODEL-007",
+        "workflow_active_ticket": "MODEL-007",
+        "workflow_stage": "implementation",
+        "workflow_status": "in_progress",
         "workflow_approved_plan": true
       },
       "after": {
-        "manifest_active_ticket": "REMED-003",
-        "workflow_active_ticket": "REMED-003",
-        "workflow_stage": "review",
-        "workflow_status": "review",
+        "manifest_active_ticket": "MODEL-007",
+        "workflow_active_ticket": "MODEL-007",
+        "workflow_stage": "implementation",
+        "workflow_status": "in_progress",
         "workflow_approved_plan": true
       }
     },
     "ticket_graph_repair_changes": [],
     "stale_stage_reconciliation": {
       "stale": false,
-      "manifest_stage": "review",
-      "evidenced_stage": "review"
+      "manifest_stage": "implementation",
+      "evidenced_stage": null
+    },
+    "bootstrap_refresh": {
+      "performed": true,
+      "previous_status": "stale",
+      "previous_fingerprint": "8e35836e9061865f24cc461927c5278787e51c9d6a065c74516f36541795ef68",
+      "result": {
+        "ticket_id": "MODEL-007",
+        "bootstrap_status": "ready",
+        "recovery_mode": true,
+        "proof_artifact": ".opencode/state/artifacts/history/model-007/bootstrap/2026-04-18T00-33-14-037Z-environment-bootstrap.md",
+        "environment_fingerprint": "2b46962ff4561b95ba5a39daf674bb5afb7ac329a01d45bde8677a2d1c738267",
+        "fingerprint_inputs": {
+          "input_files": [
+            ".opencode/meta/asset-pipeline-bootstrap.json",
+            "android/scafforge-managed.json",
+            "export_presets.cfg",
+            "opencode.jsonc",
+            "project.godot"
+          ],
+          "repo_surfaces": {
+            "project_godot": true,
+            "export_presets": true,
+            "android_support_surface": true,
+            "asset_pipeline_metadata": true,
+            "opencode_config": true
+          },
+          "env": {
+            "JAVA_HOME": "/usr/lib/jvm/java-17-openjdk-amd64",
+            "ANDROID_HOME": "/home/rowan/Android/Sdk",
+            "ANDROID_SDK_ROOT": "/home/rowan/Android/Sdk",
+            "BLENDER_MCP_BLENDER_EXECUTABLE": "<unset>"
+          },
+          "host_paths": {
+            "android_debug_keystore": "/home/rowan/.android/debug.keystore",
+            "godot_export_templates": "/home/rowan/.local/share/godot/export_templates",
+            "android_sdk_default": "/home/rowan/Android/Sdk",
+            "java_home_default": "/usr/lib/jvm/java-17-openjdk-amd64",
+            "java_home_inferred": "/usr/lib/jvm/java-17-openjdk-amd64"
+          }
+        },
+        "host_surface_classification": "none",
+        "missing_prerequisites": [],
+        "blockers": [],
+        "warnings": [],
+        "detections": [
+          {
+            "adapter_id": "godot",
+            "indicator_files": [
+              "project.godot",
+              "export_presets.cfg"
+            ],
+            "missing_executables": [],
+            "missing_env_vars": [],
+            "version_info": {
+              "config_version": "5",
+              "android_sdk_path": "/home/rowan/Android/Sdk",
+              "java_home": "/usr/lib/jvm/java-17-openjdk-amd64",
+              "android_debug_keystore": "/home/rowan/.android/debug.keystore",
+              "blender_executable": "blender"
+            },
+            "warnings": []
+          }
+        ],
+        "bootstrap_commands": [
+          {
+            "label": "godot4 headless version",
+            "command": "godot4 --headless --version",
+            "reason": "Verify the Godot runtime is available for headless validation."
+          }
+        ],
+        "commands": [
+          {
+            "label": "godot4 headless version",
+            "command": "godot4 --headless --version",
+            "exit_code": 0,
+            "missing_executable": null,
+            "failure_classification": null,
+            "blocked_by_permissions": false,
+            "duration_ms": 19
+          }
+        ]
+      }
     },
     "android_surface_result": {
       "performed": false,
@@ -378,8 +450,7 @@
         "surfaces": [],
         "reason": "Ticket follow-up is required when source findings still need explicit routing through ticket-pack-builder.",
         "finding_codes": [
-          "EXEC-GODOT-004",
-          "EXEC-GODOT-005a",
+          "EXEC-BLENDER-001",
           "EXEC-REMED-001"
         ]
       },
@@ -425,18 +496,18 @@
         "status": "completed",
         "reason": "Repo-local skills still contain generic placeholder/model drift that must be regenerated with project-specific content.",
         "currently_required": false,
-        "last_checked_at": "2026-04-12T03:09:05Z",
-        "last_updated_at": "2026-04-12T03:09:05Z",
+        "last_checked_at": "2026-04-18T00:32:50Z",
+        "last_updated_at": "2026-04-18T00:32:50Z",
         "completion_mode": "recorded_execution",
         "completed_by": "project-skill-bootstrap",
-        "summary": "Regenerated stack standards with Godot Android and Blender-MCP project-specific validation guidance for current repair cycle.",
+        "summary": "Regenerated repo-local skills for the 2026-04-18 repair cycle and restored VC-specific stack standards.",
         "evidence_paths": [
           ".opencode/skills/stack-standards/SKILL.md",
           ".opencode/state/artifacts/history/repair/project-skill-bootstrap-completion.md"
         ],
-        "repair_package_commit": "72acfbad2d953b04f73d10fc873102b70b9e8907+dirty:b13b6acf4081",
-        "first_recorded_at": "2026-04-12T03:09:05Z",
-        "last_recorded_at": "2026-04-12T03:09:05Z"
+        "repair_package_commit": "b2205a14fc57390317ff7b52a5c79e7a6a29adf4+dirty:b6dfa118779a",
+        "first_recorded_at": "2026-04-18T00:32:50Z",
+        "last_recorded_at": "2026-04-18T00:32:50Z"
       },
       "ticket-pack-builder": {
         "stage": "ticket-pack-builder",
@@ -445,23 +516,20 @@
         "status": "completed",
         "reason": "Repair left remediation or reverification follow-up that must be routed into the repo ticket system.",
         "currently_required": true,
-        "last_checked_at": "2026-04-12T03:09:17Z",
-        "last_updated_at": "2026-04-12T03:09:05Z",
+        "last_checked_at": "2026-04-18T00:33:16Z",
+        "last_updated_at": "2026-04-18T00:32:50Z",
         "completion_mode": "recorded_execution",
         "completed_by": "ticket-pack-builder",
-        "summary": "Ran remediation-follow-up mode for post-repair diagnosis and updated canonical remediation tickets.",
+        "summary": "Applied remediation follow-up from diagnosis 20260418-002831 and created current remediation tickets.",
         "evidence_paths": [
           ".opencode/state/artifacts/history/repair/ticket-pack-builder-completion.md",
-          "diagnosis/20260412-030731/manifest.json",
-          "tickets/REMED-003.md",
-          "tickets/REMED-004.md",
-          "tickets/REMED-006.md",
-          "tickets/REMED-007.md",
-          "tickets/REMED-008.md"
+          "tickets/REMED-026.md",
+          "tickets/REMED-027.md",
+          "tickets/REMED-028.md"
         ],
-        "repair_package_commit": "72acfbad2d953b04f73d10fc873102b70b9e8907+dirty:b13b6acf4081",
-        "first_recorded_at": "2026-04-12T03:09:05Z",
-        "last_recorded_at": "2026-04-12T03:09:05Z"
+        "repair_package_commit": "b2205a14fc57390317ff7b52a5c79e7a6a29adf4+dirty:b6dfa118779a",
+        "first_recorded_at": "2026-04-18T00:32:50Z",
+        "last_recorded_at": "2026-04-18T00:32:50Z"
       }
     },
     "pruned_unknown_stages": [],
@@ -474,42 +542,34 @@
     "verification_blocking_codes": [],
     "manual_prerequisite_codes": [],
     "source_follow_up_codes": [
-      "EXEC-GODOT-004",
-      "EXEC-GODOT-005a",
-      "EXEC-REMED-001",
+      "EXEC-BLENDER-001",
       "EXEC-REMED-001",
       "EXEC-REMED-001"
     ],
     "process_state_codes": [],
-    "advisory_codes": [],
+    "advisory_codes": [
+      "SESSION009"
+    ],
     "contract_failures": [],
-    "last_updated_at": "2026-04-12T03:09:17Z",
+    "last_updated_at": "2026-04-18T00:33:16Z",
     "process_version": 7,
     "allowed_follow_on_tickets": []
   },
   "diagnosis_pack": {
-    "path": "/home/pc/projects/womanvshorseVC/diagnosis/20260412-030918",
+    "path": "/home/rowan/womanvshorseVC/diagnosis/20260418-003317",
     "report_count": 4,
     "manifest": {
-      "generated_at": "2026-04-12T03:09:18Z",
-      "repo_root": "/home/pc/projects/womanvshorseVC",
-      "finding_count": 5,
+      "generated_at": "2026-04-18T00:33:17Z",
+      "repo_root": "/home/rowan/womanvshorseVC",
+      "finding_count": 4,
       "finding_codes": [
-        "EXEC-GODOT-004",
-        "EXEC-GODOT-005a",
-        "EXEC-REMED-001"
+        "EXEC-BLENDER-001",
+        "EXEC-REMED-001",
+        "SESSION009"
       ],
       "source_findings": [
         {
-          "code": "EXEC-GODOT-004",
-          "severity": "error"
-        },
-        {
-          "code": "EXEC-GODOT-005a",
-          "severity": "error"
-        },
-        {
-          "code": "EXEC-REMED-001",
+          "code": "EXEC-BLENDER-001",
           "severity": "error"
         },
         {
@@ -523,8 +583,8 @@
       ],
       "result_state": "validated failures found",
       "diagnosis_kind": "post_repair_verification",
-      "evidence_mode": "current_state_only",
-      "audit_package_commit": "72acfbad2d953b04f73d10fc873102b70b9e8907+dirty:77159f2ab867",
+      "evidence_mode": "transcript_backed",
+      "audit_package_commit": "b2205a14fc57390317ff7b52a5c79e7a6a29adf4+dirty:b6dfa118779a",
       "report_files": {
         "report_1": "01-initial-codebase-review.md",
         "report_2": "02-scafforge-process-failures.md",
@@ -534,9 +594,9 @@
       "disposition_bundle_file": "disposition-bundle.json",
       "disposition_bundle": {
         "version": 1,
-        "generated_at": "2026-04-12T03:09:18Z",
-        "repo_root": "/home/pc/projects/womanvshorseVC",
-        "audit_package_commit": "72acfbad2d953b04f73d10fc873102b70b9e8907+dirty:77159f2ab867",
+        "generated_at": "2026-04-18T00:33:17Z",
+        "repo_root": "/home/rowan/womanvshorseVC",
+        "audit_package_commit": "b2205a14fc57390317ff7b52a5c79e7a6a29adf4+dirty:b6dfa118779a",
         "allowed_classes": [
           "managed_blocker",
           "manual_prerequisite_blocker",
@@ -544,10 +604,10 @@
           "process_state_only",
           "advisory"
         ],
-        "finding_count": 5,
+        "finding_count": 4,
         "findings": [
           {
-            "code": "EXEC-GODOT-004",
+            "code": "EXEC-BLENDER-001",
             "severity": "error",
             "disposition_class": "source_follow_up",
             "legacy_disposition_class": "source_follow_up",
@@ -555,22 +615,12 @@
             "repair_class": "generated-repo remediation ticket",
             "evidence_grade": "repo-state validation",
             "source_files": [
-              "project.godot"
-            ],
-            "provenance": "script"
-          },
-          {
-            "code": "EXEC-GODOT-005a",
-            "severity": "error",
-            "disposition_class": "source_follow_up",
-            "legacy_disposition_class": "source_follow_up",
-            "route": "ticket-pack-builder",
-            "repair_class": "generated-repo remediation ticket",
-            "evidence_grade": "repo-state validation",
-            "source_files": [
-              "project.godot",
-              "export_presets.cfg",
-              "android"
+              ".opencode/meta/asset-pipeline-bootstrap.json",
+              "assets/pipeline.json",
+              ".blender-mcp/audit/audit_20260409.jsonl",
+              ".blender-mcp/audit/audit_20260410.jsonl",
+              ".blender-mcp/audit/audit_20260411.jsonl",
+              ".blender-mcp/audit/audit_20260417.jsonl"
             ],
             "provenance": "script"
           },
@@ -584,7 +634,7 @@
             "evidence_grade": "repo-state validation",
             "source_files": [
               "tickets/manifest.json",
-              ".opencode/state/reviews/remed-001-review-reverification.md"
+              ".opencode/state/reviews/remed-010-review-review.md"
             ],
             "provenance": "script"
           },
@@ -598,21 +648,21 @@
             "evidence_grade": "repo-state validation",
             "source_files": [
               "tickets/manifest.json",
-              ".opencode/state/reviews/remed-002-review-reverification.md"
+              ".opencode/state/reviews/remed-014-review-ticket-reconciliation.md"
             ],
             "provenance": "script"
           },
           {
-            "code": "EXEC-REMED-001",
+            "code": "SESSION009",
             "severity": "error",
-            "disposition_class": "source_follow_up",
-            "legacy_disposition_class": "source_follow_up",
-            "route": "ticket-pack-builder",
-            "repair_class": "generated-repo remediation ticket",
-            "evidence_grade": "repo-state validation",
+            "disposition_class": "advisory",
+            "legacy_disposition_class": "managed_blocker",
+            "route": "scafforge-repair",
+            "repair_class": "safe Scafforge package change",
+            "evidence_grade": "transcript-backed and repo-validated",
             "source_files": [
-              "tickets/manifest.json",
-              ".opencode/state/reviews/remed-003-review-review.md"
+              "/home/rowan/Scafforge/reports/agent-runs/wvhvc-opencode-2026-04-17T23-58-59.log",
+              ".opencode/tools/ticket_lookup.ts"
             ],
             "provenance": "script"
           }
@@ -620,66 +670,59 @@
         "counts": {
           "managed_blocker": 0,
           "manual_prerequisite_blocker": 0,
-          "source_follow_up": 5,
+          "source_follow_up": 3,
           "process_state_only": 0,
-          "advisory": 0
+          "advisory": 1
         },
-        "shadow_mode_deltas": []
+        "shadow_mode_deltas": [
+          {
+            "code": "SESSION009",
+            "legacy_disposition_class": "managed_blocker",
+            "disposition_class": "advisory",
+            "route": "scafforge-repair",
+            "reason": "Legacy prefix classification would label SESSION009 as managed_blocker, but the authoritative bundle assigns advisory."
+          }
+        ]
       },
       "ticket_recommendations": [
         {
-          "id": "REMED-006",
-          "title": "Godot headless validation fails",
-          "description": "Remediate EXEC-GODOT-004 by correcting the validated issue and rerunning the relevant quality checks.",
+          "id": "REMED-026",
+          "title": "Recorded Blender-MCP mutating calls violated the stateless saved-blend chaining contract",
+          "description": "Remediate EXEC-BLENDER-001 by correcting the validated issue and rerunning the relevant quality checks.",
           "affected_files": [
-            "project.godot"
+            ".opencode/meta/asset-pipeline-bootstrap.json",
+            "assets/pipeline.json",
+            ".blender-mcp/audit/audit_20260409.jsonl",
+            ".blender-mcp/audit/audit_20260410.jsonl",
+            ".blender-mcp/audit/audit_20260411.jsonl",
+            ".blender-mcp/audit/audit_20260417.jsonl"
           ],
-          "suggested_fix_approach": "Run a deterministic `godot --headless --path . --quit` validation during audit and keep the repo blocked until it succeeds or returns an explicit environment blocker instead.",
+          "suggested_fix_approach": "Before escalating a Blender-MCP defect, prove one correct chain: `project_initialize(output_blend=...)`, then a mutating follow-up that reuses the returned `persistence.saved_blend` as `input_blend`, and verify `.blender-mcp/audit/*.jsonl` records non-null `input_blend` / `output_blend` on the matching `job_start`.",
           "assignee": "implementer",
-          "source_finding_code": "EXEC-GODOT-004",
+          "source_finding_code": "EXEC-BLENDER-001",
           "source_finding_codes": [
-            "EXEC-GODOT-004"
+            "EXEC-BLENDER-001"
           ],
           "severity": "error",
           "route": "ticket-pack-builder",
           "repair_class": "generated-repo remediation ticket",
-          "summary": "Run a deterministic `godot --headless --path . --quit` validation during audit and keep the repo blocked until it succeeds or returns an explicit environment blocker instead.",
+          "summary": "Before escalating a Blender-MCP defect, prove one correct chain: `project_initialize(output_blend=...)`, then a mutating follow-up that reuses the returned `persistence.saved_blend` as `input_blend`, and verify `.blender-mcp/audit/*.jsonl` records non-null `input_blend` / `output_blend` on the matching `job_start`.",
           "source_files": [
-            "project.godot"
+            ".opencode/meta/asset-pipeline-bootstrap.json",
+            "assets/pipeline.json",
+            ".blender-mcp/audit/audit_20260409.jsonl",
+            ".blender-mcp/audit/audit_20260410.jsonl",
+            ".blender-mcp/audit/audit_20260411.jsonl",
+            ".blender-mcp/audit/audit_20260417.jsonl"
           ]
         },
         {
-          "id": "REMED-007",
-          "title": "Android-targeted Godot repo is missing export surfaces or debug APK runnable proof",
-          "description": "Remediate EXEC-GODOT-005a by correcting the validated issue and rerunning the relevant quality checks.",
-          "affected_files": [
-            "project.godot",
-            "export_presets.cfg",
-            "android"
-          ],
-          "suggested_fix_approach": "Emit export_presets.cfg and android/ surfaces at scaffold time. Block RELEASE-001 closeout until debug APK runnable proof exists at the canonical path.",
-          "assignee": "implementer",
-          "source_finding_code": "EXEC-GODOT-005a",
-          "source_finding_codes": [
-            "EXEC-GODOT-005a"
-          ],
-          "severity": "error",
-          "route": "ticket-pack-builder",
-          "repair_class": "generated-repo remediation ticket",
-          "summary": "Emit export_presets.cfg and android/ surfaces at scaffold time. Block RELEASE-001 closeout until debug APK runnable proof exists at the canonical path.",
-          "source_files": [
-            "project.godot",
-            "export_presets.cfg",
-            "android"
-          ]
-        },
-        {
-          "id": "REMED-003",
+          "id": "REMED-027",
           "title": "Remediation review artifact does not contain runnable command evidence",
           "description": "Remediate EXEC-REMED-001 by correcting the validated issue and rerunning the relevant quality checks.",
           "affected_files": [
             "tickets/manifest.json",
-            ".opencode/state/reviews/remed-001-review-reverification.md"
+            ".opencode/state/reviews/remed-010-review-review.md"
           ],
           "suggested_fix_approach": "For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure.",
           "assignee": "implementer",
@@ -693,16 +736,16 @@
           "summary": "For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure.",
           "source_files": [
             "tickets/manifest.json",
-            ".opencode/state/reviews/remed-001-review-reverification.md"
+            ".opencode/state/reviews/remed-010-review-review.md"
           ]
         },
         {
-          "id": "REMED-004",
+          "id": "REMED-028",
           "title": "Remediation review artifact does not contain runnable command evidence",
           "description": "Remediate EXEC-REMED-001 by correcting the validated issue and rerunning the relevant quality checks.",
           "affected_files": [
             "tickets/manifest.json",
-            ".opencode/state/reviews/remed-002-review-reverification.md"
+            ".opencode/state/reviews/remed-014-review-ticket-reconciliation.md"
           ],
           "suggested_fix_approach": "For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure.",
           "assignee": "implementer",
@@ -716,53 +759,54 @@
           "summary": "For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure.",
           "source_files": [
             "tickets/manifest.json",
-            ".opencode/state/reviews/remed-002-review-reverification.md"
+            ".opencode/state/reviews/remed-014-review-ticket-reconciliation.md"
           ]
         },
         {
-          "id": "REMED-008",
-          "title": "Remediation review artifact does not contain runnable command evidence",
-          "description": "Remediate EXEC-REMED-001 by correcting the validated issue and rerunning the relevant quality checks.",
+          "id": "REMED-029",
+          "title": "The supplied session transcript shows a Blender-routed implementation ticket delegated to a generic worker that lacks the required Blender asset-creation toolset",
+          "description": "Remediate SESSION009 by correcting the validated issue and rerunning the relevant quality checks.",
           "affected_files": [
-            "tickets/manifest.json",
-            ".opencode/state/reviews/remed-003-review-review.md"
+            "/home/rowan/Scafforge/reports/agent-runs/wvhvc-opencode-2026-04-17T23-58-59.log",
+            ".opencode/tools/ticket_lookup.ts"
           ],
-          "suggested_fix_approach": "For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure.",
+          "suggested_fix_approach": "When a repo exposes `blender-asset-creator` and the ticket's primary deliverable is a Blender-generated asset, `ticket_lookup.transition_guidance.delegate_to_agent` must route implementation and implementation-recovery paths to `blender-asset-creator` instead of the generic implementer.",
           "assignee": "implementer",
-          "source_finding_code": "EXEC-REMED-001",
+          "source_finding_code": "SESSION009",
           "source_finding_codes": [
-            "EXEC-REMED-001"
+            "SESSION009"
           ],
           "severity": "error",
-          "route": "ticket-pack-builder",
-          "repair_class": "generated-repo remediation ticket",
-          "summary": "For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure.",
+          "route": "scafforge-repair",
+          "repair_class": "safe Scafforge package change",
+          "summary": "When a repo exposes `blender-asset-creator` and the ticket's primary deliverable is a Blender-generated asset, `ticket_lookup.transition_guidance.delegate_to_agent` must route implementation and implementation-recovery paths to `blender-asset-creator` instead of the generic implementer.",
           "source_files": [
-            "tickets/manifest.json",
-            ".opencode/state/reviews/remed-003-review-review.md"
+            "/home/rowan/Scafforge/reports/agent-runs/wvhvc-opencode-2026-04-17T23-58-59.log",
+            ".opencode/tools/ticket_lookup.ts"
           ]
         }
       ],
       "package_work_required_first": false,
       "recommended_next_step": "subject_repo_source_follow_up",
+      "supporting_logs": [
+        "/home/rowan/Scafforge/reports/agent-runs/wvhvc-opencode-2026-04-17T23-58-59.log"
+      ],
       "verification_kind": "post_repair",
-      "repair_package_commit": "72acfbad2d953b04f73d10fc873102b70b9e8907+dirty:77159f2ab867",
-      "repair_basis_path": "/home/pc/projects/womanvshorseVC/diagnosis/20260412-030500",
+      "repair_package_commit": "b2205a14fc57390317ff7b52a5c79e7a6a29adf4+dirty:b6dfa118779a",
+      "repair_basis_path": "/home/rowan/womanvshorseVC/diagnosis/20260418-002831",
       "current_state_clean": false,
       "causal_regression_verified": true,
-      "verification_basis": "current_state_only",
+      "verification_basis": "transcript_backed",
       "recommended_ticket_payload": "recommended-ticket-payload.json"
     }
   },
   "remediation_follow_up": {
     "created_tickets": [
-      "REMED-006",
-      "REMED-007",
-      "REMED-003",
-      "REMED-004",
-      "REMED-008"
+      "REMED-026",
+      "REMED-027",
+      "REMED-028"
     ],
     "superseded_tickets": [],
-    "diagnosis_manifest": "diagnosis/20260412-030918/manifest.json"
+    "diagnosis_manifest": "diagnosis/20260418-003317/manifest.json"
   }
 }

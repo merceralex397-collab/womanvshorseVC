@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "ticket_id": "MODEL-008",
+  "qa_artifact": ".opencode/state/artifacts/history/model-008/qa/2026-04-18T12-42-21-390Z-qa.md",
+  "scope": "model-generation",
+  "test_paths": [],
+  "command_signatures": [
+    "ls -la assets/models/heart-pickup.glb",
+    "godot4 --headless --path . --quit"
+  ],
+  "commands_total": 2,
+  "commands_completed": 2,
+  "completed": true,
+  "passed": true,
+  "updated_at": "2026-04-18T12:43:04.506Z",
+  "commands": [
+    {
+      "label": "command override 1",
+      "argv": [
+        "ls",
+        "-la",
+        "assets/models/heart-pickup.glb"
+      ],
+      "reason": "Explicit smoke-test command override supplied by the caller.",
+      "exit_code": 0,
+      "duration_ms": 2,
+      "stdout": "-rw-rw-r-- 1 rowan rowan 14012 Apr 18 01:45 assets/models/heart-pickup.glb\n",
+      "stderr": ""
+    },
+    {
+      "label": "command override 2",
+      "argv": [
+        "godot4",
+        "--headless",
+        "--path",
+        ".",
+        "--quit"
+      ],
+      "reason": "Explicit smoke-test command override supplied by the caller.",
+      "exit_code": 0,
+      "duration_ms": 297,
+      "stdout": "Godot Engine v4.6.1.stable.official.14d19694e - https://godotengine.org\n\n",
+      "stderr": ""
+    }
+  ]
+}

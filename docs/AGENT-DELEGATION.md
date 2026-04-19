@@ -7,7 +7,7 @@ This document is the human-readable delegation map for the generated OpenCode te
 
 - visible coordinator: `wvhvc-team-leader`
 - planning lane: `wvhvc-planner` and `wvhvc-plan-review`
-- implementation lane: `wvhvc-lane-executor` and `wvhvc-implementer`
+- implementation lane: `wvhvc-lane-executor`, `wvhvc-implementer`, and `wvhvc-blender-asset-creator` for Blender-routed asset tickets
 - review lane: `wvhvc-reviewer-code` and `wvhvc-reviewer-security`
 - QA lane: `wvhvc-tester-qa`
 - closeout lane: `wvhvc-docs-handoff`
@@ -18,7 +18,7 @@ This document is the human-readable delegation map for the generated OpenCode te
 1. `wvhvc-team-leader` resolves canonical state with `ticket_lookup`
 2. `wvhvc-planner` writes the planning artifact
 3. `wvhvc-plan-review` approves or rejects the plan
-4. `wvhvc-lane-executor` or `wvhvc-implementer` performs the approved implementation lane
+4. `wvhvc-lane-executor` or `wvhvc-implementer` performs the approved implementation lane unless the ticket's primary deliverable is a Blender-generated asset, in which case `wvhvc-blender-asset-creator` owns implementation
 5. `wvhvc-reviewer-code` and `wvhvc-reviewer-security` return findings or approval evidence
 6. `wvhvc-tester-qa` runs QA and returns the QA artifact
 7. `wvhvc-team-leader` runs `smoke_test`, advances lifecycle state, and routes closeout
@@ -30,6 +30,7 @@ This document is the human-readable delegation map for the generated OpenCode te
 - only the owning specialist or tool writes the stage artifact body
 - read-only specialists return findings, blockers, or evidence; they do not mutate repo-tracked files
 - write-capable specialists work only inside a claimed lease and only for the bounded lane they were assigned
+- Blender-routed asset tickets must delegate to `wvhvc-blender-asset-creator`, not to the generic implementer or lane executor
 
 ## Escalation Path
 

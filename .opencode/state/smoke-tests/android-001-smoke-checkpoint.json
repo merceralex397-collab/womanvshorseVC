@@ -1,0 +1,59 @@
+{
+  "version": 1,
+  "ticket_id": "ANDROID-001",
+  "qa_artifact": ".opencode/state/artifacts/history/android-001/qa/2026-04-17T14-08-16-811Z-qa.md",
+  "scope": "backlog-verification",
+  "test_paths": [],
+  "command_signatures": [
+    "godot4 --headless --path . --quit",
+    "ls -la build/android/womanvshorseVC-debug.apk",
+    "file build/android/womanvshorseVC-debug.apk"
+  ],
+  "commands_total": 3,
+  "commands_completed": 3,
+  "completed": true,
+  "passed": true,
+  "updated_at": "2026-04-17T21:11:40.280Z",
+  "commands": [
+    {
+      "label": "command override 1",
+      "argv": [
+        "godot4",
+        "--headless",
+        "--path",
+        ".",
+        "--quit"
+      ],
+      "reason": "Explicit smoke-test command override supplied by the caller.",
+      "exit_code": 0,
+      "duration_ms": 168,
+      "stdout": "Godot Engine v4.6.1.stable.official.14d19694e - https://godotengine.org\n\n",
+      "stderr": ""
+    },
+    {
+      "label": "command override 2",
+      "argv": [
+        "ls",
+        "-la",
+        "build/android/womanvshorseVC-debug.apk"
+      ],
+      "reason": "Explicit smoke-test command override supplied by the caller.",
+      "exit_code": 0,
+      "duration_ms": 2,
+      "stdout": "-rw-rw-r-- 1 rowan rowan 29824304 Apr 17 14:02 build/android/womanvshorseVC-debug.apk\n",
+      "stderr": ""
+    },
+    {
+      "label": "command override 3",
+      "argv": [
+        "file",
+        "build/android/womanvshorseVC-debug.apk"
+      ],
+      "reason": "Explicit smoke-test command override supplied by the caller.",
+      "exit_code": 0,
+      "duration_ms": 22,
+      "stdout": "build/android/womanvshorseVC-debug.apk: Android package (APK), with classes.dex\n",
+      "stderr": ""
+    }
+  ]
+}

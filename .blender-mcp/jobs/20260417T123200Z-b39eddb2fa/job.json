@@ -1,0 +1,13 @@
+{
+  "job_id": "20260417T123200Z-b39eddb2fa",
+  "tool": "quality_validate",
+  "project_root": "/home/rowan/womanvshorseVC",
+  "input_blend": "/home/rowan/womanvshorseVC/assets/models/arena-ground.glb",
+  "output_blend": null,
+  "payload": {
+    "profile": "game-ready"
+  },
+  "timeout_seconds": 180,
+  "factory_startup": true,
+  "generated_at": "2026-04-17T12:32:00.657824+00:00"
+}

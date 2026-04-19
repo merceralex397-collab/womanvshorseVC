@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ground"]
+size = Vector2(12, 12)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_warrior"]
+radius = 0.35
+height = 1.2
+
+[sub_resource type="BoxMesh" id="BoxMesh_horse"]
+size = Vector3(1.2, 0.8, 2)
+
+[node name="Main" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.422618, 0.906308, 0, -0.906308, 0.422618, 0, 7.5, 7.5)
+projection = 1
+size = 8.0
+near = 0.1
+far = 50.0
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, -0.353553, 0.353553, 0, 0.707107, 0.707107, -0.5, -0.612372, 0.612372, 0, 4, 0)
+light_energy = 1.4
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_ground")
+
+[node name="WomanWarrior" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0.6, 0)
+mesh = SubResource("CapsuleMesh_warrior")
+
+[node name="HorseBrown" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 1.5, 0.4, 0)
+mesh = SubResource("BoxMesh_horse")

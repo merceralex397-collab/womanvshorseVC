@@ -4,15 +4,26 @@
 
 - REMED-002
 
-## Evidence
+## Verification Commands
 
-- evidence_ticket_id: REMED-002
-- evidence_artifact_path: .opencode/state/artifacts/history/remed-002/review/2026-04-11T16-10-14-409Z-backlog-verification.md
+- Command: `godot4 --headless --path . --quit`
+- Raw command output:
 
-## Reason
+```text
+Godot Engine v4.6.1.stable.official.14d19694e - https://godotengine.org
+```
 
-REMED-002 backlog verification PASS. All stage artifacts verified current, smoke-test PASS, QA PASS, workflow drift none, proof gaps none. Trust intact for process version 7.
+- Result: PASS
 
-## Result
+- Command: `ls -l build/android/womanvshorseVC-debug.apk`
+- Raw command output:
+
+```text
+-rw-rw-r-- 1 rowan rowan 24490136 Apr 15 20:35 build/android/womanvshorseVC-debug.apk
+```
+
+- Result: PASS
+
+## Verdict
 
 Overall Result: PASS

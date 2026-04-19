@@ -4,12 +4,29 @@ config_version=5
 [application]
 name="Woman vs Horse VC"
 config/features=PackedStringArray("4.6", "Forward+")
+run/main_scene="res://scenes/ui/title_screen.tscn"
 
 [display]
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/handheld/orientation=1
+
+[input]
+
+[input/jump]
+events = []
+
+[input/attack]
+events = []
+
+[physics]
+layer_1 = "static_geometry"
+layer_2 = "player"
+layer_3 = "enemies"
+
+[autoload]
+AudioManager="res://scripts/audio/audio_manager.gd"
 
 [rendering]
 textures/vram_compression/import_etc2_astc=true

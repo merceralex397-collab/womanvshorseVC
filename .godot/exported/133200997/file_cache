@@ -1,0 +1,7 @@
+res://scenes/main.tscn::ba08aa91ebc263223e80b25604811cf2::1776285264::res://.godot/exported/133200997/export-3ad5c15c4f3250da0cc7c1af1770d85f-main.scn
+res://scenes/arena/arena.tscn::52ce9497ccdb73ee4f31a072f3dceaf2::1776434180::res://.godot/exported/133200997/export-8ddfe6f8446e54dd7240dc80a2be5fea-arena.scn
+res://scenes/enemies/horse_base.tscn::8145b1120054dd999795bb61215460c2::1776436698::res://.godot/exported/133200997/export-955c8496af06026112ca205bac2d6992-horse_base.scn
+res://scenes/player/player.tscn::2f2943a2530a3d21be0e9216e78f1b27::1776438890::res://.godot/exported/133200997/export-c2c62cb8c73458cd122faf659769dc80-player.scn
+res://scenes/wave_spawner/wave_spawner.tscn::528444db60b768e4964086193c388e73::1776434159::res://.godot/exported/133200997/export-7165550c0b61bf6ca2260a0ddfc1dd1a-wave_spawner.scn
+res://scenes/ui/game_over_screen.tscn::450779cf835445a97240ab766b3b3fa7::1776437883::res://.godot/exported/133200997/export-ba494dd9b051bd79084501bcfe9f90ed-game_over_screen.scn
+res://scenes/ui/title_screen.tscn::21fa19256a70dba65496974277ed5fb2::1776437265::res://.godot/exported/133200997/export-5eabcd2865b627a14b0c7b9586988c63-title_screen.scn

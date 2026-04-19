@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "ticket_id": "REMED-023",
+  "qa_artifact": ".opencode/state/artifacts/history/remed-023/qa/2026-04-18T00-09-06-042Z-qa.md",
+  "scope": "remediation",
+  "test_paths": [],
+  "command_signatures": [
+    "bash -c grep -c \"input_blend.*remed-009-test-init\" .blender-mcp/audit/audit_20260417.jsonl",
+    "bash -c grep -c \"output_blend.*remed-009-test-chain\" .blender-mcp/audit/audit_20260417.jsonl",
+    "godot4 --headless --path . --quit"
+  ],
+  "commands_total": 3,
+  "commands_completed": 3,
+  "completed": true,
+  "passed": true,
+  "updated_at": "2026-04-18T00:10:00.799Z",
+  "commands": [
+    {
+      "label": "command override 1",
+      "argv": [
+        "bash",
+        "-c",
+        "grep -c \"input_blend.*remed-009-test-init\" .blender-mcp/audit/audit_20260417.jsonl"
+      ],
+      "reason": "Explicit smoke-test command override supplied by the caller.",
+      "exit_code": 0,
+      "duration_ms": 4,
+      "stdout": "4\n",
+      "stderr": ""
+    },
+    {
+      "label": "command override 2",
+      "argv": [
+        "bash",
+        "-c",
+        "grep -c \"output_blend.*remed-009-test-chain\" .blender-mcp/audit/audit_20260417.jsonl"
+      ],
+      "reason": "Explicit smoke-test command override supplied by the caller.",
+      "exit_code": 0,
+      "duration_ms": 2,
+      "stdout": "3\n",
+      "stderr": ""
+    },
+    {
+      "label": "command override 3",
+      "argv": [
+        "godot4",
+        "--headless",
+        "--path",
+        ".",
+        "--quit"
+      ],
+      "reason": "Explicit smoke-test command override supplied by the caller.",
+      "exit_code": 0,
+      "duration_ms": 159,
+      "stdout": "Godot Engine v4.6.1.stable.official.14d19694e - https://godotengine.org\n\n",
+      "stderr": ""
+    }
+  ]
+}

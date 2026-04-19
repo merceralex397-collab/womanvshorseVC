@@ -27,7 +27,7 @@ Before applying these rules, call `skill_ping` with `skill_id: "godot-3d-android
 1. Create or update the asset brief in `assets/briefs/<asset-name>.md`.
 2. Generate the model through the Blender-MCP flow and export `assets/models/<asset-name>.glb`.
 3. Record provenance in `assets/PROVENANCE.md`.
-4. Validate Godot import with `/home/pc/.local/bin/godot --headless --path /home/pc/projects/womanvshorseVC --quit`.
+4. Validate Godot import with `godot4 --headless --path . --quit` from the repo root.
 5. Only after the import surface is proven should a ticket claim the model is ready for gameplay scene wiring.
 
 ## Orthographic Camera Setup
@@ -49,14 +49,14 @@ Key rules:
 ## Validation Commands
 
 ```bash
-/home/pc/.local/bin/godot --headless --path /home/pc/projects/womanvshorseVC --quit
-/home/pc/.local/bin/godot --headless --path /home/pc/projects/womanvshorseVC --export-debug "Android Debug" build/android/womanvshorseVC-debug.apk
-ls -lh build/android/womanvshorseVC-debug.apk
+godot4 --headless --path . --quit
+godot4 --headless --path . --export-debug "Android Debug" build/android/womanvshorsevc-debug.apk
+ls -lh build/android/womanvshorsevc-debug.apk
 ```
 
 ## Common Pitfalls
 
-- Do not assume `godot` is on PATH; use `/home/pc/.local/bin/godot` when needed.
+- Use the current host bootstrap proof and repo-local canonical commands instead of copying an older workstation-specific Godot binary path.
 - Do not declare an asset imported cleanly without running the headless project load command.
 - Do not assume current repo structure from other Woman vs Horse variants; VC must be validated from its own tree.
 - Do not treat a missing or failed APK export as a docs-only issue. `EXEC-GODOT-005a` stays open until the real debug APK proof exists.

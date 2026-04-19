@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "generated_at": "2026-04-16T21:27:35Z",
+  "repo_root": "/home/rowan/womanvshorseVC",
+  "audit_package_commit": "a7754f5955b5df9f7f37d19bb1969db2542d6825+dirty:b90f7aab0f69",
+  "allowed_classes": [
+    "managed_blocker",
+    "manual_prerequisite_blocker",
+    "source_follow_up",
+    "process_state_only",
+    "advisory"
+  ],
+  "finding_count": 2,
+  "findings": [
+    {
+      "code": "EXEC-BLENDER-001",
+      "severity": "error",
+      "disposition_class": "source_follow_up",
+      "legacy_disposition_class": "source_follow_up",
+      "route": "ticket-pack-builder",
+      "repair_class": "generated-repo remediation ticket",
+      "evidence_grade": "repo-state validation",
+      "source_files": [
+        ".opencode/meta/asset-pipeline-bootstrap.json",
+        "assets/pipeline.json",
+        ".blender-mcp/audit/audit_20260409.jsonl",
+        ".blender-mcp/audit/audit_20260410.jsonl",
+        ".blender-mcp/audit/audit_20260411.jsonl"
+      ],
+      "provenance": "script"
+    },
+    {
+      "code": "SESSION003",
+      "severity": "error",
+      "disposition_class": "advisory",
+      "legacy_disposition_class": "managed_blocker",
+      "route": "scafforge-repair",
+      "repair_class": "safe Scafforge package change",
+      "evidence_grade": "transcript-backed and repo-validated",
+      "source_files": [
+        "wvhvclogblender1.md"
+      ],
+      "provenance": "script"
+    }
+  ],
+  "counts": {
+    "managed_blocker": 0,
+    "manual_prerequisite_blocker": 0,
+    "source_follow_up": 1,
+    "process_state_only": 0,
+    "advisory": 1
+  },
+  "shadow_mode_deltas": [
+    {
+      "code": "SESSION003",
+      "legacy_disposition_class": "managed_blocker",
+      "disposition_class": "advisory",
+      "route": "scafforge-repair",
+      "reason": "Legacy prefix classification would label SESSION003 as managed_blocker, but the authoritative bundle assigns advisory."
+    }
+  ]
+}

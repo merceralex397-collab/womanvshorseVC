@@ -1,0 +1,37 @@
+# Smoke Test
+
+## Ticket
+
+- CORE-002
+
+## Overall Result
+
+Overall Result: PASS
+
+## Notes
+
+All detected deterministic smoke-test commands passed.
+
+## Commands
+
+### 1. qa artifact command 1
+
+- reason: Current QA artifact records a deterministic smoke-test command.
+- command: `godot4 --headless --path /home/rowan/womanvshorseVC --quit`
+- exit_code: 0
+- duration_ms: 159
+- missing_executable: none
+- failure_classification: none
+- blocked_by_permissions: false
+
+#### stdout
+
+~~~~text
+Godot Engine v4.6.1.stable.official.14d19694e - https://godotengine.org
+~~~~
+
+#### stderr
+
+~~~~text
+<no output>
+~~~~

@@ -19,18 +19,18 @@ remediation
 
 ## Stage
 
-planning
+closeout
 
 ## Status
 
-todo
+done
 
 ## Trust
 
-- resolution_state: open
-- verification_state: suspect
+- resolution_state: superseded
+- verification_state: reverified
 - finding_source: EXEC-REMED-001
-- source_ticket_id: REMED-003
+- source_ticket_id: REMED-002
 - source_mode: split_scope
 
 ## Depends On
@@ -55,4 +55,5 @@ None
 - None yet
 
 ## Notes
+
 

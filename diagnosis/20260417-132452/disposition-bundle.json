@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "generated_at": "2026-04-17T13:24:52Z",
+  "repo_root": "/home/rowan/womanvshorseVC",
+  "audit_package_commit": "1e7d1e86ca976d17c4273b3cd879bfee44ec0c6b+dirty:30cb18e482cb",
+  "allowed_classes": [
+    "managed_blocker",
+    "manual_prerequisite_blocker",
+    "source_follow_up",
+    "process_state_only",
+    "advisory"
+  ],
+  "finding_count": 3,
+  "findings": [
+    {
+      "code": "EXEC-BLENDER-001",
+      "severity": "error",
+      "disposition_class": "source_follow_up",
+      "legacy_disposition_class": "source_follow_up",
+      "route": "ticket-pack-builder",
+      "repair_class": "generated-repo remediation ticket",
+      "evidence_grade": "repo-state validation",
+      "source_files": [
+        ".opencode/meta/asset-pipeline-bootstrap.json",
+        "assets/pipeline.json",
+        ".blender-mcp/audit/audit_20260409.jsonl",
+        ".blender-mcp/audit/audit_20260410.jsonl",
+        ".blender-mcp/audit/audit_20260411.jsonl",
+        ".blender-mcp/audit/audit_20260417.jsonl"
+      ],
+      "provenance": "script"
+    },
+    {
+      "code": "EXEC-REMED-001",
+      "severity": "error",
+      "disposition_class": "source_follow_up",
+      "legacy_disposition_class": "source_follow_up",
+      "route": "ticket-pack-builder",
+      "repair_class": "generated-repo remediation ticket",
+      "evidence_grade": "repo-state validation",
+      "source_files": [
+        "tickets/manifest.json",
+        ".opencode/state/reviews/remed-010-review-review.md"
+      ],
+      "provenance": "script"
+    },
+    {
+      "code": "EXEC-REMED-001",
+      "severity": "error",
+      "disposition_class": "source_follow_up",
+      "legacy_disposition_class": "source_follow_up",
+      "route": "ticket-pack-builder",
+      "repair_class": "generated-repo remediation ticket",
+      "evidence_grade": "repo-state validation",
+      "source_files": [
+        "tickets/manifest.json",
+        ".opencode/state/reviews/remed-014-review-ticket-reconciliation.md"
+      ],
+      "provenance": "script"
+    }
+  ],
+  "counts": {
+    "managed_blocker": 0,
+    "manual_prerequisite_blocker": 0,
+    "source_follow_up": 3,
+    "process_state_only": 0,
+    "advisory": 0
+  },
+  "shadow_mode_deltas": []
+}

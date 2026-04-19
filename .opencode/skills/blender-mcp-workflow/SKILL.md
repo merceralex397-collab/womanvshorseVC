@@ -1,90 +1,35 @@
 ---
 name: blender-mcp-workflow
-description: Run the stateless blender-agent MCP pipeline for Woman vs Horse VC GLB assets. Use when a ticket creates or updates a required low-poly 3D model.
+description: Guide agents through the repo's managed Blender-MCP asset workflow, including saved-blend chaining and audit-log verification.
 ---
 
-# Blender-MCP Workflow
+# Blender-MCP Workflow Reference
 
-Before using this workflow, call `skill_ping` with `skill_id: "blender-mcp-workflow"` and `scope: "project"`.
+Use this reference when synthesizing a repo-local `blender-mcp-workflow` skill for a project that routes asset creation through `blender-agent`.
 
-## Contract
+## Required contract
 
-The asset workflow is stateless across MCP calls. Every operation that depends on prior Blender work must pass the previous `persistence.saved_blend` value as `input_blend`, and every mutating operation must request or record an `output_blend` for the next step. Do not rely on a live editor session to preserve state between calls.
+- Treat mutating Blender-MCP calls as **stateless** unless current repo evidence proves otherwise.
+- Every mutating call must provide an `output_blend`.
+- After each mutating call, read `persistence.saved_blend` from the response and feed that exact path back as `input_blend` on the next mutating call.
+- If a mutating response says the work was ephemeral, omits `output_blend`, or returns no `persistence.saved_blend`, stop and retry that same step correctly before continuing.
+- Before claiming a bridge defect, prove one successful chain explicitly: `project_initialize(output_blend=...)` must save a file, the next mutating call must reuse that path as `input_blend`, and `.blender-mcp/audit/*.jsonl` must record non-null `input_blend` / `output_blend` on the corresponding `job_start`.
+- Do not claim the bridge is broken just because a call was made with `input_blend: null` or `output_blend: null`. First verify the call honored the stateless chaining contract.
 
-## Repo Paths
+## Default tool sequence
 
-- MCP server source: `/home/pc/projects/blender-agent`
-- Server command: `cd /home/pc/projects/blender-agent/mcp-server && python3 -m blender_mcp_server`
-- Blender binary: `/home/pc/blender-4.5.0/blender`
-- Asset briefs: `assets/briefs/<asset-name>.md`
-- Blender working files: `assets/models/<asset-name>.blend`
-- Godot imports: `assets/models/<asset-name>.glb`
-- Preview renders: `.blender-mcp/renders/`
-- Provenance ledger: `assets/PROVENANCE.md`
+1. `project_initialize(output_blend=...)`
+2. `mesh_edit_batch(...)` or `scene_batch_edit(...)` with chained `input_blend` / `output_blend`
+3. `material_pbr_build(...)` with chained `input_blend` / `output_blend`
+4. `uv_workflow(...)` with chained `input_blend` / `output_blend`
+5. `render_preview(...)` with chained `input_blend` / `output_blend`
+6. `quality_validate(input_blend=...)`
+7. `export_asset(input_blend=...)`
 
-## Required Assets
+## Blocker handling
 
-- `woman-warrior`: warrior woman with sword, about 3000 triangles
-- `horse-brown`: basic horse enemy, about 2000 triangles
-- `horse-black`: fast horse variant, about 2000 triangles
-- `horse-war`: armored horse, about 4000 triangles
-- `horse-boss`: large boss horse, about 5000 triangles
-- `arena-ground`: grass arena with fence border, about 500 triangles
-- `sword-projectile`: thrown sword, about 200 triangles
-- `heart-pickup`: health pickup, about 100 triangles
-
-## Stateless Pipeline
-
-For each asset brief:
-
-1. Read `assets/briefs/<asset-name>.md` and confirm scale, triangle budget, silhouette, and color palette.
-2. Create or load the starting `.blend` through the MCP project initialization tool. Record the returned `persistence.saved_blend`.
-3. For mesh construction, call the mesh edit tool with `input_blend` set to the previous saved blend. Record the returned `output_blend` or `persistence.saved_blend`.
-4. For material assignment, UV work, modifiers, or scene edits, always chain the last saved path forward as `input_blend`.
-5. Generate front, top, and three-quarter preview renders into `.blender-mcp/renders/`.
-6. Run quality validation against the brief's triangle budget, normal direction, manifold state, scale, and UV constraints.
-7. Export GLB to `assets/models/<asset-name>.glb` from the latest saved blend.
-8. Update `assets/PROVENANCE.md` with asset path, source, license, generation tool, and date.
-9. Run Godot import validation with `godot --headless --path . --quit`.
-
-## Tool Usage Rules
-
-- Prefer primitive mesh construction and simple low-poly shaping over high subdivision.
-- Keep material node trees simple; use Principled BSDF-compatible PBR materials.
-- Do not export FBX, OBJ, or non-GLB formats for Godot.
-- Do not add animation or armatures unless the asset brief explicitly requires them.
-- Keep 1 Blender unit equal to 1 Godot meter.
-- Preserve each `output_blend` path in the ticket artifact so the next agent can resume deterministically.
-- If an MCP operation fails, retry from the last known `persistence.saved_blend` rather than assuming in-memory state survived.
-
-## Brief To Parameter Mapping
-
-| Brief Field | MCP Parameter |
-|---|---|
-| Triangle budget | `max_triangles` during quality validation |
-| Primary color | material base color |
-| Secondary color | additional material slot color |
-| Scale reference | expected scale or dimensions |
-| Export path | `assets/models/<asset-name>.glb` |
-| Working file path | `input_blend` or `output_blend` |
-
-## Validation Checklist
-
-- Triangle count is within the asset brief budget.
-- Normals face outward and no critical inverted-normal errors remain.
-- Mesh is manifold enough for Godot import and gameplay collision usage.
-- UVs are generated and do not create obvious texture artifacts.
-- Preview renders match the brief silhouette and low-poly style.
-- GLB exists at `assets/models/<asset-name>.glb`.
-- Godot imports the GLB during `godot --headless --path . --quit`.
-- `assets/PROVENANCE.md` records the generation source and license.
-
-## Blockers
-
-Return a blocker instead of fabricating proof when:
-
-- the blender-agent MCP server is unavailable;
-- `/home/pc/blender-4.5.0/blender` is missing;
-- a tool call does not return a usable `persistence.saved_blend`, `input_blend`, or `output_blend` chain;
-- Godot import validation cannot run on the host;
-- the generated model cannot meet the brief's triangle or silhouette requirements without changing the brief.
+- If `environment_probe` or config evidence shows inline Python is disabled, treat that as a blocker rather than inventing a Python fallback.
+- If `.blender-mcp/audit/*.jsonl` shows a mutating `job_start` with `input_blend: null` or `output_blend: null`, treat that as invocation evidence first. Re-run the step with explicit chained paths before escalating a system-level MCP defect.
+- Do not describe `blender_session_*` tools, persistent in-memory sessions, or checkpoint workflows unless the repo actually exposes and documents those tools.
+- Tell agents to use the repo's managed `blender_agent` MCP entry from `opencode.jsonc` when it exists instead of inventing a separate launch command.
+- Use the repo's seeded asset surfaces (`assets/briefs/`, `assets/models/`, `assets/PROVENANCE.md`, `assets/pipeline.json`) instead of generic imaginary paths.

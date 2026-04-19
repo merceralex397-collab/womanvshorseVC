@@ -18,7 +18,7 @@ import {
   validateHandoffNextAction,
   validateRestartSurfacePublication,
   workflowStatePath,
-} from "../lib/workflow"
+} from "../lib/workflow.ts"
 
 export default tool({
   description: "Publish the top-level START-HERE handoff and the latest handoff copy in .opencode/state.",

@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://horse_base_001"]
+
+[ext_resource type="Script" path="res://scripts/enemies/horse_base.gd" id="1_horse_base"]
+[ext_resource type="Script" path="res://scripts/enemies/HealthComponent.gd" id="2_health"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1"]
+radius = 0.5
+height = 1.4
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_contact"]
+radius = 1.0
+height = 1.2
+
+[node name="HorseBase" type="CharacterBody3D"]
+collision_layer = 4
+script = ExtResource("1_horse_base")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_1")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+target_desired_distance = 1.5
+navigation_layers = 1
+
+[node name="Health" type="Node" parent="."]
+script = ExtResource("2_health")
+
+[node name="ContactDamageArea" type="Area3D" parent="."]
+collision_mask = 4
+monitoring = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ContactDamageArea"]
+shape = SubResource("CylinderShape3D_contact")
+
+[node name="HitFlash" type="Node3D" parent="."]
+
+[node name="ModelContainer" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ModelContainer"]

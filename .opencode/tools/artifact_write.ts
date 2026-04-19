@@ -1,5 +1,5 @@
 import { tool } from "@opencode-ai/plugin"
-import { canonicalizeRepoPath, currentStageArtifactForAlias, defaultArtifactPath, describeArtifactPathMismatch, getTicket, loadManifest, writeText } from "../lib/workflow"
+import { canonicalizeRepoPath, currentStageArtifactForAlias, defaultArtifactPath, describeArtifactPathMismatch, getTicket, loadManifest, writeText } from "../lib/workflow.ts"
 
 export default tool({
   description: "Write the full body for a canonical planning, implementation, review, or QA artifact.",

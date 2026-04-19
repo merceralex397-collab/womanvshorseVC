@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "ticket_id": "CORE-005",
+  "qa_artifact": ".opencode/state/artifacts/history/core-005/qa/2026-04-17T14-27-12-335Z-qa.md",
+  "scope": "live-verification",
+  "test_paths": [],
+  "command_signatures": [
+    "godot4 --headless --path /home/rowan/womanvshorseVC --quit"
+  ],
+  "commands_total": 1,
+  "commands_completed": 1,
+  "completed": true,
+  "passed": true,
+  "updated_at": "2026-04-17T21:19:02.056Z",
+  "commands": [
+    {
+      "label": "command override 1",
+      "argv": [
+        "godot4",
+        "--headless",
+        "--path",
+        "/home/rowan/womanvshorseVC",
+        "--quit"
+      ],
+      "reason": "Explicit smoke-test command override supplied by the caller.",
+      "exit_code": 0,
+      "duration_ms": 170,
+      "stdout": "Godot Engine v4.6.1.stable.official.14d19694e - https://godotengine.org\n\n",
+      "stderr": ""
+    }
+  ]
+}

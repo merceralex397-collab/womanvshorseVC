@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "ticket_id": "REMED-009",
+  "qa_artifact": ".opencode/state/artifacts/history/remed-009/qa/2026-04-17T03-06-27-301Z-qa.md",
+  "scope": "full-suite",
+  "test_paths": [],
+  "command_signatures": [
+    "grep -c 20260417T030247Z /home/rowan/womanvshorseVC/.blender-mcp/audit/audit_20260417.jsonl",
+    "grep -c /tmp/remed-009-test-chain.blend /home/rowan/womanvshorseVC/.blender-mcp/audit/audit_20260417.jsonl",
+    "python3 -c import json; data=open('/home/rowan/womanvshorseVC/.blender-mcp/audit/audit_20260417.jsonl').readlines(); print([l for l in data if '20260417T030247Z' in l][:1])"
+  ],
+  "commands_total": 3,
+  "commands_completed": 3,
+  "completed": true,
+  "passed": true,
+  "updated_at": "2026-04-17T03:08:23.246Z",
+  "commands": [
+    {
+      "label": "command override 1",
+      "argv": [
+        "grep",
+        "-c",
+        "20260417T030247Z",
+        "/home/rowan/womanvshorseVC/.blender-mcp/audit/audit_20260417.jsonl"
+      ],
+      "reason": "Explicit smoke-test command override supplied by the caller.",
+      "exit_code": 0,
+      "duration_ms": 1,
+      "stdout": "3\n",
+      "stderr": ""
+    },
+    {
+      "label": "command override 2",
+      "argv": [
+        "grep",
+        "-c",
+        "/tmp/remed-009-test-chain.blend",
+        "/home/rowan/womanvshorseVC/.blender-mcp/audit/audit_20260417.jsonl"
+      ],
+      "reason": "Explicit smoke-test command override supplied by the caller.",
+      "exit_code": 0,
+      "duration_ms": 1,
+      "stdout": "3\n",
+      "stderr": ""
+    },
+    {
+      "label": "command override 3",
+      "argv": [
+        "python3",
+        "-c",
+        "import json; data=open('/home/rowan/womanvshorseVC/.blender-mcp/audit/audit_20260417.jsonl').readlines(); print([l for l in data if '20260417T030247Z' in l][:1])"
+      ],
+      "reason": "Explicit smoke-test command override supplied by the caller.",
+      "exit_code": 0,
+      "duration_ms": 18,
+      "stdout": "['{\"record_id\": \"20260417030247-3fbf8bdecb26\", \"timestamp\": \"2026-04-17T03:02:47.626410+00:00\", \"event_type\": \"job_start\", \"actor_id\": null, \"client_id\": null, \"session_id\": null, \"job_id\": \"20260417T030247Z-761597ed6a\", \"execution_layer\": \"mcp_tool\", \"tool_name\": \"scene_batch_edit\", \"operator_id\": null, \"provenance\": \"certified_workflow\", \"project_root\": \"/home/rowan/womanvshorseVC\", \"input_blend\": \"/home/rowan/womanvshorseVC/tmp/remed-009-test-init.blend\", \"input_blend_hash\": \"59b438245b5bc110c5beb559f9dd9c6b0002769ce79ce4cced9ee7f474d39637\", \"output_blend\": \"/home/rowan/womanvshorseVC/tmp/remed-009-test-chain.blend\", \"output_blend_hash\": null, \"checkpoint_before\": null, \"checkpoint_after\": null, \"files_created\": [], \"files_modified\": [], \"files_deleted\": [], \"success\": true, \"return_code\": null, \"warnings\": [], \"errors\": [], \"trust_profile\": \"unrestricted\", \"policy_version\": \"1.0\", \"human_override\": false, \"manual_takeover_by\": null, \"resumed_after_manual\": false, \"scene_changed_during_manual\": null, \"duration_ms\": null, \"payload_summary\": {\"operations\": \"list[1]\"}, \"command_executed\": [\"/home/rowan/.local/bin/blender\", \"--factory-startup\", \"--background\", \"/home/rowan/womanvshorseVC/tmp/remed-009-test-init.blend\", \"--python\", \"/home/rowan/blender-agent/mcp-server/src/blender_mcp_server/bridge_runtime.py\", \"--\", \"--job\", \"/home/rowan/womanvshorseVC/.blender-mcp/jobs/20260417T030247Z-761597ed6a/job.json\", \"--result\", \"/home/rowan/womanvshorseVC/.blender-mcp/jobs/20260417T030247Z-761597ed6a/result.json\"]}\\n']\n",
+      "stderr": ""
+    }
+  ]
+}

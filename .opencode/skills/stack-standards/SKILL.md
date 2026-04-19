@@ -1,78 +1,57 @@
 ---
 name: stack-standards
-description: Apply Woman vs Horse VC's Godot 4.6 Android, low-poly asset, and release-proof engineering standards.
+description: Hold the repo-specific engineering, validation, and release-proof standards for Woman vs Horse VC's Godot 4.6 Android stack.
 ---
 
 # Stack Standards
 
 Before applying these rules, call `skill_ping` with `skill_id: "stack-standards"` and `scope: "project"`.
 
-This repository is a Godot 4.6 Android project for a low-poly 3D arena action game. The product target is an Android APK with Blender-MCP generated GLB assets, touch controls, a fixed top-down orthographic camera, and no placeholder final models.
+Current stack: `Godot 4.6 / GDScript / Android / Blender-MCP GLB assets`
 
-## Project Stack
+## Repo-specific operating rules
 
-- Engine: Godot 4.6, Forward+ rendering, Android landscape output.
-- Main config: `project.godot`.
-- Android export config: `export_presets.cfg`.
-- Canonical debug APK path: `build/android/womanvshorseVC-debug.apk`.
-- Asset source: Blender 4.5.0 at `/home/pc/blender-4.5.0/blender` via blender-agent MCP.
-- Model format: GLB files under `assets/models/`.
-- Asset provenance: `assets/PROVENANCE.md`.
+- Build and validation work is Godot-first. Do not substitute generic Python or Node tooling for the real project-load and Android export commands.
+- Runtime code lives in `scripts/` and scene ownership lives in `scenes/`. Check the live tree before inventing new scene names or script paths.
+- Gameplay is a fixed top-down 3D arena on the XZ plane. Keep movement, combat, and spawn logic centered on X/Z and treat Y as gravity / vertical presentation only.
+- The Android target is landscape and touch-only. UI work must preserve large touch targets and avoid desktop-only input assumptions.
+- Visual assets are low-poly GLB files under `assets/models/`, generated from the seeded asset brief and Blender-MCP route. Do not claim an asset is usable until the GLB imports cleanly in Godot.
 
-## Godot Rules
+## GDScript conventions already present in this repo
 
-- Keep gameplay code and scenes compatible with Godot 4.6.
-- Use fixed top-down orthographic camera assumptions unless the canonical brief changes.
-- Keep controls touch-first: virtual joystick movement plus attack buttons. Do not add keyboard-only acceptance for Android-facing tickets.
-- Treat `project.godot`, `.tscn`, `.tres`, `.gd`, `export_presets.cfg`, and Android export surfaces as first-class review targets.
-- Do not add save systems, online features, IAP, narrative systems, or high-poly realism without a pivot decision in canonical truth.
+- Prefer typed exported properties and typed locals (`@export var speed: float = 5.0`, `var mesh: Mesh = ...`) instead of untyped catch-all values.
+- Use `CharacterBody3D`, `NavigationAgent3D`, `Area3D`, and explicit signals for gameplay actors instead of custom ad hoc movement abstractions.
+- Keep runtime loading and warnings explicit: use `push_warning` / `push_error` when GLB loading or node lookup fails rather than silently swallowing bad state.
+- Follow the current naming pattern: scene-facing nodes may stay PascalCase when they mirror node names (`AttackArea`, `ModelContainer`), while functions stay snake_case.
 
-## Low-Poly Asset Rules
+## Validation and release-proof commands
 
-- Required models are `woman-warrior`, `horse-brown`, `horse-black`, `horse-war`, `horse-boss`, `arena-ground`, `sword-projectile`, and `heart-pickup`.
-- Use Blender-MCP generated GLB assets for final product content. Placeholder models are not acceptable for finish closure.
-- Keep model budgets within the canonical brief: 2000-5000 triangles for character and horse models, about 500 triangles for arena ground, and about 100-200 triangles for small props.
-- Keep textures at 512x512 or smaller unless the canonical brief is updated.
-- Every committed final model must be listed in `assets/PROVENANCE.md` with source, license, author, and acquisition date.
-- GLB assets must load in Godot without import errors before a ticket can claim visual finish.
+Run the smallest command set that matches the ticket scope, but use these as the canonical repo checks:
 
-## Validation Commands
+```bash
+godot4 --headless --path . --quit
+godot4 --headless --path . --export-debug "Android Debug" build/android/womanvshorsevc-debug.apk
+ls -lh build/android/womanvshorsevc-debug.apk
+unzip -l build/android/womanvshorsevc-debug.apk | rg "AndroidManifest.xml|classes|resources"
+```
 
-Use the smallest command set that proves the touched surface. Record exact command output in stage artifacts.
+Use `godot4 --headless --path . --quit` after asset or scene changes to prove the project loads and imports without errors.
 
-- Project load check: `godot --headless --path . --quit`
-- Android debug export: `godot --headless --path . --export-debug "Android Debug" build/android/womanvshorseVC-debug.apk`
-- APK existence check: `test -f build/android/womanvshorseVC-debug.apk`
-- APK content check: `unzip -l build/android/womanvshorseVC-debug.apk`
-- Asset provenance check: inspect `assets/PROVENANCE.md` for each changed file under `assets/models/`.
+Use the Android export plus APK existence and `unzip -l` checks for `ANDROID-001`, `RELEASE-001`, and any ticket that claims release-proof progress.
 
-If the local Godot binary is unavailable, Android export templates are missing, Java/Android tooling is absent, or the debug keystore is missing, report a host prerequisite blocker. Do not turn an unrun command into PASS evidence.
+## Asset and import rules
 
-## Review And QA Gates
+- Asset work starts from `assets/briefs/<asset-name>.md`, then Blender-MCP generation, then `assets/models/<asset-name>.glb`, then provenance and Godot import proof.
+- Keep the Blender-MCP saved-blend chain intact across mutating calls; do not accept `input_blend: null` / `output_blend: null` mutating sequences as valid bridge evidence.
+- Do not wire gameplay around placeholder meshes once a ticket claims the model lane is complete; use the real GLB path recorded in the asset brief / provenance surfaces.
 
-- Review must inspect the exact Godot, asset, ticket, or workflow files changed by the ticket.
-- QA must run the ticket's canonical validation command when host prerequisites are present.
-- Remediation tickets with `finding_source` must rerun the original finding-producing check or the exact acceptance command named by the finding.
-- `smoke_test` is the only legal producer of smoke-test PASS artifacts.
-- If `godot --headless --path . --quit` fails, the repo remains blocked on Godot project-load repair or an explicit host prerequisite blocker.
-- If the Android export command fails, `RELEASE-001` cannot close.
+## Finish-contract implications
 
-## Release Proof
+- The finish contract requires a real Android game APK with non-placeholder 3D visuals and audio. Do not describe placeholder art, empty audio lanes, or missing gameplay content as acceptable closeout.
+- `RELEASE-001` is not done unless the debug APK export succeeds at `build/android/womanvshorsevc-debug.apk` and the archive contents prove a real Android package.
 
-`RELEASE-001` is not complete until:
+## Common failure modes to reject
 
-- `export_presets.cfg` contains an Android preset for this project.
-- `android/` support surfaces exist and are non-placeholder.
-- `godot --headless --path . --export-debug "Android Debug" build/android/womanvshorseVC-debug.apk` succeeds or records an explicit environment blocker.
-- `build/android/womanvshorseVC-debug.apk` exists.
-- `unzip -l build/android/womanvshorseVC-debug.apk` shows Android manifest plus compiled classes or resources content.
-- All terminal product tickets required for playable waves, controls, assets, and finish have current trusted proof.
-
-## Coding Standards
-
-- Prefer clear Godot scene and script boundaries over large all-purpose scripts.
-- Keep runtime behavior deterministic enough for headless project-load checks.
-- Validate external file paths and generated asset imports at the boundary.
-- Remove dead placeholder content once real Blender-MCP assets exist.
-- Add dependencies only when Godot 4.6 or Android export work cannot reasonably proceed without them.
-- Keep ticket artifacts current through `artifact_write` and `artifact_register`; do not update queue state with raw file edits.
+- Declaring Blender or Android tooling broken before rerunning the exact repo-local command with the current managed surfaces.
+- Marking a ticket done from prose alone when the ticket acceptance already names a runnable Godot load, export, or asset-import check.
+- Inventing new scene layout, combat systems, or input mappings without checking the current repo state and canonical brief first.

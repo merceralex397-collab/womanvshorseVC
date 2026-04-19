@@ -9,7 +9,7 @@ import {
   setPlanApprovedForTicket,
   syncWorkflowSelection,
   ticketFilePath,
-} from "../lib/workflow"
+} from "../lib/workflow.ts"
 
 export default tool({
   description: "Reopen a completed ticket when its original accepted scope is no longer true.",

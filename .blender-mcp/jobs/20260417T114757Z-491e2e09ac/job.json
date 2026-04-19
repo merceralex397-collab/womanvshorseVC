@@ -1,0 +1,14 @@
+{
+  "job_id": "20260417T114757Z-491e2e09ac",
+  "tool": "quality_validate",
+  "project_root": "/home/rowan/womanvshorseVC",
+  "input_blend": "/home/rowan/womanvshorseVC/assets/models/horse-war.glb",
+  "output_blend": null,
+  "payload": {
+    "profile": "game-ready",
+    "engine": "godot"
+  },
+  "timeout_seconds": 180,
+  "factory_startup": true,
+  "generated_at": "2026-04-17T11:47:57.051508+00:00"
+}

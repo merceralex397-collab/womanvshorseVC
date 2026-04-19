@@ -1,12 +1,12 @@
 {
   "tracking_mode": "persistent_recorded_state",
   "assertion_input_mode": "legacy_manual_assertion",
-  "cycle_id": "2026-04-12T03:07:27Z",
-  "created_at": "2026-04-12T03:07:27Z",
-  "last_updated_at": "2026-04-12T03:09:17Z",
+  "cycle_id": "2026-04-18T00:28:44Z",
+  "created_at": "2026-04-18T00:28:44Z",
+  "last_updated_at": "2026-04-18T00:33:16Z",
   "process_version": 7,
-  "repair_package_commit": "72acfbad2d953b04f73d10fc873102b70b9e8907+dirty:b13b6acf4081",
-  "repair_basis_path": "/home/pc/projects/womanvshorseVC/diagnosis/20260412-030500",
+  "repair_package_commit": "b2205a14fc57390317ff7b52a5c79e7a6a29adf4+dirty:b6dfa118779a",
+  "repair_basis_path": "/home/rowan/womanvshorseVC/diagnosis/20260418-002831",
   "pruned_unknown_stages": [],
   "required_stages": [
     "ticket-pack-builder"
@@ -19,18 +19,18 @@
       "status": "completed",
       "reason": "Repo-local skills still contain generic placeholder/model drift that must be regenerated with project-specific content.",
       "currently_required": false,
-      "last_checked_at": "2026-04-12T03:09:05Z",
-      "last_updated_at": "2026-04-12T03:09:05Z",
+      "last_checked_at": "2026-04-18T00:32:50Z",
+      "last_updated_at": "2026-04-18T00:32:50Z",
       "completion_mode": "recorded_execution",
       "completed_by": "project-skill-bootstrap",
-      "summary": "Regenerated stack standards with Godot Android and Blender-MCP project-specific validation guidance for current repair cycle.",
+      "summary": "Regenerated repo-local skills for the 2026-04-18 repair cycle and restored VC-specific stack standards.",
       "evidence_paths": [
         ".opencode/skills/stack-standards/SKILL.md",
         ".opencode/state/artifacts/history/repair/project-skill-bootstrap-completion.md"
       ],
-      "repair_package_commit": "72acfbad2d953b04f73d10fc873102b70b9e8907+dirty:b13b6acf4081",
-      "first_recorded_at": "2026-04-12T03:09:05Z",
-      "last_recorded_at": "2026-04-12T03:09:05Z"
+      "repair_package_commit": "b2205a14fc57390317ff7b52a5c79e7a6a29adf4+dirty:b6dfa118779a",
+      "first_recorded_at": "2026-04-18T00:32:50Z",
+      "last_recorded_at": "2026-04-18T00:32:50Z"
     },
     "ticket-pack-builder": {
       "stage": "ticket-pack-builder",
@@ -39,62 +39,56 @@
       "status": "completed",
       "reason": "Repair left remediation or reverification follow-up that must be routed into the repo ticket system.",
       "currently_required": true,
-      "last_checked_at": "2026-04-12T03:09:17Z",
-      "last_updated_at": "2026-04-12T03:09:05Z",
+      "last_checked_at": "2026-04-18T00:33:16Z",
+      "last_updated_at": "2026-04-18T00:32:50Z",
       "completion_mode": "recorded_execution",
       "completed_by": "ticket-pack-builder",
-      "summary": "Ran remediation-follow-up mode for post-repair diagnosis and updated canonical remediation tickets.",
+      "summary": "Applied remediation follow-up from diagnosis 20260418-002831 and created current remediation tickets.",
       "evidence_paths": [
         ".opencode/state/artifacts/history/repair/ticket-pack-builder-completion.md",
-        "diagnosis/20260412-030731/manifest.json",
-        "tickets/REMED-003.md",
-        "tickets/REMED-004.md",
-        "tickets/REMED-006.md",
-        "tickets/REMED-007.md",
-        "tickets/REMED-008.md"
+        "tickets/REMED-026.md",
+        "tickets/REMED-027.md",
+        "tickets/REMED-028.md"
       ],
-      "repair_package_commit": "72acfbad2d953b04f73d10fc873102b70b9e8907+dirty:b13b6acf4081",
-      "first_recorded_at": "2026-04-12T03:09:05Z",
-      "last_recorded_at": "2026-04-12T03:09:05Z"
+      "repair_package_commit": "b2205a14fc57390317ff7b52a5c79e7a6a29adf4+dirty:b6dfa118779a",
+      "first_recorded_at": "2026-04-18T00:32:50Z",
+      "last_recorded_at": "2026-04-18T00:32:50Z"
     }
   },
   "history": [
     {
-      "recorded_at": "2026-04-12T03:09:05Z",
+      "recorded_at": "2026-04-18T00:32:50Z",
       "stage": "project-skill-bootstrap",
       "owner": "project-skill-bootstrap",
       "category": "repo_local_skills",
       "status": "completed",
       "completion_mode": "recorded_execution",
       "completed_by": "project-skill-bootstrap",
-      "summary": "Regenerated stack standards with Godot Android and Blender-MCP project-specific validation guidance for current repair cycle.",
+      "summary": "Regenerated repo-local skills for the 2026-04-18 repair cycle and restored VC-specific stack standards.",
       "evidence_paths": [
         ".opencode/skills/stack-standards/SKILL.md",
         ".opencode/state/artifacts/history/repair/project-skill-bootstrap-completion.md"
       ],
-      "repair_package_commit": "72acfbad2d953b04f73d10fc873102b70b9e8907+dirty:b13b6acf4081",
-      "cycle_id": "2026-04-12T03:07:27Z"
+      "repair_package_commit": "b2205a14fc57390317ff7b52a5c79e7a6a29adf4+dirty:b6dfa118779a",
+      "cycle_id": "2026-04-18T00:28:44Z"
     },
     {
-      "recorded_at": "2026-04-12T03:09:05Z",
+      "recorded_at": "2026-04-18T00:32:50Z",
       "stage": "ticket-pack-builder",
       "owner": "ticket-pack-builder",
       "category": "ticket_follow_up",
       "status": "completed",
       "completion_mode": "recorded_execution",
       "completed_by": "ticket-pack-builder",
-      "summary": "Ran remediation-follow-up mode for post-repair diagnosis and updated canonical remediation tickets.",
+      "summary": "Applied remediation follow-up from diagnosis 20260418-002831 and created current remediation tickets.",
       "evidence_paths": [
         ".opencode/state/artifacts/history/repair/ticket-pack-builder-completion.md",
-        "diagnosis/20260412-030731/manifest.json",
-        "tickets/REMED-003.md",
-        "tickets/REMED-004.md",
-        "tickets/REMED-006.md",
-        "tickets/REMED-007.md",
-        "tickets/REMED-008.md"
+        "tickets/REMED-026.md",
+        "tickets/REMED-027.md",
+        "tickets/REMED-028.md"
       ],
-      "repair_package_commit": "72acfbad2d953b04f73d10fc873102b70b9e8907+dirty:b13b6acf4081",
-      "cycle_id": "2026-04-12T03:07:27Z"
+      "repair_package_commit": "b2205a14fc57390317ff7b52a5c79e7a6a29adf4+dirty:b6dfa118779a",
+      "cycle_id": "2026-04-18T00:28:44Z"
     }
   ]
 }

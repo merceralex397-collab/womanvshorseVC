@@ -1,0 +1,142 @@
+[
+  {
+    "id": "REMED-018",
+    "title": "Recorded Blender-MCP mutating calls violated the stateless saved-blend chaining contract",
+    "description": "Remediate EXEC-BLENDER-001 by correcting the validated issue and rerunning the relevant quality checks.",
+    "affected_files": [
+      ".opencode/meta/asset-pipeline-bootstrap.json",
+      "assets/pipeline.json",
+      ".blender-mcp/audit/audit_20260409.jsonl",
+      ".blender-mcp/audit/audit_20260410.jsonl",
+      ".blender-mcp/audit/audit_20260411.jsonl",
+      ".blender-mcp/audit/audit_20260417.jsonl"
+    ],
+    "suggested_fix_approach": "Before escalating a Blender-MCP defect, prove one correct chain: `project_initialize(output_blend=...)`, then a mutating follow-up that reuses the returned `persistence.saved_blend` as `input_blend`, and verify `.blender-mcp/audit/*.jsonl` records non-null `input_blend` / `output_blend` on the matching `job_start`.",
+    "assignee": "implementer",
+    "source_finding_code": "EXEC-BLENDER-001",
+    "source_finding_codes": [
+      "EXEC-BLENDER-001"
+    ],
+    "severity": "error",
+    "route": "ticket-pack-builder",
+    "repair_class": "generated-repo remediation ticket",
+    "summary": "Before escalating a Blender-MCP defect, prove one correct chain: `project_initialize(output_blend=...)`, then a mutating follow-up that reuses the returned `persistence.saved_blend` as `input_blend`, and verify `.blender-mcp/audit/*.jsonl` records non-null `input_blend` / `output_blend` on the matching `job_start`.",
+    "source_files": [
+      ".opencode/meta/asset-pipeline-bootstrap.json",
+      "assets/pipeline.json",
+      ".blender-mcp/audit/audit_20260409.jsonl",
+      ".blender-mcp/audit/audit_20260410.jsonl",
+      ".blender-mcp/audit/audit_20260411.jsonl",
+      ".blender-mcp/audit/audit_20260417.jsonl"
+    ]
+  },
+  {
+    "id": "REMED-019",
+    "title": "Remediation review artifact does not contain runnable command evidence",
+    "description": "Remediate EXEC-REMED-001 by correcting the validated issue and rerunning the relevant quality checks.",
+    "affected_files": [
+      "tickets/manifest.json",
+      ".opencode/state/reviews/remed-010-review-review.md"
+    ],
+    "suggested_fix_approach": "For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure.",
+    "assignee": "implementer",
+    "source_finding_code": "EXEC-REMED-001",
+    "source_finding_codes": [
+      "EXEC-REMED-001"
+    ],
+    "severity": "error",
+    "route": "ticket-pack-builder",
+    "repair_class": "generated-repo remediation ticket",
+    "summary": "For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure.",
+    "source_files": [
+      "tickets/manifest.json",
+      ".opencode/state/reviews/remed-010-review-review.md"
+    ]
+  },
+  {
+    "id": "REMED-020",
+    "title": "Remediation review artifact does not contain runnable command evidence",
+    "description": "Remediate EXEC-REMED-001 by correcting the validated issue and rerunning the relevant quality checks.",
+    "affected_files": [
+      "tickets/manifest.json",
+      ".opencode/state/reviews/remed-014-review-ticket-reconciliation.md"
+    ],
+    "suggested_fix_approach": "For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure.",
+    "assignee": "implementer",
+    "source_finding_code": "EXEC-REMED-001",
+    "source_finding_codes": [
+      "EXEC-REMED-001"
+    ],
+    "severity": "error",
+    "route": "ticket-pack-builder",
+    "repair_class": "generated-repo remediation ticket",
+    "summary": "For remediation tickets with `finding_source`, require the review artifact to record the exact command run, include raw command output, and state the explicit PASS/FAIL result before the review counts as trustworthy closure.",
+    "source_files": [
+      "tickets/manifest.json",
+      ".opencode/state/reviews/remed-014-review-ticket-reconciliation.md"
+    ]
+  },
+  {
+    "id": "REMED-021",
+    "title": "Repo claims ready or finished state, but the finish contract forbids placeholder output and finish-owning tickets are still open",
+    "description": "Remediate FINISH002 by correcting the validated issue and rerunning the relevant quality checks.",
+    "affected_files": [
+      "docs/spec/CANONICAL-BRIEF.md"
+    ],
+    "suggested_fix_approach": "Either close or supersede the open finish tickets with real content proof, or update the restart narrative to stop claiming finished-product ready state until the finish bar is met.",
+    "assignee": "implementer",
+    "source_finding_code": "FINISH002",
+    "source_finding_codes": [
+      "FINISH002"
+    ],
+    "severity": "error",
+    "route": "scafforge-repair",
+    "repair_class": "safe Scafforge package change",
+    "summary": "Either close or supersede the open finish tickets with real content proof, or update the restart narrative to stop claiming finished-product ready state until the finish bar is met.",
+    "source_files": [
+      "docs/spec/CANONICAL-BRIEF.md"
+    ]
+  },
+  {
+    "id": "REMED-022",
+    "title": "The supplied session transcript shows the agent searching for workflow bypasses or soft dependency overrides instead of following the lifecycle contract",
+    "description": "Remediate SESSION003 by correcting the validated issue and rerunning the relevant quality checks.",
+    "affected_files": [
+      "/home/rowan/Scafforge/reports/agent-runs/wvhvc-opencode-2026-04-17T14-00-00.log"
+    ],
+    "suggested_fix_approach": "Reject unsupported stages and dependency overrides up front, tell the coordinator not to probe alternate transitions or close blocked tickets anyway, and return the contract contradiction as a blocker when the required proof is missing.",
+    "assignee": "implementer",
+    "source_finding_code": "SESSION003",
+    "source_finding_codes": [
+      "SESSION003"
+    ],
+    "severity": "error",
+    "route": "scafforge-repair",
+    "repair_class": "safe Scafforge package change",
+    "summary": "Reject unsupported stages and dependency overrides up front, tell the coordinator not to probe alternate transitions or close blocked tickets anyway, and return the contract contradiction as a blocker when the required proof is missing.",
+    "source_files": [
+      "/home/rowan/Scafforge/reports/agent-runs/wvhvc-opencode-2026-04-17T14-00-00.log"
+    ]
+  },
+  {
+    "id": "REMED-023",
+    "title": "The supplied session transcript shows the operator trapped between contradictory workflow rules instead of having one clear legal next move",
+    "description": "Remediate SESSION006 by correcting the validated issue and rerunning the relevant quality checks.",
+    "affected_files": [
+      "/home/rowan/Scafforge/reports/agent-runs/wvhvc-opencode-2026-04-17T14-00-00.log"
+    ],
+    "suggested_fix_approach": "Design every workflow state so it exposes one legal next action, one named owner, and one blocker return path. When transcript evidence shows a trap, audit adjacent surfaces together instead of treating each symptom as isolated noise.",
+    "assignee": "implementer",
+    "source_finding_code": "SESSION006",
+    "source_finding_codes": [
+      "SESSION006"
+    ],
+    "severity": "error",
+    "route": "scafforge-repair",
+    "repair_class": "safe Scafforge package change",
+    "summary": "Design every workflow state so it exposes one legal next action, one named owner, and one blocker return path. When transcript evidence shows a trap, audit adjacent surfaces together instead of treating each symptom as isolated noise.",
+    "source_files": [
+      "/home/rowan/Scafforge/reports/agent-runs/wvhvc-opencode-2026-04-17T14-00-00.log"
+    ]
+  }
+]

@@ -14,7 +14,7 @@ import {
   ticketFilePath,
   type SplitKind,
   type TicketSourceMode,
-} from "../lib/workflow"
+} from "../lib/workflow.ts"
 
 function normalizeOptional(value: string | undefined): string | undefined {
   if (typeof value !== "string") return undefined

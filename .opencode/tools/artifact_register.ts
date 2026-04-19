@@ -11,7 +11,7 @@ import {
   registerArtifactSnapshot,
   saveArtifactRegistry,
   saveManifest,
-} from "../lib/workflow"
+} from "../lib/workflow.ts"
 
 export default tool({
   description: "Register an existing canonical planning, implementation, review, or QA artifact.",

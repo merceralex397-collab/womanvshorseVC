@@ -70,3 +70,4 @@ None
 - Follow `blender-mcp-workflow` skill for exact tool sequence
 - Read asset brief at `assets/briefs/woman-warrior.md` before starting
 - This is the player character — most important model for visual identity
+

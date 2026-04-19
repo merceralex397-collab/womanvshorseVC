@@ -1,0 +1,155 @@
+{
+  "generated_at": "2026-04-17T09:03:06Z",
+  "repo_root": "/home/rowan/womanvshorseVC",
+  "finding_count": 2,
+  "finding_codes": [
+    "EXEC-BLENDER-001",
+    "SESSION003"
+  ],
+  "source_findings": [
+    {
+      "code": "EXEC-BLENDER-001",
+      "severity": "error"
+    }
+  ],
+  "result_state": "validated failures found",
+  "diagnosis_kind": "post_repair_verification",
+  "evidence_mode": "transcript_backed",
+  "audit_package_commit": "1e7d1e86ca976d17c4273b3cd879bfee44ec0c6b+dirty:66e5736fbcda",
+  "report_files": {
+    "report_1": "01-initial-codebase-review.md",
+    "report_2": "02-scafforge-process-failures.md",
+    "report_3": "03-scafforge-prevention-actions.md",
+    "report_4": "04-live-repo-repair-plan.md"
+  },
+  "disposition_bundle_file": "disposition-bundle.json",
+  "disposition_bundle": {
+    "version": 1,
+    "generated_at": "2026-04-17T09:03:06Z",
+    "repo_root": "/home/rowan/womanvshorseVC",
+    "audit_package_commit": "1e7d1e86ca976d17c4273b3cd879bfee44ec0c6b+dirty:66e5736fbcda",
+    "allowed_classes": [
+      "managed_blocker",
+      "manual_prerequisite_blocker",
+      "source_follow_up",
+      "process_state_only",
+      "advisory"
+    ],
+    "finding_count": 2,
+    "findings": [
+      {
+        "code": "EXEC-BLENDER-001",
+        "severity": "error",
+        "disposition_class": "source_follow_up",
+        "legacy_disposition_class": "source_follow_up",
+        "route": "ticket-pack-builder",
+        "repair_class": "generated-repo remediation ticket",
+        "evidence_grade": "repo-state validation",
+        "source_files": [
+          ".opencode/meta/asset-pipeline-bootstrap.json",
+          "assets/pipeline.json",
+          ".blender-mcp/audit/audit_20260409.jsonl",
+          ".blender-mcp/audit/audit_20260410.jsonl",
+          ".blender-mcp/audit/audit_20260411.jsonl",
+          ".blender-mcp/audit/audit_20260417.jsonl"
+        ],
+        "provenance": "script"
+      },
+      {
+        "code": "SESSION003",
+        "severity": "error",
+        "disposition_class": "advisory",
+        "legacy_disposition_class": "managed_blocker",
+        "route": "scafforge-repair",
+        "repair_class": "safe Scafforge package change",
+        "evidence_grade": "transcript-backed and repo-validated",
+        "source_files": [
+          "/home/rowan/Scafforge/reports/agent-runs/wvhvc-opencode-2026-04-17T04-14-07.log"
+        ],
+        "provenance": "script"
+      }
+    ],
+    "counts": {
+      "managed_blocker": 0,
+      "manual_prerequisite_blocker": 0,
+      "source_follow_up": 1,
+      "process_state_only": 0,
+      "advisory": 1
+    },
+    "shadow_mode_deltas": [
+      {
+        "code": "SESSION003",
+        "legacy_disposition_class": "managed_blocker",
+        "disposition_class": "advisory",
+        "route": "scafforge-repair",
+        "reason": "Legacy prefix classification would label SESSION003 as managed_blocker, but the authoritative bundle assigns advisory."
+      }
+    ]
+  },
+  "ticket_recommendations": [
+    {
+      "id": "REMED-010",
+      "title": "Recorded Blender-MCP mutating calls violated the stateless saved-blend chaining contract",
+      "description": "Remediate EXEC-BLENDER-001 by correcting the validated issue and rerunning the relevant quality checks.",
+      "affected_files": [
+        ".opencode/meta/asset-pipeline-bootstrap.json",
+        "assets/pipeline.json",
+        ".blender-mcp/audit/audit_20260409.jsonl",
+        ".blender-mcp/audit/audit_20260410.jsonl",
+        ".blender-mcp/audit/audit_20260411.jsonl",
+        ".blender-mcp/audit/audit_20260417.jsonl"
+      ],
+      "suggested_fix_approach": "Before escalating a Blender-MCP defect, prove one correct chain: `project_initialize(output_blend=...)`, then a mutating follow-up that reuses the returned `persistence.saved_blend` as `input_blend`, and verify `.blender-mcp/audit/*.jsonl` records non-null `input_blend` / `output_blend` on the matching `job_start`.",
+      "assignee": "implementer",
+      "source_finding_code": "EXEC-BLENDER-001",
+      "source_finding_codes": [
+        "EXEC-BLENDER-001"
+      ],
+      "severity": "error",
+      "route": "ticket-pack-builder",
+      "repair_class": "generated-repo remediation ticket",
+      "summary": "Before escalating a Blender-MCP defect, prove one correct chain: `project_initialize(output_blend=...)`, then a mutating follow-up that reuses the returned `persistence.saved_blend` as `input_blend`, and verify `.blender-mcp/audit/*.jsonl` records non-null `input_blend` / `output_blend` on the matching `job_start`.",
+      "source_files": [
+        ".opencode/meta/asset-pipeline-bootstrap.json",
+        "assets/pipeline.json",
+        ".blender-mcp/audit/audit_20260409.jsonl",
+        ".blender-mcp/audit/audit_20260410.jsonl",
+        ".blender-mcp/audit/audit_20260411.jsonl",
+        ".blender-mcp/audit/audit_20260417.jsonl"
+      ]
+    },
+    {
+      "id": "REMED-011",
+      "title": "The supplied session transcript shows the agent searching for workflow bypasses or soft dependency overrides instead of following the lifecycle contract",
+      "description": "Remediate SESSION003 by correcting the validated issue and rerunning the relevant quality checks.",
+      "affected_files": [
+        "/home/rowan/Scafforge/reports/agent-runs/wvhvc-opencode-2026-04-17T04-14-07.log"
+      ],
+      "suggested_fix_approach": "Reject unsupported stages and dependency overrides up front, tell the coordinator not to probe alternate transitions or close blocked tickets anyway, and return the contract contradiction as a blocker when the required proof is missing.",
+      "assignee": "implementer",
+      "source_finding_code": "SESSION003",
+      "source_finding_codes": [
+        "SESSION003"
+      ],
+      "severity": "error",
+      "route": "scafforge-repair",
+      "repair_class": "safe Scafforge package change",
+      "summary": "Reject unsupported stages and dependency overrides up front, tell the coordinator not to probe alternate transitions or close blocked tickets anyway, and return the contract contradiction as a blocker when the required proof is missing.",
+      "source_files": [
+        "/home/rowan/Scafforge/reports/agent-runs/wvhvc-opencode-2026-04-17T04-14-07.log"
+      ]
+    }
+  ],
+  "package_work_required_first": false,
+  "recommended_next_step": "subject_repo_source_follow_up",
+  "supporting_logs": [
+    "/home/rowan/Scafforge/reports/agent-runs/wvhvc-opencode-2026-04-17T04-14-07.log"
+  ],
+  "verification_kind": "post_repair",
+  "repair_package_commit": "1e7d1e86ca976d17c4273b3cd879bfee44ec0c6b+dirty:66e5736fbcda",
+  "repair_basis_path": "/home/rowan/womanvshorseVC/diagnosis/20260417-085239",
+  "current_state_clean": false,
+  "causal_regression_verified": true,
+  "verification_basis": "transcript_backed",
+  "recommended_ticket_payload": "recommended-ticket-payload.json"
+}

@@ -19,7 +19,7 @@ import {
   type Ticket,
   type TicketSourceMode,
   writeText,
-} from "../lib/workflow"
+} from "../lib/workflow.ts"
 
 function normalizeOptional(value: string | undefined): string | undefined {
   if (typeof value !== "string") return undefined
@@ -36,8 +36,10 @@ function findEvidenceArtifact(
 ): Artifact | undefined {
   const normalized = normalizeRepoPath(artifactPath)
   const allowedTicketIds = new Set([sourceTicket.id, targetTicket.id, replacementSourceTicket.id])
-  return [...sourceTicket.artifacts, ...targetTicket.artifacts].find(
-    (artifact) => artifact.path === normalized && artifact.trust_state === "current",
+  return [...sourceTicket.artifacts, ...targetTicket.artifacts, ...replacementSourceTicket.artifacts].find(
+    (artifact) =>
+      artifact.trust_state === "current"
+      && (artifact.path === normalized || artifact.source_path === normalized),
   )
     ?? ((): Artifact | undefined => {
       const registryArtifact = currentRegistryArtifact(registry, normalized)

@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "ticket_id": "FINISH-VALIDATE-001",
+  "qa_artifact": ".opencode/state/artifacts/history/finish-validate-001/qa/2026-04-17T15-50-42-936Z-qa.md",
+  "scope": "full-suite",
+  "test_paths": [],
+  "command_signatures": [
+    "godot4 --headless --path . --quit"
+  ],
+  "commands_total": 1,
+  "commands_completed": 1,
+  "completed": true,
+  "passed": true,
+  "updated_at": "2026-04-17T15:51:25.339Z",
+  "commands": [
+    {
+      "label": "acceptance command 1",
+      "argv": [
+        "godot4",
+        "--headless",
+        "--path",
+        ".",
+        "--quit"
+      ],
+      "reason": "Ticket acceptance criteria define an explicit smoke-test command.",
+      "exit_code": 0,
+      "duration_ms": 169,
+      "stdout": "Godot Engine v4.6.1.stable.official.14d19694e - https://godotengine.org\n\n",
+      "stderr": ""
+    }
+  ]
+}

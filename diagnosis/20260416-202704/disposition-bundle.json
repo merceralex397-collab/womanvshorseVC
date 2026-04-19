@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "generated_at": "2026-04-16T20:27:04Z",
+  "repo_root": "/home/rowan/womanvshorseVC",
+  "audit_package_commit": "b9f1187c3f67f023d2aeb089e14832b77ba34cc3+dirty:6c3d97f0102f",
+  "allowed_classes": [
+    "managed_blocker",
+    "manual_prerequisite_blocker",
+    "source_follow_up",
+    "process_state_only",
+    "advisory"
+  ],
+  "finding_count": 4,
+  "findings": [
+    {
+      "code": "SKILL001",
+      "severity": "warning",
+      "disposition_class": "managed_blocker",
+      "legacy_disposition_class": "managed_blocker",
+      "route": "scafforge-repair",
+      "repair_class": "safe Scafforge package change",
+      "evidence_grade": "repo-state validation",
+      "source_files": [
+        ".opencode/skills/stack-standards/SKILL.md"
+      ],
+      "provenance": "script"
+    },
+    {
+      "code": "SKILL003",
+      "severity": "warning",
+      "disposition_class": "managed_blocker",
+      "legacy_disposition_class": "managed_blocker",
+      "route": "scafforge-repair",
+      "repair_class": "safe Scafforge package change",
+      "evidence_grade": "repo-state validation",
+      "source_files": [
+        ".opencode/agents/blender-asset-creator.md"
+      ],
+      "provenance": "script"
+    },
+    {
+      "code": "CONFIG012",
+      "severity": "warning",
+      "disposition_class": "managed_blocker",
+      "legacy_disposition_class": "managed_blocker",
+      "route": "scafforge-repair",
+      "repair_class": "safe Scafforge package change",
+      "evidence_grade": "repo-state validation",
+      "source_files": [
+        "opencode.jsonc"
+      ],
+      "provenance": "script"
+    },
+    {
+      "code": "EXEC-BLENDER-001",
+      "severity": "error",
+      "disposition_class": "source_follow_up",
+      "legacy_disposition_class": "source_follow_up",
+      "route": "ticket-pack-builder",
+      "repair_class": "generated-repo remediation ticket",
+      "evidence_grade": "repo-state validation",
+      "source_files": [
+        ".opencode/meta/asset-pipeline-bootstrap.json",
+        "assets/pipeline.json",
+        ".blender-mcp/audit/audit_20260409.jsonl",
+        ".blender-mcp/audit/audit_20260410.jsonl",
+        ".blender-mcp/audit/audit_20260411.jsonl"
+      ],
+      "provenance": "script"
+    }
+  ],
+  "counts": {
+    "managed_blocker": 3,
+    "manual_prerequisite_blocker": 0,
+    "source_follow_up": 1,
+    "process_state_only": 0,
+    "advisory": 0
+  },
+  "shadow_mode_deltas": []
+}

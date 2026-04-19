@@ -1,60 +1,58 @@
 ---
 name: asset-description
-description: How to write actionable asset briefs for Blender-MCP 3D model generation. Use when creating or reviewing asset briefs in assets/briefs/ that drive the model generation pipeline.
+description: Guide an agent through writing a precise, actionable asset description brief that can be executed by a Blender-MCP subagent or used to source matching free assets. Use when a game project needs a specific visual asset defined before creation.
 ---
 
 # Asset Description Skill
 
-Before writing any brief, call `skill_ping` with `skill_id: "asset-description"` and `scope: "project"`.
+Use this skill to produce a structured asset brief that is actionable by either:
+- A Blender-MCP subagent (route C) — the brief becomes tool call parameters
+- A human or agent sourcing free assets (route B) — the brief becomes search criteria
 
-## Purpose
+## Brief Format
 
-Asset briefs are the single source of truth for 3D model generation via Blender-MCP. Each brief must be precise enough that a subagent can execute the full tool sequence without human clarification.
-
-## Brief Location
-
-One file per asset in `assets/briefs/<asset-name>.md`
-
-## Required Format
+Create one file per asset in `assets/briefs/<asset-name>.md`:
 
 ```markdown
-# Asset Brief: <Display Name>
+# Asset Brief: <Name>
 
 ## Identity
-- **Name**: <kebab-case-name>
-- **Category**: character | prop | environment | pickup
+- **Name**: horse-enemy-base
+- **Category**: character
 - **Art Style**: low-poly stylized
-- **Target Engine**: Godot 4.6
+- **Target Engine**: Godot 4.x
 - **Export Format**: .glb (GLTF Binary)
 
 ## Visual Description
 <2-4 sentences describing exactly what this looks like. Be specific about
-proportions, colors, distinctive features. Use measurable terms. Avoid
-subjective language like "cool" or "nice".>
+proportions, colors, distinctive features. Avoid subjective terms like
+"cool" or "nice". Use measurable terms.>
 
 ## Technical Constraints
-- **Triangle budget**: <N> tris (hard cap)
+- **Triangle budget**: 2000-5000 tris
 - **Texture size**: 512x512 max
-- **Material slots**: <N> (<slot names>)
-- **UV mapping**: Auto-unwrap (Smart UV Project)
-- **Rigging**: None (static mesh)
-- **Animation**: None
-- **Scale reference**: <height in meters> tall in Godot/Blender units
+- **Material slots**: 1-2 (body, accent)
+- **UV mapping**: Auto-unwrap acceptable
+- **Rigging**: None (static prop) / Basic (animated)
+- **Animation**: None / Idle loop / Walk cycle
+- **Scale reference**: 2m tall in Godot units
 
 ## Color Palette
-- Primary: #<hex> (<description>)
-- Secondary: #<hex> (<description>)
-- Accent: #<hex> (<description>, if needed)
+- Primary: #8B4513 (brown body)
+- Secondary: #2F2F2F (dark mane/tail)
+- Accent: #FF4444 (glowing eyes, if enemy variant)
 
-## Blender-MCP Tool Sequence
-1. project_initialize — new file, metric units
-2. mesh_edit_batch — <specific modeling steps>
-3. mesh_edit_batch — <refinement steps>
-4. material_pbr_build — <material spec from palette>
-5. uv_workflow — smart UV project, pack islands
-6. render_preview — front + side orthographic
-7. quality_validate — check tri count, manifold, scale
-8. export_asset — .glb to assets/models/<name>.glb
+## Blender-MCP Tool Sequence (Route C only)
+1. project_initialize — new file, metric units, `output_blend=tmp/<asset>-01.blend`
+2. mesh_edit_batch — create body from cube, extrude legs/neck/head, `input_blend=<saved>`, `output_blend=tmp/<asset>-02.blend`
+3. mesh_edit_batch — loop cuts for joints, edge flow cleanup, `input_blend=<saved>`, `output_blend=tmp/<asset>-03.blend`
+4. material_pbr_build — base color from palette, roughness 0.7, `input_blend=<saved>`, `output_blend=tmp/<asset>-04.blend`
+5. uv_workflow — smart UV project, pack islands, `input_blend=<saved>`, `output_blend=tmp/<asset>-05.blend`
+6. render_preview — front + side orthographic from the latest saved blend
+7. quality_validate — check tri count, manifold, scale against the latest saved blend
+8. export_asset — .glb, apply modifiers, Godot preset, from the latest saved blend
+
+Critical rule: every mutating Blender-MCP call is stateless. Never continue after a mutating call unless it returned `persistence.saved_blend`, and never send `input_blend: null` or `output_blend: null` on a mutating call.
 
 ## Acceptance Criteria
 - [ ] Triangle count within budget
@@ -63,61 +61,36 @@ subjective language like "cool" or "nice".>
 - [ ] UV islands non-overlapping
 - [ ] Correct scale (matches reference)
 - [ ] Preview renders reviewed
-- [ ] Materials match color palette
-- [ ] Imports cleanly into Godot (no Output panel errors)
+- [ ] Imports cleanly into Godot (no errors in Output panel)
 - [ ] PROVENANCE.md entry created
 ```
 
-## Writing Rules
+## Procedure
 
-### Be Specific
-- BAD: "A horse"
-- GOOD: "A brown horse standing on four legs, low-poly with visible facets, 2 meters tall at the head, blocky proportions with simplified mane and tail"
+### 1. Gather Requirements
+Read the canonical brief and `assets/pipeline.json` to understand:
+- Overall art style
+- Platform constraints (mobile = lower budgets)
+- Which route this asset will use
 
-### Be Measurable
-- Triangle counts are hard caps, not suggestions
-- Material slot count determines Blender setup complexity
-- Scale reference must match the game's unit system (1 unit = 1 meter)
+### 2. Write the Brief
+Follow the format above. Key principles:
+- **Be specific**: "A brown horse standing on four legs" not "a horse"
+- **Be measurable**: Triangle counts, texture sizes, material counts
+- **Be actionable**: The Blender-MCP sequence should be executable as-is
+- **Match the style**: Low-poly characters don't need 4K textures
 
-### Be Actionable
-- The Blender-MCP Tool Sequence must be executable as-is
-- Each step should map to a specific tool call with inferrable parameters
-- Include enough modeling detail that the agent knows WHAT to build, not just what tool to call
+### 3. Validate the Brief
+Before creation begins:
+- Check triangle budget is reasonable for target platform
+- Check texture size is appropriate
+- Check export format matches engine import capabilities
+- Check color palette has enough contrast for gameplay readability
 
-### Match the Style
-- All models in this project are low-poly stylized
-- Low-poly characters do not need 4K textures or complex UV islands
-- Flat shading or subtle smooth shading only
-- Bold color blocks, not realistic textures
-- Clean silhouettes that read well from a top-down orthographic camera
-
-### Consider Gameplay Readability
-- Models are viewed from a fixed top-down orthographic camera
-- Distinctive silhouettes matter more than front-facing detail
-- Color contrast between player (green/silver) and enemies (brown/black/red) is critical
-- Boss variants should be visibly larger and more distinctive
-
-## Triangle Budget Guidelines
-
-| Category | Budget Range | Notes |
-|---|---|---|
-| Player character | 2000-3000 tris | Most detail budget |
-| Standard enemy | 1500-2000 tris | Many on screen at once |
-| Elite/armored enemy | 3000-4000 tris | Fewer on screen |
-| Boss enemy | 4000-5000 tris | One at a time |
-| Environment (arena) | 300-500 tris | Simple ground + fence |
-| Props/pickups | 50-200 tris | Very simple shapes |
-
-## Validation Before Submission
-
-Before committing a brief:
-- Triangle budget is reasonable for the category (see table above)
-- Color palette has hex values, not just color names
-- Visual description is specific enough to model without questions
-- Tool sequence covers all 7 pipeline stages
-- Scale reference uses meters and matches game scale
-- Acceptance criteria include all standard checks
+### 4. Route to Creation
+- If Route C (Blender-MCP): Hand brief to blender-asset-creator subagent
+- If Route B (free/open): Use brief as search criteria on asset sources
+- If Route D (Godot built-in): Use brief as reference for CSG/particle/shader work
 
 ## Output
-
-Each completed brief is saved to `assets/briefs/<asset-name>.md` and referenced by the corresponding MODEL ticket for Blender-MCP execution.
+- `assets/briefs/<asset-name>.md` — One complete asset brief per asset needed
